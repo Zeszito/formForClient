@@ -1,0 +1,10 @@
+.rcorner{
+    border-radius: 15px;
+    border:  white solid ;
+    padding: 25px;
+    background-color: white;
+}
+
+body{
+    background-color: teal;
+}
