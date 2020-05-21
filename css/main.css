@@ -1,4 +1,5 @@
 .rcorner{
+    margin-top: 10vh;
     border-radius: 15px;
     border:  white solid ;
     padding: 25px;
@@ -8,3 +9,11 @@
 body{
     background-color: teal;
 }
+
+.form-check-label{
+    font-size: 75%;
+}
+label{
+    font-size: 75%;
+}
+
