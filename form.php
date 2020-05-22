@@ -1,47 +1,29 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Form question</title>
-  </head>
-  <body>
-    
-    <div class="container">
-        <div class="row">
-           
-            <div class="col col-sm-6 offset-sm-3 rcorner">
-                
-                <form method="get" action="">
-                    <div class="form-group">
+<form method="get" action="" class="main-form needs-validation " novalidate >
+                    <div class="form-group" >
                         <label for="my-input">Email</label>
-                        <input type="email" class="form-control" id="emailVal" name="emailVal" required>
+                        <input type="email" class="form-control form-control-sm" id="emailVal" name="emailVal" required>
+                        <div class="invalid-feedback">looks good</div>
                     </div>
                     <div class="form-group">
                         <label for="my-input">Nome</label>
-                        <input type="text" class="form-control" id="nomeVal" name="nomeVal" required>
+                        <input type="text" class="form-control  form-control-sm" id="nomeVal" name="nomeVal" required>
                     </div>
                     <!------FORM ROW DNASCIMENTO LOCALIDADE NIF-->
                     <div class="form-row">
                         <div class="form-group col-md-4">
                           <label for="inputEmail4">Data Nascimento</label>
-                          <input type="email" class="form-control" id="DataNascimentoVal">
+                          <input type="email" class="form-control form-control-sm" id="DataNascimentoVal">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="Localidade">Localidade</label>
-                            <select id="LocalidadeVal" class="form-control">
+                            <select id="LocalidadeVal" class="form-control form-control-sm">
                               <option selected>Choose...</option>
                               <option>...</option>
                             </select>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="NIF">NIF</label>
-                            <input type="number" class="form-control" id="nifVal">
+                            <input type="number" class="form-control form-control-sm" id="nifVal">
                           </div>
                     </div>
 
@@ -49,11 +31,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                           <label for="inputEmail4">Telémovel</label>
-                          <input type="email" class="form-control" id="DataNascimentoVal">
+                          <input type="email" class="form-control form-control-sm" id="DataNascimentoVal">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="Localidade">Club</label>
-                            <select id="LocalidadeVal" class="form-control">
+                            <select id="LocalidadeVal" class="form-control form-control-sm">
                               <option selected>Choose...</option>
                               <option>...</option>
                             </select>
@@ -65,27 +47,13 @@
                         <div class="col">
                             <div class="form-check">
                                 <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
-                                <label for="my-input" class="form-check-label">Text</label>
+                                <label for="my-input" class="form-check-label">Auto</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-check">
                                 <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
-                                <label for="my-input" class="form-check-label">Text</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
-                                <label for="my-input" class="form-check-label">Text</label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-check">
-                                <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
-                                <label for="my-input" class="form-check-label">Text</label>
+                                <label for="my-input" class="form-check-label">Vida</label>
                             </div>
                         </div>
                     </div>
@@ -93,13 +61,27 @@
                         <div class="col">
                             <div class="form-check">
                                 <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
-                                <label for="my-input" class="form-check-label">Text</label>
+                                <label for="my-input" class="form-check-label">Saúde</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-check">
                                 <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
-                                <label for="my-input" class="form-check-label">Text</label>
+                                <label for="my-input" class="form-check-label">Casa</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
+                                <label for="my-input" class="form-check-label">Outro</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
+                                <label for="my-input" class="form-check-label"><a href="https://celebramosfutebol.sabseg.com/resources/files/CelebramosFutebol_DireitoInformacao.pdf">Li e compreendi o direito de informação</a></label>
                             </div>
                         </div>
                     </div>
@@ -117,26 +99,9 @@
                         <label for="my-input" class="form-check-label">	Autorizo a consulta e a utilização dos dados pessoais disponibilizados, sob regime de absoluta confidencialidade, à SABSEG designadamente para o envio de futuras campanhas de marketing, de publicidade e de informação sobre produtos e serviços.</label>
                     </div>
 
-                   
-                        <div class="col-3 offset-3">
+
+                        <div class="offset-6">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
-                   
-                 
-                </form>     
 
-            </div>    
-             
-        </div>
-    </div>
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="js/main.js" async defer></script>  
-</body>
-</html>
+                </form>

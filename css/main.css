@@ -1,8 +1,14 @@
+/*400 regular
+600 semi bold
+800 bold*/
+*{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
 .rcorner{
-    margin-top: 10vh;
     border-radius: 15px;
     border:  white solid ;
-    padding: 25px;
     background-color: white;
 }
 
@@ -10,10 +16,20 @@ body{
     background-color: teal;
 }
 
-.form-check-label{
-    font-size: 75%;
-}
-label{
-    font-size: 75%;
+.form-control-sm{
+    font-size: 0.5rem;
 }
 
+label{
+    font-size: 75% ;
+}
+
+@media (max-width: 576px) { 
+    .rcorner{
+        border-radius: 15px;
+        border:  white solid ;
+        background-color: white;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+}
