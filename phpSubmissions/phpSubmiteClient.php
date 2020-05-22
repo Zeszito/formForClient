@@ -71,7 +71,7 @@
         // 4- Verify phoneNumber
         if (!phonenumber_isvalid($cellphone))
         {
-          echo "Numero de telefone inválido"
+          echo "Numero de telefone inválido";
         }
         else 
         {
@@ -91,7 +91,7 @@ function phonenumber_isvalid($nr)
 {
   if(strlen($nr != 9 ))
   {
-    return false
+    return false;
   }
   if ((substr(trim($nr), 0, 2) == '91') || (substr(trim($nr), 0, 2) == '92') || (substr(trim($nr), 0, 2) == '93')|| (substr(trim($nr), 0, 2) == '96'))
   {
@@ -102,8 +102,10 @@ function phonenumber_isvalid($nr)
     return false;
   }
 }
-function binif_isvalid($nr){
-  while (strlen($nr) < 9) {
+function binif_isvalid($nr)
+{
+  while (strlen($nr) < 9) 
+  {
      $nr = "0" . $nr;
   }
 
