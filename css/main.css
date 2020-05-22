@@ -10,6 +10,7 @@
     border-radius: 15px;
     border:  white solid ;
     background-color: white;
+    margin-top: 15vh;
 }
 
 body{
@@ -31,5 +32,14 @@ label{
         background-color: white;
         margin-left: 5vw;
         margin-right: 5vw;
+        margin-top: 5vh;
     }
 }
+
+body {
+    background-image: url("../images/Background.png");
+  
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
