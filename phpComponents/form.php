@@ -9,7 +9,7 @@
                         <input type="text" class="form-control  form-control-sm" id="nomeVal" name="nomeVal" required>
                     </div>
                     <!------FORM ROW DNASCIMENTO LOCALIDADE NIF-->
-                    <div class="form-row">
+                    <div class="form-row noLogIn">
                         <div class="form-group col-md-4">
                           <label for="inputEmail4">Data Nascimento</label>
                           <input type="date" class="form-control form-control-sm" name="dataNascimentoVal" id="DataNascimentoVal">
@@ -28,7 +28,7 @@
                     </div>
 
                     <!-- Form Row Numero de telemovel Club-->
-                    <div class="form-row">
+                    <div class="form-row noLogIn">
                         <div class="form-group col-md-6">
                           <label for="inputEmail4">Telémovel</label>
                           <input name="telemovelVal" type="number" class="form-control form-control-sm" id="DataNascimentoVal">
@@ -43,7 +43,7 @@
                     </div>
 
                     <!--Check Boxes section-->
-                    <div class="row">
+                    <div class="row noLogIn">
                         <div class="col">
                             <div class="form-check">
                                 <input id="my-input" class="form-check-input" type="checkbox" name="autoVal" value="true">
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row noLogIn">
                         <div class="col">
                             <div class="form-check">
                                 <input id="my-input" class="form-check-input" type="checkbox" name="saudeVal" value="1">
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row noLogIn">
                         <div class="col">
                             <div class="form-check">
                                 <input id="my-input" class="form-check-input" type="checkbox" name="outroVal" value="1">

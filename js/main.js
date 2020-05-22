@@ -22,4 +22,15 @@ function newClient() {
         }
     })
 }
-    
+
+function HideShowChangeTarget(choose){
+
+    if(choose===1){
+        $(".noLogIn").hide();
+    }
+    else{
+        $(".noLogIn").show();
+    }
+}
+
+$(".noLogIn").hide();
