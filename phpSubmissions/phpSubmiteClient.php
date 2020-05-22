@@ -5,18 +5,19 @@
     //Erros de php eu digo só "Desculpe Erro Interno Tente mais tarde"
 
 
+    
 
  //Aqui para o ficheiro que faz a conecção
  //include "phpSubmissions\phpConection.php";
- $con = mysqli_connect("15.236.164.101", "root", "sayhitoevolution", "sabseg_database");
-
- if(mysqli_connect_error())
+ $conn = new mysqli("15.236.164.101", "root", "sayhitoevolution", "sabseg_database","3306");
+ if($conn->connect_error)
  {
-
-     echo "Failed my connection : ";
-
+    die("error:" . $conn->connect_error);
  } 
-
+else{
+  echo "Connected!";
+}
+ 
 
  $name = $_POST['nomeVal'];
  $email = $_POST['emailVal'];
@@ -24,14 +25,12 @@
  $locality = $_POST['localidadeVal'];
  $nif = $_POST['nifVal'];
  $cellphone = $_POST['telemovelVal'];
- $club = isset($_POST['clubVal']);
+ $club = $_POST['clubVal'];
  $auto = (isset($_POST['autoVal'])) ? 1: 0;
  $life = (isset($_POST['vidaVal'])) ? 1: 0;
  $health = (isset($_POST['saudeVal'])) ? 1: 0;
  $house = (isset($_POST['casaVal'])) ? 1: 0;
  $other = (isset($_POST['outroVal'])) ? 1: 0;
- 
-
 //TESTE
  echo  "---------------------------\n".
         "APENAS PARA DEBUG ONLY!!!!!".
@@ -50,6 +49,8 @@
   } 
   else 
   {
+    // VERIFICAR SE EMAIL é valido
+
     // 2- Verify if nif exists
     $sqlNif = "SELECT nif FROM users WHERE email = '" . $email . "' AND nif = '".$nif."'";
     $resultNif = $conn->query($sqlNif);
@@ -61,7 +62,7 @@
     else
     {
       // 3- Verify nif
-      if(!binif_isvalid($nif)
+      if(!binif_isvalid($nif))
       {
         echo "BI invalido";
       }
@@ -77,7 +78,7 @@
         {
           // Dados validos, executar registo
           $sqlCommand = "INSERT INTO users('".$email."','".$name."','".$birthDate."','".$locality."','".$nif."','".$cellphone."','".$club."','".$auto."','".$life."','".$health."','".$house."','".$other."')";
-          $result = $con->query($sqlCommand);
+          $result = $conn->query($sqlCommand);
           echo $result;
 
           echo "OK";

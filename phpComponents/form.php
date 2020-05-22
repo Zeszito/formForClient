@@ -36,8 +36,8 @@
                         <div class="form-group col-md-6">
                             <label for="club">Club</label>
                             <select name="clubVal" id="clubVal" class="form-control form-control-sm">
-                              <option selected>Porto</option>
-                              <option>Sporting</option>
+                              <option selected value = "Porto">Porto</option>
+                              <option value = "Sporting">Sporting</option>
                             </select>
                         </div>
                     </div>
