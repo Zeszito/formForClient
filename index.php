@@ -20,7 +20,8 @@
 
       <div class="col col-sm-8 offset-sm-2 rcorner ">
         <div class="row">
-          
+         
+        <div class="col offset-1" id="checksUserType">
         <div class="form-check form-check-inline">
             <input onchange="HideShowChangeTarget(1)" class="form-check-input" type="radio" name="utilizadorTipo" checked>
             <label class="form-check-label" for="inlineCheckbox1">Utilizador Existente</label>
@@ -31,11 +32,16 @@
             <label class="form-check-label" for="inlineCheckbox1">Novo Utilizador</label>
           </div>
         </div>
+       
+        </div>
 
         <?php
         include 'phpComponents/form.php'
         ?>
-
+        
+        <?php
+        include 'phpComponents/wheel.php'
+        ?>
       </div>
 
     </div>

@@ -43,3 +43,18 @@ body {
     background-attachment: fixed;
     background-size: cover;
   }
+
+img#seta {
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    width: 15px;
+    margin-top: -10px;
+
+
+}
+#roda{
+    transform: rotate(10deg);
+}
+
