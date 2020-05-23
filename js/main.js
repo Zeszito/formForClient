@@ -10,13 +10,21 @@ form.addEventListener('submit', function(event) {
     }
     else{
        // logInClient();
+       whellTransition();
+    
+    }
+ 
+   
+})
+
+function whellTransition(){
+    $(".bg2").animate({
+        'background-color' :"white"
+       }, 1000);
        $("#checksUserType").hide();
        $("#mainForm").hide();
        $(".RodaAll").slideDown(1000);
-    }
-
-
-})
+}
 
 function newClient() {
     var form = $("#mainForm")
@@ -62,22 +70,22 @@ var degree = 10;
 var degreeSeta = 0;
 var time = 0;
 function myFunction() {
-
+ 
 //360º /16 espaços = 22.5;
       // For webkit browsers: e.g. Chrome
            $elie.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});
       // For Mozilla browser: e.g. Firefox
            $elie.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});
-    degree+=22.5;
-
-
+    degree+=22.5;   
+    
+    
     $seta.css({ WebkitTransform: 'rotate(' + degreeSeta + 'deg)'});
     // For Mozilla browser: e.g. Firefox
          $seta.css({ '-moz-transform': 'rotate(' + degreeSeta + 'deg)'});
 
          if(time<5)
          degreeSeta +=2;
-
+         
          if(time==5)
          degreeSeta=0;
 
@@ -86,11 +94,11 @@ function myFunction() {
 
          if(time>10)
             time=0;
-
+          
             time++;
-
+    
 }
-
+ 
 var rodando = setInterval(myFunction, 50);
 
 $("#prizebtn").on("click", function () {

@@ -36,13 +36,7 @@ label{
     }
 }
 
-body {
-    background-image: url("../images/Background.png");
-  
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
+
 
 img#seta {
     position: absolute;
@@ -58,3 +52,50 @@ img#seta {
     transform: rotate(10deg);
 }
 
+#prizebtn{
+background-color: #175E9F;
+-webkit-box-shadow: inset 0px 0px 11px 12px rgba(0,0,0,0.47); 
+box-shadow: inset 0px 0px 11px 12px rgba(0,0,0,0.47);
+border-radius:23px;
+font-size: 1.5rem;
+padding-left: 5vw;
+padding-right: 5vw ;
+}
+
+.bg:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("../images/Background.png") no-repeat center center /cover;
+    content: '';
+    z-index: -1;
+  }
+
+  .bg2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #BDCDDD;
+    opacity: 70%;
+    content: '';
+    z-index: -1;
+  }
+
+  #rodaCentro{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    display: block;
+    margin: auto;
+    z-index: 1;
+    width: 50%;
+  }
