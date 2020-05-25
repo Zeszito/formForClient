@@ -90,8 +90,8 @@
                     </div>
 
 
-                    <div class="text-center">
+                    <div class="text-center pb-2">
                             <button type="submit" class="btn btn-primary" id="enviarFormBtn">Submit</button>
-                        </div>
+                    </div>
 
                 </form>

@@ -29,10 +29,15 @@
         include 'phpComponents/form.php'
         ?>
         
-        <?php
+     
+      </div>
+
+  
+       <?php
         include 'phpComponents/wheel.php'
         ?>
-      </div>
+
+    
 
     </div>
   </div>

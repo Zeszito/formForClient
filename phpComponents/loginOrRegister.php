@@ -1,6 +1,6 @@
 <div class="row">
 
-    <div  id="checksUserType">
+    <div class="pt-3"  id="checksUserType">
 
         <div class="form-check form-check-inline">
             <input onchange="HideShowChangeTarget(1)" class="form-check-input" type="radio" name="utilizadorTipo" checked>

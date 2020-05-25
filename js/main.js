@@ -1,11 +1,13 @@
 var form = document.querySelector('.needs-validation');
 var wichOne = 1;
+$('.noLogIn').find('*').attr('disabled', true);
 //$(".RodaAll").hide();
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     event.stopPropagation();
 
     if(wichOne===2){
+        whellTransition();
         newClient();
     }
     else{
@@ -18,12 +20,13 @@ form.addEventListener('submit', function(event) {
 })
 
 function whellTransition(){
-    $(".RodaAll").show();
+
     $(".bg2").animate({
         'background-color' :"white"
        }, 1000);
-       $("#checksUserType").hide();
-       $("#mainForm").slideUp();
+ 
+       $(".rcorner").animate({bottom:-200, opacity:0}, 1000);
+     
   
 }
 
@@ -51,18 +54,17 @@ function logInClient(){
 function HideShowChangeTarget(choose){
 
     if(choose===1){
-        $(".noLogIn").hide();
+        $('.noLogIn').find('*').attr('disabled', true);
         wichOne = choose;
     }
     else{
-        $(".noLogIn").show();
+        $('.noLogIn').find('*').attr('disabled', false);
         wichOne = choose;
     }
 }
 
 
 
-$(".noLogIn").hide();
 
 var $elie = $("#roda");
 var $seta = $("#seta");

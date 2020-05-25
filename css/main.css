@@ -28,20 +28,90 @@ label{
     font-size: 75% ;
 }
 
-@media (max-width: 576px) { 
-    .rcorner{
-        border-radius: 15px;
-        border:  white solid ;
-        background-color: white;
-        margin-left: 5vw;
-        margin-right: 5vw;
-        margin-top: 5vh;
-    }
-}
 
 
 
-img#seta {
+
+
+.bg:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("../images/Background.png") no-repeat center center /cover;
+    content: '';
+    z-index: -2;
+
+  }
+
+  .bg2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #BDCDDD;
+    opacity: 70%;
+    content: '';
+    z-index: -2;
+  }
+
+
+
+  .form-control-sm{
+    background-color: #D6E8F8 ;
+    
+  }
+
+  input[type=radio] {
+    border: 1px solid #D6E8F8(243, 9, 9);
+    border-radius: 4px;
+    background-color: #D6E8F8;
+    padding: 0.5em;
+    -webkit-appearance: none;
+  }
+  
+  input[type=radio]:checked {
+   background-color: #0A6FB6;
+    background-size: 9px 9px;
+  }
+  
+  input[type=radio]:focus {
+    outline-color: transparent;
+  }
+  
+  #checksUserType{
+      margin: auto;
+  }
+ 
+
+  /*RODA CENTRO */
+.RodaAll{
+    position: absolute ;
+    top: 0 ;
+    left: 0;
+    margin: auto;
+    z-index: -1;
+ 
+  }
+
+  #rodaCentro{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    display: block;
+    margin: auto;
+    z-index: 1;
+    width: 50%;
+  }
+
+  img#seta {
     position: absolute;
     margin: auto;
     right: 0;
@@ -62,76 +132,44 @@ box-shadow: inset 0px 0px 11px 12px rgba(0,0,0,0.47);
 border-radius:23px;
 font-size: 1.5rem;
 padding-left: 5vw;
-padding-right: 5vw ;
+padding-right: 5vw;
 }
 
-.bg:before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: url("../images/Background.png") no-repeat center center /cover;
-    content: '';
-    z-index: -1;
+/**MEDIA FOR SMALLER **/
+@media (max-width: 768px) { 
+    .rcorner{
+        border-radius: 15px;
+        border:  white solid ;
+        background-color: white;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-top: 5vh;
+    }
 
-  }
-
-  .bg2{
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #BDCDDD;
-    opacity: 70%;
-    content: '';
-    z-index: -1;
-  }
-
-  #rodaCentro{
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-
-    display: block;
-    margin: auto;
-    z-index: 1;
-    width: 50%;
-  }
-
-  .form-control-sm{
-    background-color: #D6E8F8 ;
+    .bg:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 150%;
+   
+        background: url("../images/Background.png") no-repeat center center /cover;
+        content: '';
+        z-index: -2;
     
-  }
-
-  input[type=radio] {
-    border: 1px solid #D6E8F8(243, 9, 9);
-    border-radius: 4px;
-    background-color: #D6E8F8;
-    padding: 0.5em;
-    -webkit-appearance: none;
-  }
-  
-  input[type=radio]:checked {
-   /* background: url(data:image/gif;base64,R0lGODlhAQABAPAAAP///////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==) no-repeat center center;*/
-   background-color: #0A6FB6;
-    background-size: 9px 9px;
-  }
-  
-  input[type=radio]:focus {
-    outline-color: transparent;
-  }
-  
-  #checksUserType{
-      margin: auto;
-  }
- 
-.rodaAll{
-    position: absolute !important;
-    top: 0 !important;
-  }
+      }
+    
+      .bg2{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 150%;
+     
+        background-color: #BDCDDD;
+        opacity: 70%;
+        content: '';
+        z-index: -2;
+      }
+    
+}
