@@ -1,6 +1,6 @@
 var form = document.querySelector('.needs-validation');
 var wichOne = 1;
-$(".RodaAll").hide();
+//$(".RodaAll").hide();
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -18,12 +18,13 @@ form.addEventListener('submit', function(event) {
 })
 
 function whellTransition(){
+    $(".RodaAll").show();
     $(".bg2").animate({
         'background-color' :"white"
        }, 1000);
        $("#checksUserType").hide();
-       $("#mainForm").hide();
-       $(".RodaAll").slideDown(1000);
+       $("#mainForm").slideUp();
+  
 }
 
 function newClient() {
