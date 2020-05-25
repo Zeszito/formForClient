@@ -81,17 +81,17 @@
                     </div>
 
                     <div class="form-check">
-                                <input  class="form-check-input" type="checkbox" name="direitoInfoVal" value="1">
+                                <input id="direitoInfo" class="form-check-input" type="checkbox" name="direitoInfoVal" value="1">
                                 <label for="my-input" class="form-check-label"><a href="https://celebramosfutebol.sabseg.com/resources/files/CelebramosFutebol_DireitoInformacao.pdf">Li e compreendi o direito de informação</a></label>
                             </div>
                     <div class="form-check">
-                        <input  class="form-check-input" type="checkbox" name="" value="true">
+                        <input id="termosInfo" class="form-check-input" type="checkbox" name="" value="true">
                         <label for="my-input" class="form-check-label">	Autorizo a consulta e a utilização dos dados pessoais disponibilizados, sob regime de absoluta confidencialidade, à SABSEG designadamente para o envio de futuras campanhas de marketing, de publicidade e de informação sobre produtos e serviços.</label>
                     </div>
 
 
                     <div class="text-center pb-2">
-                            <button type="submit" class="btn btn-primary" id="enviarFormBtn">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="enviarFormBtn">Login</button>
                     </div>
 
                 </form>
