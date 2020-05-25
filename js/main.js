@@ -1,7 +1,13 @@
 var form = document.querySelector('.needs-validation');
 var wichOne = 1;
+
+/**Estado inicial de cada elemento */
 $('.noLogIn').find('*').attr('disabled', true);
-//$(".RodaAll").hide();
+$('#nomeVal').attr('disabled', true)
+$("#enviarFormBtn").attr('disabled', true);
+
+
+/**Observo o botao de enviar */
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -14,10 +20,29 @@ form.addEventListener('submit', function(event) {
        // logInClient();
        whellTransition();
     
-    }
- 
-   
+    }  
 })
+//-------------------------------------------------------//
+/**Observo os Termos */
+var a = $("#direitoInfo");
+var b = $("#termosInfo");
+
+a.click(function() {
+    CheckTermos();
+  });
+b.click(function() {
+    CheckTermos();
+  });
+
+function CheckTermos()
+{
+  if(a.is(':checked') && b.is(':checked'))
+    $("#enviarFormBtn").attr('disabled', false);
+  else   $("#enviarFormBtn").attr('disabled', true);
+}
+//-------------------------------------------------------//
+
+
 
 function whellTransition(){
 
@@ -25,7 +50,9 @@ function whellTransition(){
         'background-color' :"white"
        }, 1000);
  
-       $(".rcorner").animate({bottom:-200, opacity:0}, 1000);
+       $(".rcorner").animate({bottom:-200, opacity:0}, 1000,
+        function (){$(".rcorner").remove()});
+
      
   
 }
@@ -55,10 +82,12 @@ function HideShowChangeTarget(choose){
 
     if(choose===1){
         $('.noLogIn').find('*').attr('disabled', true);
+        $('#nomeVal').attr('disabled', true)
         wichOne = choose;
     }
     else{
         $('.noLogIn').find('*').attr('disabled', false);
+        $('#nomeVal').attr('disabled', false)
         wichOne = choose;
     }
 }
@@ -74,7 +103,7 @@ var degreeSeta = 0;
 var time = 0;
 function myFunction() {
  
-//360º /16 espaços = 22.5;
+      //360º /16 espaços = 22.5;
       // For webkit browsers: e.g. Chrome
            $elie.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});
       // For Mozilla browser: e.g. Firefox
