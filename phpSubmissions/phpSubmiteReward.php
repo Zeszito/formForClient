@@ -20,6 +20,7 @@
    }
 
    $email = $_POST['emailVal'];
+   $reward ? $_POST['rewardVal'];
 
    //TESTE
    echo  "---------------------------\n".
@@ -27,31 +28,13 @@
        "\nnome-".$name. "\nemail-".$email."\n---------------------------";
 
    //1-Verificar se email esta registado
-   $accountVerify = "SELECT email FROM users WHERE email = '".$email."'";
-   if($conn->query($accountVerify)->num_rows == 0)
+   $updateReward = "UPDATE `users` SET `reward`=$reward WHERE `email` = $email";
+   if($conn->query($updateReward) === FALSE)
    {
       echo("NO-Este email não foi ainda registado");
    }
    else
    {
-      // 2-Verificar se já jogou
-      $selectReward = "SELECT reward FROM users WHERE email = '".$email."' AND reward != 0";
-      if ($conn->query($selectReward)->num_rows == 0) 
-      {
-         echo"NO-Voçê já jogou á roleta";
-      }
-      else
-      {
-         $clubSelect = "SELECT `club` FROM `users` WHERE email = '" . $email . "'";
-         if ($conn->query($clubSelect)->num_rows == 0) 
-         {
-            echo "NO-Error getting club";
-         }
-         else
-         {
-            $club = mysql_fetch_row($clubSelect);
-            echo "OK-$club[0]";
-         }
-      }
+      echo "OK-Parabéns voçe ganhou";
    }
 ?>
