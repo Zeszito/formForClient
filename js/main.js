@@ -188,5 +188,3 @@ $("#prizebtn").on("click", function () {
   });
 
 
-$(".bg2").css("height", Math.max($(document).height(), $(window).height()));
-$(".bg").css("height", Math.max($(document).height(), $(window).height()));

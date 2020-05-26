@@ -25,8 +25,13 @@
 }
 
 body{
-    background-color: teal;
+    background-color: red;
 }
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 
 .form-control-sm{
     font-size: 0.5rem;
@@ -47,7 +52,7 @@ label{
     right: 0;
     left: 0;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     background: url("../images/Background.png") no-repeat center center /cover;
     content: '';
     z-index: -2;
@@ -60,7 +65,7 @@ label{
     right: 0;
     left: 0;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     background-color: #BDCDDD;
     opacity: 70%;
     content: '';
@@ -162,8 +167,8 @@ padding-right: 5vw;
         position: absolute;
         top: 0;
         left: 0;
-        height: 165%;
-   
+        height: 150%;
+        width: 100vw;
         background: url("../images/Background.png") no-repeat center center /cover;
         content: '';
         z-index: -2;
@@ -175,7 +180,7 @@ padding-right: 5vw;
         top: 0;
         left: 0;
         height: 150%;
-     
+        width: 100vw;
         background-color: #BDCDDD;
         opacity: 70%;
         content: '';
