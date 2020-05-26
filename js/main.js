@@ -85,6 +85,8 @@ function logInClient(){
             if(result.slice(0, 3)==="OK-"){
                 let club =result.slice(3);
                 console.log(club);
+                skinChange(club);
+
                 whellTransition();
             }else{
                 alert(result);
@@ -188,3 +190,37 @@ $("#prizebtn").on("click", function () {
   });
 
 
+function skinChange(club){
+    console.log("entro");
+
+    switch (club) {
+        case "SC Braga":
+            $("#roda").attr("src", "images/rodas/Red White.png");
+            break;
+        case "Vitória SC":
+            $("#roda").attr("src", "images/rodas/Green White");
+            break;
+        case "Vitória FC":
+            $("#roda").attr("src", "images/rodas/Black White.png");
+            break;
+        case "CS Marítimo":
+            $("#roda").attr("src", "images/rodas/Red Green.png");
+            break;
+        case "FC Famalicão":
+            $("#roda").attr("src", "images/rodas/Blue White.png");
+            break;
+        case "CD Tondela":
+            $("#roda").attr("src", "images/rodas/Green Yellow.png");
+            break;
+        case "Rio Ave FC":
+            $("#roda").attr("src", "images/rodas/Green White.png");
+            break;
+
+        default:
+            break;
+    }
+
+
+
+
+}
