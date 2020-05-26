@@ -54,27 +54,108 @@
          $mail->SetFrom("hivolvept@gmail.com");
          $mail->Subject = "Celebramos Futebol | SABSEG Seguros: Roleta Digital";
 
+         // CAMISOLA
          if($sqlReward = "camisola")
          {
-            $mail->Body = "camisola";
+            $mail->Body = "<pre>Olá,
+
+Desde já agradecemos a tua participação na Roleta Digital SABSEG!
+O prémio que ganhaste, através da nossa Roleta, foi: Camisola Oficial
+
+Para receberes o prémio, por favor, responde a este e-mail indicando-nos o tamanho pretendido e a morada para onde devemos enviar o prémio. Todos os prémios vão ser enviados por correio.
+
+Após recebermos o teu e-mail vamos entrar em contacto contigo confirmando o prémio e a indicação da morada. 
+
+Posteriormente, quando efetuarmos o envio para a tua morada, receberás, também, um e-mail com essa indicação!
+
+Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.
+
+
+Junta-te a nós e vive experiências inesquecíveis.
+O futebol é a paixão que nos une.
+
+<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
          }
+         // CAMISOLA ALTERNATIVA
          else if($sqlReward = "camisolaAlt")
          {
-            $mail->Body = "camisolaAlt";
+            $mail->Body = "<pre>Olá,
+
+Desde já agradecemos a tua participação na Roleta Digital SABSEG!
+O prémio que ganhaste, através da nossa Roleta, foi: Camisola Oficial Alternativa
+
+Para receberes o prémio, por favor, responde a este e-mail indicando-nos o tamanho pretendido e a morada para onde devemos enviar o prémio. Todos os prémios vão ser enviados por correio.
+
+Após recebermos o teu e-mail vamos entrar em contacto contigo confirmando o prémio e a indicação da morada. 
+
+Posteriormente, quando efetuarmos o envio para a tua morada, receberás, também, um e-mail com essa indicação!
+
+Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.
+
+
+Junta-te a nós e vive experiências inesquecíveis.
+O futebol é a paixão que nos une.
+
+<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
          }
+         // SEGURO AUTOMOVEL
          else if($sqlReward = "seguro")
          {
-            $mail->Body = "seguro";
+            $mail->Body = "<pre>Olá,
+
+Desde já agradecemos a tua participação na Roleta Digital SABSEG!
+O prémio que ganhaste, através da nossa Roleta, foi: Seguro Automóvel (oferta da primeira anuidade)
+
+Para receberes o prémio, por favor, responde a este e-mail demonstrando interesse pelo mesmo. Após recebermos o teu e-mail vamos entrar em contacto contigo! 
+
+Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.
+
+Junta-te a nós e vive experiências inesquecíveis.
+O futebol é a paixão que nos une.
+
+<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
          }
+         // CONSULTORIA DE SEGUROS
          else if($sqlReward = "consultoria")
          {
-            $mail->Body = "consultoria";
+            $mail->Body = "<pre>Olá,
+
+Desde já agradecemos a tua participação na Roleta Digital SABSEG!
+O prémio que ganhaste, através da nossa Roleta, foi: Consultoria de todos os teus seguros
+            
+Para receberes o prémio, por favor, responde a este e-mail demonstrando interesse pelo mesmo. Após recebermos o teu e-mail vamos entrar em contacto contigo! 
+            
+Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.
+            
+Junta-te a nós e vive experiências inesquecíveis.
+O futebol é a paixão que nos une.
+
+            
+<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
          }
+         // OTHER
          else
          {
-            $mail->Body = "other";
+            $mail->Body = "<pre>Olá,
+
+Desde já agradecemos a tua participação na Roleta Digital SABSEG!
+O prémio que ganhaste, através da nossa Roleta, foi: $sqlReward 
+
+Para receberes o prémio, por favor, responde a este e-mail indicando-nos a morada para onde devemos enviar o prémio. Todos os prémios vão ser enviados por correio.
+
+Após recebermos o teu e-mail vamos entrar em contacto contigo confirmando o prémio e a indicação da morada. 
+
+Posteriormente, quando efetuarmos o envio para a tua morada, receberás, também, um e-mail com essa indicação!
+
+Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.
+
+Junta-te a nós e vive experiências inesquecíveis.
+O futebol é a paixão que nos une.
+
+
+<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
          }
-         
+
          $mail->AddAddress($email);
          if(!$mail->Send()) 
          {
