@@ -16,15 +16,15 @@
    } 
    else
    {
-     echo "Connected!";
+    // echo "Connected!";
    }
 
    $email = $_POST['emailVal'];
 
    //TESTE
-   echo  "---------------------------\n".
+   /*echo  "---------------------------\n".
         "APENAS PARA DEBUG!!!!!".
-       "\nnome-".$name. "\nemail-".$email."\n---------------------------";
+        "\nemail-".$email."\n---------------------------";*/
 
    //1-Verificar se email esta registado
    $accountVerify = "SELECT email FROM users WHERE email = '".$email."'";
@@ -35,22 +35,23 @@
    else
    {
       // 2-Verificar se já jogou
-      $selectReward = "SELECT reward FROM users WHERE email = '".$email."' AND reward != 0";
-      if ($conn->query($selectReward)->num_rows == 0) 
+      $selectReward = "SELECT reward FROM users WHERE email = '".$email."' AND reward != '0'";
+      if ($conn->query($selectReward)->num_rows > 0) 
       {
          echo"NO-Voçê já jogou á roleta";
       }
       else
       {
          $clubSelect = "SELECT `club` FROM `users` WHERE email = '" . $email . "'";
-         if ($conn->query($clubSelect)->num_rows == 0) 
+         $clubResult = $conn->query($clubSelect);
+         if ( $clubResult->num_rows == 0) 
          {
             echo "NO-Error getting club";
          }
          else
          {
-            $club = mysql_fetch_row($clubSelect);
-            echo "OK-$club[0]";
+            $club = mysqli_fetch_row($clubResult);
+            echo "OK-".$club[0];
          }
       }
    }

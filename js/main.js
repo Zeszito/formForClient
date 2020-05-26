@@ -7,19 +7,17 @@ $('#nomeVal').attr('disabled', true)
 $("#enviarFormBtn").attr('disabled', true);
 
 
+
 /**Observo o botao de enviar */
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     event.stopPropagation();
 
     if(wichOne===2){
-        whellTransition();
         newClient();
     }
     else{
-       // logInClient();
-       whellTransition();
-    
+        logInClient();    
     }  
 })
 //-------------------------------------------------------//
@@ -43,7 +41,7 @@ function CheckTermos()
 //-------------------------------------------------------//
 
 
-
+//**SHOWS WHELL */
 function whellTransition(){
 
     $(".bg2").animate({
@@ -74,10 +72,28 @@ function newClient() {
 }
 
 function logInClient(){
+    console.log(("JS ->" + $("#emailVal").val()));
 
+
+    $.ajax({
+        type: "POST",
+        url: "phpSubmissions/phpSubmiteLogIn.php",
+        data: {'emailVal':$("#emailVal").val() },
+        success: function (data) {
+            result = data;
+      
+            if(result.slice(0, 3)==="OK-"){
+                let club =result.slice(3);
+                console.log(club);
+                whellTransition();
+            }else{
+                alert(result);
+            }
+        }
+    })
 }
 
-
+/**Chnage type of use */
 function HideShowChangeTarget(choose){
 
     if(choose===1){
@@ -101,7 +117,9 @@ var $seta = $("#seta");
 var degree = 10;
 var degreeSeta = 0;
 var time = 0;
-function myFunction() {
+
+//wheel Spin
+function StarSpin() {
  
       //360º /16 espaços = 22.5;
       // For webkit browsers: e.g. Chrome
@@ -130,40 +148,45 @@ function myFunction() {
             time++;
     
 }
- 
-var rodando = setInterval(myFunction, 50);
-
-$("#prizebtn").on("click", function () {
-    Stop();
-  });
-
-
-function Stop(){
+function Stop(rodavar){
     $("#prizebtn").hide();
 
     setTimeout(()=>{
-        clearInterval(rodando);
-        rodando = setInterval(myFunction, 100);
+        clearInterval(rodavar);
+        rodavar = setInterval(myFunction, 100);
         console.log("Roda 1");
-    },1000)
+    },1000);
+
     setTimeout(()=>{
-        clearInterval(rodando);
-        rodando = setInterval(myFunction, 200);
+        clearInterval(rodavar);
+        rodavar = setInterval(myFunction, 200);
         console.log("Roda 2");
-    },2000)
+    },2000);
 
     setTimeout(()=>{
-        clearInterval(rodando);
-        rodando = setInterval(myFunction, 250);
+        clearInterval(rodavar);
+        rodavar = setInterval(myFunction, 250);
         console.log("Roda 3");
-    },2500)
-    setTimeout(()=>{
-        clearInterval(rodando);
-        console.log("Roda 4");
-        $seta.css({ WebkitTransform: 'rotate(' + 0 + 'deg)'});
-        // For Mozilla browser: e.g. Firefox
-             $seta.css({ '-moz-transform': 'rotate(' + 0 + 'deg)'});
+    },2500);
 
-    },3200)
+    setTimeout(()=>{
+        clearInterval(rodavar);
+        console.log("Roda 4");
+        $('#myModal').modal();
+    },3200);
+
+    /*Show modal*/
+    setTimeout(()=>{
+        $('#myModal').modal();;
+    },4000);
 
 }
+$("#prizebtn").on("click", function () {
+    var rodando = setInterval(StarSpin, 50);
+    Stop(rodando);
+
+  });
+
+
+$(".bg2").css("height", Math.max($(document).height(), $(window).height()));
+$(".bg").css("height", Math.max($(document).height(), $(window).height()));

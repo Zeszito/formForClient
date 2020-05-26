@@ -8,7 +8,11 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ 
+  <!-- We should slow down on fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <title>Form question</title>
 </head>
@@ -19,7 +23,7 @@
   <div class="container">
     <div class="row">
 
-      <div class="col col-sm-6 offset-sm-3 rcorner ">
+      <div class="col col-sm-8 offset-sm-2 col-md-8 offset-md-2 rcorner ">
    
         <?php
         include 'phpComponents/loginOrRegister.php'
@@ -35,6 +39,10 @@
   
        <?php
         include 'phpComponents/wheel.php'
+        ?>
+
+      <?php
+        include 'phpComponents/modal.php'
         ?>
 
     
