@@ -114,42 +114,9 @@ function HideShowChangeTarget(choose){
 
 
 var $elie = $("#roda");
-var $seta = $("#seta");
-
-var degree = 10;
-var degreeSeta = 0;
-var time = 0;
 
 //wheel Spin
-function StarSpin() {
- 
-      //360º /16 espaços = 22.5;
-      // For webkit browsers: e.g. Chrome
-           $elie.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});
-      // For Mozilla browser: e.g. Firefox
-           $elie.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});
-    degree+=22.5;   
-    
-    
-    $seta.css({ WebkitTransform: 'rotate(' + degreeSeta + 'deg)'});
-    // For Mozilla browser: e.g. Firefox
-         $seta.css({ '-moz-transform': 'rotate(' + degreeSeta + 'deg)'});
 
-         if(time<5)
-         degreeSeta +=2;
-         
-         if(time==5)
-         degreeSeta=0;
-
-         if(time>5 && time < 10)
-         degreeSeta -=2;
-
-         if(time>10)
-            time=0;
-          
-            time++;
-    
-}
 function Stop(rodavar){
     $("#prizebtn").hide();
     /*Show modal*/
@@ -159,23 +126,13 @@ function Stop(rodavar){
 
 }
 $("#prizebtn").on("click", function () {
+   
     var min=1080; 
     var max=1800;  
     var amount = 
     Math.floor(Math.random() * (+max - +min)) + +min;
-    
 
-    $elie.css( { transition: "transform 0.5s",
-    transform:  "rotate(" + amount + "deg)" } );
-    
-    setTimeout( function() { 
-        $($elie).css( { transition: "none" } ) 
-
-    }, 3000 );
-
-    setTimeout(()=>{
-        $('#myModal').modal();
-    },4000);
+   spin(amount);
 
   });
 
@@ -215,3 +172,38 @@ function skinChange(club){
 
 
 }
+
+
+
+
+
+function spin(amount) {
+    var $myElm = $elie;
+  
+    var rotAmount = amount;
+    function rotate(degrees) {
+      
+      $myElm.css({
+        '-webkit-transform': 'rotate(' + degrees + 'deg)',
+        '-moz-transform': 'rotate(' + degrees + 'deg)',
+        '-ms-transform': 'rotate(' + degrees + 'deg)',
+        'transform': 'rotate(' + degrees + 'deg)'
+      });
+      
+      
+    }
+    
+    $({
+      deg: 0
+    }).animate({
+      deg: rotAmount * 2  
+    }, {
+      duration: 7000,
+      easing: "easeOutCirc",
+      step: function(now) {
+        var deg = now < 6000  || now > 8000  ? now / 8 : now;
+        rotate(deg);
+      }
+    });
+  }
+  
