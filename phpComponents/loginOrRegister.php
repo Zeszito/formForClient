@@ -3,7 +3,7 @@
     <div class="pt-3"  id="checksUserType">
 
         <div class="form-check form-check-inline">
-            <input onchange="HideShowChangeTarget(1)" class="form-check-input" type="radio" name="utilizadorTipo" checked>
+            <input id="registerChoose" onchange="HideShowChangeTarget(1)" class="form-check-input" type="radio" name="utilizadorTipo" checked>
             <label class="form-check-label" for="inlineCheckbox1">Utilizador Existente</label>
         </div>
 

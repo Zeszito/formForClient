@@ -7,7 +7,7 @@ if($conn->connect_error)
 } 
 else
 {
-  echo "Connected!";
+  //echo "Connected!";
 }
 
 $name = $_POST['nomeVal'];
@@ -23,11 +23,11 @@ $health = (isset($_POST['saudeVal'])) ? 1: 0;
 $house = (isset($_POST['casaVal'])) ? 1: 0;
 $other = (isset($_POST['outroVal'])) ? 1: 0;
 //TESTE
-echo  "---------------------------\n".
+/*echo  "---------------------------\n".
         "APENAS PARA DEBUG ONLY!!!!!".
        "\nnome-".$name. "\nemail-".$email."\ndataNas-".$birthDate."\nlocal-".$locality."\nnif-".$nif.
        "\ntelemo-".$cellphone."\nclub-".$club."\nTem auto?-".$auto."\nTem vida?-".$life."\nTem saude?-".$health."\nTem casa?-".$house.
-       "\nTem outro?-".$other."\n---------------------------";
+       "\nTem outro?-".$other."\n---------------------------";*/
   
   
 // 1- Verify if email exists
@@ -74,7 +74,7 @@ else
           VALUES ('".$email."','".$name."','".$birthDate."','".$locality."','".$nif."','".$cellphone."','".$club."','".$auto."','".$life."','".$health."','".$house."','".$other."','0')";
           if ($conn->query($sqlCommand) === TRUE) 
           {
-            echo "OK";
+            echo "OK-";
 //            // Send email
 //            $mail = new PHPMailer();
 //            $mail->IsSMTP(); // enable SMTP

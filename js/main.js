@@ -3,8 +3,9 @@ var wichOne = 1;
 
 /**Estado inicial de cada elemento */
 $('.noLogIn').find('*').attr('disabled', true);
-$('#nomeVal').attr('disabled', true)
-$("#enviarFormBtn").attr('disabled', true);
+$('#nomeVal').attr('disabled', true);
+$(".AceitoDados").find('input').prop("checked", true);
+$(".AceitoDados").find('*').attr('disabled', true);
 
 
 
@@ -55,10 +56,11 @@ function whellTransition(){
   
 }
 
+/**ENVIA NOVO CLIENTE */
 function newClient() {
     var form = $("#mainForm")
 
-    console.log(("JS ->" + form.serialize()));
+   // console.log(("JS ->" + form.serialize()));
 
     $.ajax({
         type: "POST",
@@ -66,11 +68,23 @@ function newClient() {
         data: form.serialize(),
         success: function (data) {
             result = data;
-            console.log("PHP->" + result);
+            if(result.slice(0, 3)==="OK-"){
+                alert("Sucesso!");
+                $('#myModalRegisto').modal();
+                $("#registerChoose").prop("checked", true);
+                HideShowChangeTarget(1);
+                CheckTermos();
+            }
+            else{
+                alert(result);
+
+          
+            }
         }
     })
 }
 
+/**faz log in */
 function logInClient(){
     console.log(("JS ->" + $("#emailVal").val()));
 
@@ -100,12 +114,16 @@ function HideShowChangeTarget(choose){
 
     if(choose===1){
         $('.noLogIn').find('*').attr('disabled', true);
-        $('#nomeVal').attr('disabled', true)
+        $('#nomeVal').attr('disabled', true);
+        $(".AceitoDados").find('input').prop("checked", true);
+        $(".AceitoDados").find('*').attr('disabled', true);
         wichOne = choose;
     }
     else{
         $('.noLogIn').find('*').attr('disabled', false);
-        $('#nomeVal').attr('disabled', false)
+        $('#nomeVal').attr('disabled', false);
+        $(".AceitoDados").find('input').prop("checked", false);
+        $(".AceitoDados").find('*').attr('disabled', false);
         wichOne = choose;
     }
 }
@@ -207,14 +225,8 @@ function getCurrentRotation(el){
              "none";
     if (tm != "none") {
       var values = tm.split('(')[1].split(')')[0].split(',');
-      /*
-      a = values[0];
-      b = values[1];
-      angle = Math.round(Math.atan2(b,a) * (180/Math.PI));
-      */
-      //return Math.round(Math.atan2(values[1],values[0]) * (180/Math.PI)); //this would return negative values the OP doesn't wants so it got commented and the next lines of code added
       var angle = Math.round(Math.atan2(values[1],values[0]) * (180/Math.PI));
-      return (angle < 0 ? angle + 360 : angle); //adding 360 degrees here when angle < 0 is equivalent to adding (2 * Math.PI) radians before
+      return (angle < 0 ? angle + 360 : angle); 
     }
     return 0;
   } 

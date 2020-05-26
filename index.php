@@ -47,6 +47,9 @@
       <?php
         include 'phpComponents/modal.php'
         ?>
+         <?php
+        include 'phpComponents/modalRegisto.php'
+        ?>
 
     
 
