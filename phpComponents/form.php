@@ -55,7 +55,7 @@
                 <option value="Boavista Futebol Clube">Boavista Futebol Clube</option>
                 <option value="Club Sport Marítimo">Club Sport Marítimo</option>
                 <option value="Clube Desportivo das Aves">Clube Desportivo das Aves</option>
-                <option value="Clube Desportivo Santa Clar">Clube Desportivo Santa Clara</option>
+                <option value="Clube Desportivo Santa Clara">Clube Desportivo Santa Clara</option>
                 <option value="Clube Desportivo Tondela">Clube Desportivo Tondela</option>
                 <option value="FC Famalicão">FC Famalicão</option>
                 <option value="FC Paços de Ferreira">FC Paços de Ferreira</option>
