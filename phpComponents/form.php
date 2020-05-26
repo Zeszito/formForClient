@@ -36,8 +36,24 @@
                         <div class="form-group col-md-6">
                             <label for="club">Club</label>
                             <select name="clubVal" id="clubVal" class="form-control form-control-sm">
-                              <option selected value = "Porto">Porto</option>
-                              <option value = "Sporting">Sporting</option>
+                              <option selected value = "Belenenses SAD">Belenenses SAD</option>
+                              <option value = "Boavista Futebol Clube">Boavista Futebol Clube</option>
+                              <option value = "Club Sport Marítimo">Club Sport Marítimo</option>
+                              <option value = "Clube Desportivo das Aves">Clube Desportivo das Aves</option>
+                              <option value = "Clube Desportivo Santa Clar">Clube Desportivo Santa Clara</option>
+                              <option value = "Clube Desportivo Tondela">Clube Desportivo Tondela</option>
+                              <option value = "FC Famalicão">FC Famalicão</option>
+                              <option value = "FC Paços de Ferreira">FC Paços de Ferreira</option>
+                              <option value = "Futebol Clube do Porto">Futebol Clube do Porto</option>
+                              <option value = "Gil Vicente Futebol Clube">Gil Vicente Futebol Clube</option>
+                              <option value = "Moreirense Futebol Clube">Moreirense Futebol Clube</option>
+                              <option value = "Portimonense Sporting Clube">Portimonense Sporting Clube</option>
+                              <option value = "Rio Ave Futebol Clube">Rio Ave Futebol Clube</option>
+                              <option value = "Sport Lisboa e Benfica">Sport Lisboa e Benfica</option>
+                              <option value = "Sporting Clube de Braga">Sporting Clube de Braga</option>
+                              <option value = "Sporting Clube de Portugal">Sporting Clube de Portugal</option>
+                              <option value = "Vitória Futebol Clube">Vitória Futebol Clube</option>
+                              <option value = "Vitória Sport Clube">Vitória Sport Clube</option>
                             </select>
                         </div>
                     </div>
