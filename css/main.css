@@ -210,8 +210,8 @@ padding-right: 5vw;
     color:#066EB4;
 }
 
-.modal-header  .img-responsive {
+.img-responsive {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 20vw;
 }

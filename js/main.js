@@ -152,40 +152,30 @@ function StarSpin() {
 }
 function Stop(rodavar){
     $("#prizebtn").hide();
-
-    setTimeout(()=>{
-        clearInterval(rodavar);
-        rodavar = setInterval(myFunction, 100);
-        console.log("Roda 1");
-    },1000);
-
-    setTimeout(()=>{
-        clearInterval(rodavar);
-        rodavar = setInterval(myFunction, 200);
-        console.log("Roda 2");
-    },2000);
-
-    setTimeout(()=>{
-        clearInterval(rodavar);
-        rodavar = setInterval(myFunction, 250);
-        console.log("Roda 3");
-    },2500);
-
-    setTimeout(()=>{
-        clearInterval(rodavar);
-        console.log("Roda 4");
-        $('#myModal').modal();
-    },3200);
-
     /*Show modal*/
     setTimeout(()=>{
-        $('#myModal').modal();;
+        $('#myModal').modal();
     },4000);
 
 }
 $("#prizebtn").on("click", function () {
-    var rodando = setInterval(StarSpin, 50);
-    Stop(rodando);
+    var min=1080; 
+    var max=1800;  
+    var amount = 
+    Math.floor(Math.random() * (+max - +min)) + +min;
+    
+
+    $elie.css( { transition: "transform 0.5s",
+    transform:  "rotate(" + amount + "deg)" } );
+    
+    setTimeout( function() { 
+        $($elie).css( { transition: "none" } ) 
+
+    }, 3000 );
+
+    setTimeout(()=>{
+        $('#myModal').modal();
+    },4000);
 
   });
 
