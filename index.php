@@ -24,7 +24,10 @@
     <div class="row">
 
       <div class="col col-sm-8 offset-sm-2 col-md-8 offset-md-2 rcorner ">
-   
+        <?php
+        
+        ?>
+
         <?php
         include 'phpComponents/loginOrRegister.php'
         ?>

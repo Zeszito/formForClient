@@ -175,9 +175,6 @@ function spin(amount) {
           duration: 7000,
           step: function(now) {
             $(this).css({ transform: 'rotate(' + now + 'deg)' });
-            
-  
-            console.log(getCurrentRotation(document.getElementById('roda')));
         },
           complete: Stop()
         }
@@ -191,12 +188,15 @@ function Stop(){
     /*Show modal*/
     setTimeout(()=>{
         $('#myModal').modal();
+        getPrizeToSend(getCurrentRotation(document.getElementById('roda')));
     },8500);
 
     /*send base */
-    console.log($elie.css("transform"));
+  
+    //console.log(getCurrentRotation(document.getElementById('roda')));
 }
 
+/**Funaçao de suport */
 function getCurrentRotation(el){
     var st = window.getComputedStyle(el, null);
     var tm = st.getPropertyValue("-webkit-transform") ||
@@ -218,3 +218,32 @@ function getCurrentRotation(el){
     }
     return 0;
   } 
+
+//**Seitch angulos to prizes */
+function getPrizeToSend(angleP){
+
+    console.log("foi tanto "+ angleP)
+    
+    let resultado;
+    resultado = angleP > 0 && angleP < 22.5 ? "cinema" : 
+                angleP > 22.6 && angleP < 45 ? "carregador" : 
+                angleP > 45.1 && angleP < 67.5 ? "mochila" : 
+                angleP > 67.6 && angleP < 90 ? "estadio" : 
+                angleP > 90.1 && angleP < 112.5 ? "cascol" : 
+                angleP > 112.6 && angleP < 135 ? "bola" : 
+                angleP > 135.1 && angleP < 157.5 ? "coluna" : 
+                angleP > 157.6 && angleP < 180 ? "carregador" : 
+                angleP > 180.1 && angleP < 202.5 ? "bilhetes" : 
+                angleP > 202.6 && angleP < 225 ? "estadio" : 
+                angleP > 225.1 && angleP < 247.5 ? "cascol" : 
+                angleP > 247.6 && angleP < 270 ? "carregador" : 
+                angleP > 270.1 && angleP < 292.5 ? "bilhetes" : 
+                angleP > 292.6 && angleP < 315 ? "bola" : 
+                angleP > 315.1 && angleP < 337.5 ? "bilhestes" : 
+                angleP > 337.6 && angleP < 360 ? "cascol":
+                "camisola";
+
+    alert(resultado);
+    
+    
+}
