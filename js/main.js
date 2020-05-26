@@ -217,6 +217,7 @@ function skinChange(club){
             break;
 
         default:
+            $("#roda").attr("src", "images/rodas/roleta_default.png");
             break;
     }
 
