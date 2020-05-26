@@ -215,3 +215,14 @@ padding-right: 5vw;
     margin-right: auto;
     width: 20vw;
 }
+
+.toast{
+  position: fixed;
+  top: 0;
+  left:0;
+  right: 0;
+
+  margin-top:25vh;
+  margin-right: 125vw;
+  margin: auto;
+}

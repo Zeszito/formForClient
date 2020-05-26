@@ -103,7 +103,9 @@ function logInClient(){
 
                 whellTransition();
             }else{
-                alert(result);
+                $('.toast-body').empty();
+                $('.toast-body').text(result.slice(3))
+                $('.toast').toast('show');
             }
         }
     })

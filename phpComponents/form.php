@@ -127,3 +127,5 @@
     </div>
 
 </form>
+
+<?php include 'phpSubmissions/phpErroToast.php' ?>
