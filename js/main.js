@@ -76,8 +76,9 @@ function newClient() {
                 CheckTermos();
             }
             else{
-                alert(result);
-
+                $('.toast-body').empty();
+                $('.toast-body').text(result.slice(3));
+                $('.toast').toast('show');
           
             }
         }
@@ -104,12 +105,19 @@ function logInClient(){
                 whellTransition();
             }else{
                 $('.toast-body').empty();
-                $('.toast-body').text(result.slice(3))
+                $('.toast-body').text(result.slice(3));
                 $('.toast').toast('show');
             }
         }
     })
 }
+$("#myToast").on("show.bs.toast", function() {
+    $(this).removeClass("d-none");
+})
+$("#myToast").on("hidden.bs.toast", function() {
+    $(this).addClass("d-none");
+})
+
 
 /**Chnage type of use */
 function HideShowChangeTarget(choose){
