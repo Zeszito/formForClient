@@ -1,14 +1,5 @@
 <?php
- //Repostas:
-    //OK - Eu passo para a roda
-    //Qualquer outra eu escrevo no topo da pagina
-    //Erros de php eu digo só "Desculpe Erro Interno Tente mais tarde"
-
-
-    
-
-//Aqui para o ficheiro que faz a conecção
-//include "phpSubmissions\phpConection.php";
+// Make connection to database
 $conn = new mysqli("15.188.164.24", "root", "sayhitoevolution", "sabseg_database");
 if($conn->connect_error)
 {
@@ -41,8 +32,7 @@ echo  "---------------------------\n".
   
 // 1- Verify if email exists
 $sqlVerifyEmail = "SELECT email FROM users WHERE email = '" . $email . "'";
-$resultVerifyEmail = $conn->query($sqlVerifyEmail);
-if ($resultVerifyEmail->num_rows > 0) 
+if ($conn->query($sqlVerifyEmail)->num_rows > 0) 
 {
   // Tell user that that name is already taken
   echo "NO-The email is already registered.";
@@ -58,8 +48,7 @@ else
   {
     // 3- Verify if nif exists
     $sqlNif = "SELECT nif FROM users WHERE email = '" . $email . "' AND nif = '".$nif."'";
-    $resultNif = $conn->query($sqlNif);
-    if ($resultNif->num_rows > 0)
+    if ($conn->query($sqlNif)->num_rows > 0)
     {
       // Tell user that that name is already taken
       echo "NO-The nif is already registered.";
@@ -81,35 +70,59 @@ else
         else 
         {
           // Dados validos, executar registo
-          $sqlCommand = "INSERT INTO users('".$email."','".$name."','".$birthDate."','".$locality."','".$nif."','".$cellphone."','".$club."','".$auto."','".$life."','".$health."','".$house."','".$other."')";
-          echo "OK";
+          $sqlCommand = "INSERT INTO `users`(`email`, `name`, `birthDate`, `locality`, `nif`, `cellphone`, `club`, `auto`, `life`, `health`, `house`, `other`, `reward`) 
+          VALUES ('".$email."','".$name."','".$birthDate."','".$locality."','".$nif."','".$cellphone."','".$club."','".$auto."','".$life."','".$health."','".$house."','".$other."','0')";
           if ($conn->query($sqlCommand) === TRUE) 
           {
-            // Send email
-            $mail = new PHPMailer();
-            $mail->IsSMTP(); // enable SMTP
-            $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-            $mail->SMTPAuth = true; // authentication enabled
-            $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-            $mail->Host = "smtp.gmail.com";
-            $mail->Port = 465; // or 587
-            $mail->IsHTML(true);
-            $mail->Username = "hivolvept@gmail.com";
-            $mail->Password = "sayhitoevolutionemail";
-            $mail->SetFrom("hivolvept@gmail.com");
-            $mail->Subject = "Sabseg Roleta: Obrigado pelo registo";
-            //$mail->Body = "<a href='http://15.188.164.24/FriconBackend/EmailVerification.php?vKey=$vkey'>Verify Account</a>";
-            $mail->Body = "Funcionou";
-            $mail->AddAddress($email);
-            
-            if(!$mail->Send()) 
-            {
-              echo "NO-Mailer error: " . $mail->ErrorInfo;
-            } 
-            else 
-            {
-              echo "OK";
-            }
+            echo "OK";
+//            // Send email
+//            $mail = new PHPMailer();
+//            $mail->IsSMTP(); // enable SMTP
+//            $mail->SMTPDebug = 2; // debugging: 1 = errors and messages, 2 = messages only
+//            $mail->SMTPAuth = true; // authentication enabled
+//            //$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+//            $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
+//            //$mail->Host = "smtp.gmail.com";
+//            $mail->Host = "smtp.live.com";
+//            $mail->Port = 587; // 465 or 587
+//            $mail->IsHTML(true);
+//            $mail->Username = "celebramosfutebol@sabseg.pt";
+//            $mail->Password = "Corretor1722";
+//            //$mail->Password = "sayhitoevolutionemail";
+//            //$mail->SetFrom("hivolvept@gmail.com");
+//            $mail->SetFrom("celebramosfutebol@sabseg.pt");
+//            $mail->Subject = "Celebramos Futebol | SABSEG Seguros: Roleta Digital";
+//            //$mail->Body = "<a href='http://15.188.164.24/FriconBackend/EmailVerification.php?vKey=$vkey'>Verify Account</a>";
+//            $mail->Body = "<pre>Olá,
+//
+//Desde já obrigado pelo teu interesse na Roleta Digital SABSEG.
+//Os teus dados foram submetidos com sucesso, pelo que te encontras registado no <b>Celebramos Futebol</b>, um site dedicado a todos os verdadeiros adeptos de futebol!
+//
+//Para teres acesso a prémios exclusivos do teu clube, basta ativares a tua conta e definires uma password através deste link:
+//<a href='www.celebramosfutebol.sabseg.com'>www.celebramosfutebol.sabseg.com</a>
+//
+//Aproveitamos este email para te dar a conhecer melhor o nosso site:
+//
+//<b>(1)</b> O <b>Celebramos Futebol</b> disponibiliza-te vários passatempos exclusivos do teu clube;
+//<b>(2)</b> Em todos os passatempos oferecemos-te prémios únicos do teu clube;
+//<b>(3)</b> Depois de efetuares uma participação num dos nossos passatempos, deves consultar com regularidade as nossas redes sociais e a tua caixa de e-mail, pois é por estes meios que vamos comunicar contigo;
+//<b>(4)</b> Sempre que necessitares de ajuda, consulta todas as informações que disponibilizamos online ou contacta-nos através de <a href='celebramosfutebol@sabseg.pt'>celebramosfutebol@sabseg.pt</a>.
+//
+//
+//Junta-te a nós e vive experiências inesquecíveis.
+//O futebol é a paixão que nos une.
+//
+//<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
+//            $mail->AddAddress($email);
+//            
+//            if(!$mail->Send()) 
+//            {
+//              echo "NO-Mailer error: " . $mail->ErrorInfo;
+//            } 
+//            else 
+//            {
+//              echo "OK";
+//            }
           }
           else
           {
@@ -124,7 +137,7 @@ else
 
 function phonenumber_isvalid($nr)
 {
-  if(strlen($nr != 9 ))
+  if(mb_strlen($nr) != 9)
   {
     return false;
   }
