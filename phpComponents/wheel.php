@@ -13,7 +13,7 @@
 
     </div>
     <div class="text-center mt-2 ">
-        <button id="prizebtn" onclick="Stop()" class="btn btn-primary" type="button">JOGAR</button>
+        <button id="prizebtn"  class="btn btn-primary" type="button">JOGAR</button>
     </div>
 </div>
 </div>

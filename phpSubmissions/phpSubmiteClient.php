@@ -113,7 +113,7 @@ else
           }
           else
           {
-            echo "NO-Não foi possivel inserir os dados na base de dados!"
+            echo "NO-Não foi possivel inserir os dados na base de dados!";
           }
         }
       }

@@ -117,12 +117,12 @@ var $elie = $("#roda");
 
 //wheel Spin
 
-function Stop(rodavar){
+function Stop(){
     $("#prizebtn").hide();
     /*Show modal*/
     setTimeout(()=>{
         $('#myModal').modal();
-    },4000);
+    },8500);
 
 }
 $("#prizebtn").on("click", function () {
@@ -174,36 +174,21 @@ function skinChange(club){
 }
 
 
-
-
-
 function spin(amount) {
-    var $myElm = $elie;
-  
-    var rotAmount = amount;
-    function rotate(degrees) {
+ 
+    $elie.animate(
+        { deg: amount },
+        {
+          duration: 7000,
+          step: function(now) {
+            $(this).css({ transform: 'rotate(' + now + 'deg)' });
+          },
+          complete: Stop()
+        }
+      );
       
-      $myElm.css({
-        '-webkit-transform': 'rotate(' + degrees + 'deg)',
-        '-moz-transform': 'rotate(' + degrees + 'deg)',
-        '-ms-transform': 'rotate(' + degrees + 'deg)',
-        'transform': 'rotate(' + degrees + 'deg)'
-      });
-      
-      
-    }
+}
     
-    $({
-      deg: 0
-    }).animate({
-      deg: rotAmount * 2  
-    }, {
-      duration: 7000,
-      easing: "easeOutCirc",
-      step: function(now) {
-        var deg = now < 6000  || now > 8000  ? now / 8 : now;
-        rotate(deg);
-      }
-    });
-  }
+
+
   

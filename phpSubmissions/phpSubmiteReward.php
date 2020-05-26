@@ -20,12 +20,8 @@
    }
 
    $email = $_POST['emailVal'];
-   $reward ? $_POST['rewardVal'];
+   $reward = $_POST['rewardVal'];
 
-   //TESTE
-   echo  "---------------------------\n".
-        "APENAS PARA DEBUG!!!!!".
-       "\nnome-".$name. "\nemail-".$email."\n---------------------------";
 
    //1-Verificar se email esta registado
    $updateReward = "UPDATE `users` SET `reward`=$reward WHERE `email` = $email";
