@@ -25,11 +25,18 @@
 }
 
 body{
-    background-color: #D6E8F8;
+    background-color: transparent;
 }
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+}
+html { 
+  background: url("../images/PARA ENVIO CRIATIVIDADES/PARA ENVIO CRIATIVIDADES/Fundo.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
