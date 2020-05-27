@@ -5,9 +5,9 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
  use PHPMailer\PHPMailer\PHPMailer;
  use PHPMailer\PHPMailer\Exception;
  
- require 'D:/Xampp/htdocs/segaGest/formForClient/phpSubmissions/phpmailer/src/Exception.php';
- require 'D:/Xampp/htdocs/segaGest/formForClient/phpSubmissions/phpmailer/src/PHPMailer.php';
- require 'D:/Xampp/htdocs/segaGest/formForClient/phpSubmissions/phpmailer/src/SMTP.php';
+ require '/opt/lampp/htdocs/roleta/phpSubmissions/phpmailer/src/Exception.php';
+ require '/opt/lampp/htdocs/roleta/phpSubmissions/phpmailer/src/PHPMailer.php';
+ require '/opt/lampp/htdocs/roleta/phpSubmissions/phpmailer/src/SMTP.php';
  
    $conn = new mysqli("15.188.164.24", "root", "sayhitoevolution", "sabseg_database");
    if($conn->connect_error)
