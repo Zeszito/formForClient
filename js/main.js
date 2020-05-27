@@ -85,6 +85,8 @@ function newClient() {
     })
 }
 
+var finalEmail;
+
 /**faz log in */
 function logInClient(){
     $.ajax({
@@ -93,7 +95,8 @@ function logInClient(){
         data: {'emailVal':$("#emailVal").val() },
         success: function (data) {
             result = data;
-      
+            finalEmail = $("#emailVal").val();
+
             if(result.slice(0, 3)==="OK-"){
                 let club =result.slice(3);
                 console.log(club);
@@ -286,7 +289,7 @@ function sendPremio(premio){
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteReward.php",
-        data: {'rewardVal': premio, 'emailVal': "joaosantosprofi@gmail.com"},
+        data: {'rewardVal': premio, 'emailVal': finalEmail},
         success: function (data) {
             result = data;
             console.log(result);

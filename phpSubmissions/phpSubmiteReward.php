@@ -12,8 +12,8 @@
       die("error:" . $conn->connect_error);
    } 
 
-   $email = $_POST['emailVal'];
    $reward = $_POST['rewardVal'];
+   $email = $_POST['emailVal'];
 
    $updateReward = "UPDATE `users` SET `reward`= '".$reward."' WHERE `email` = '".$email."'";
    if($conn->query($updateReward) === FALSE)
@@ -158,7 +158,7 @@ O futebol é a paixão que nos une.
          } 
          else 
          {
-           echo "OK";
+           echo "OK-";
          }
       }
    }

@@ -5,10 +5,6 @@ if($conn->connect_error)
 {
    die("error:" . $conn->connect_error);
 } 
-else
-{
-  //echo "Connected!";
-}
 
 $name = $_POST['nomeVal'];
 $email = $_POST['emailVal'];
