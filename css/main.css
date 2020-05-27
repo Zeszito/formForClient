@@ -141,7 +141,7 @@ label{
 
 }
 #roda{
-    transform: rotate(10deg);
+    /*transform: rotate(10deg);*/
 }
 
 #prizebtn{
