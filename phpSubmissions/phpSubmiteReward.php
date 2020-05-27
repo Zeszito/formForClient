@@ -11,14 +11,9 @@
    {
       die("error:" . $conn->connect_error);
    } 
-   else
-   {
-     echo "Connected!";
-   }
 
    $email = $_POST['emailVal'];
    $reward = $_POST['rewardVal'];
-
 
    $updateReward = "UPDATE `users` SET `reward`=$reward WHERE `email` = $email";
    if($conn->query($updateReward) === FALSE)
@@ -55,7 +50,7 @@
          $mail->Subject = "Celebramos Futebol | SABSEG Seguros: Roleta Digital";
 
          // CAMISOLA
-         if($sqlReward = "camisola")
+         if($sqlReward == "camisola")
          {
             $mail->Body = "<pre>Olá,
 
@@ -77,7 +72,7 @@ O futebol é a paixão que nos une.
 <b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
          }
          // CAMISOLA ALTERNATIVA
-         else if($sqlReward = "camisolaAlt")
+         else if($sqlReward == "camisolaAlt")
          {
             $mail->Body = "<pre>Olá,
 
@@ -99,7 +94,7 @@ O futebol é a paixão que nos une.
 <b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
          }
          // SEGURO AUTOMOVEL
-         else if($sqlReward = "seguro")
+         else if($sqlReward == "seguro")
          {
             $mail->Body = "<pre>Olá,
 
@@ -116,7 +111,7 @@ O futebol é a paixão que nos une.
 <b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
          }
          // CONSULTORIA DE SEGUROS
-         else if($sqlReward = "consultoria")
+         else if($sqlReward == "consultoria")
          {
             $mail->Body = "<pre>Olá,
 
