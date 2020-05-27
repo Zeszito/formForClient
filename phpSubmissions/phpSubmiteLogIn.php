@@ -60,7 +60,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
                   else
                   {
                      $club = mysqli_fetch_row($clubResult);
-                     echo "OK-".$club[0];
+                     echo "OK-" . utf8_encode($club[0]);
                   }
                }
             }

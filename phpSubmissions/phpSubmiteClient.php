@@ -9,6 +9,8 @@ if($conn->connect_error)
    die("error:" . $conn->connect_error);
 } 
 
+mysqli_set_charset($conn, "utf8"); // TA-DA
+
 $name = $_POST['nomeVal'];
 $email = $_POST['emailVal'];
 $birthDate = $_POST['dataNascimentoVal'];

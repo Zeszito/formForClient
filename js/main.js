@@ -158,7 +158,7 @@ $("#prizebtn").on("click", function () {
 
    spin(amount);
 
-  });
+});
 
 var ClubeDoUser;
 function skinChange(club){
@@ -198,9 +198,6 @@ function skinChange(club){
             break;
     }
     $(".full-width-image img").css("height","10vw");
-
-
-
 }
 
 function spin(amount) {
@@ -253,7 +250,7 @@ function getPrizeToSend(angleP){
     
     let resultado;
     resultado = angleP > 0 && angleP < 22.5 ? "camisola" : 
-                angleP > 22.6 && angleP < 45 ? "caschecol": 
+                angleP > 22.6 && angleP < 45 ? "cachecol": 
                 angleP > 45.1 && angleP < 67.5 ? "seguro": 
                 angleP > 67.6 && angleP < 90 ? "coluna - mochila": 
                 angleP > 90.1 && angleP < 112.5 ? "powerbank": 
@@ -263,7 +260,7 @@ function getPrizeToSend(angleP){
                 angleP > 180.1 && angleP < 202.5 ? "colina": 
                 angleP > 202.6 && angleP < 225 ? "bola - bone": 
                 angleP > 225.1 && angleP < 247.5 ? "seguro": 
-                angleP > 247.6 && angleP < 270 ? "caschecol": 
+                angleP > 247.6 && angleP < 270 ? "cachecol": 
                 angleP > 270.1 && angleP < 292.5 ? "bola - bone": 
                 angleP > 292.6 && angleP < 315 ? "kit - camisolaAlt": 
                 angleP > 315.1 && angleP < 337.5 ? "powerbank": 
@@ -271,8 +268,6 @@ function getPrizeToSend(angleP){
                 "consultoria";
 
         sendPremio(resultado);
-    
-    
 }
 
 //*ENVIA Premio doesnt */
@@ -303,7 +298,7 @@ function PrizeModalChange(stringObjectivo){
     imagePrizeChange(stringObjectivo);
     textModalchange(stringObjectivo);
 }
-
+// Nao queres começar a usar as funçoes todas com letra grande?
 function imagePrizeChange(stringObjectivo){
 // imagemModalAlvo
  let imagemModalAlvo = $("#imagemModalAlvo");
@@ -316,15 +311,15 @@ function imagePrizeChange(stringObjectivo){
      break;
      case "kit - camisolaAlt":
         if(ClubeDoUser==="FC Famalicão")
-            imagemModalAlvo.attr("src", "images/prizeImg/tshirt.svg");
+            imagemModalAlvo.attr("src", "images/prizeImg/camisolaAlt.svg");
         else
-        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+        imagemModalAlvo.attr("src", "images/prizeImg/mochila.svg");
      break;
      case "coluna - mochila":
         if(ClubeDoUser==="FC Famalicão")
-            imagemModalAlvo.attr("src", "images/prizeImg/coluna.svg");
+            imagemModalAlvo.attr("src", "images/prizeImg/mochila.svg");
         else
-        imagemModalAlvo.attr("src", "images/prizeImg/mochila.svg");
+        imagemModalAlvo.attr("src", "images/prizeImg/coluna.svg");
      break;
      case "bola - bone":
         if(ClubeDoUser==="FC Famalicão")
@@ -341,14 +336,9 @@ function imagePrizeChange(stringObjectivo){
      case "powerbank":
         imagemModalAlvo.attr("src", "images/prizeImg/powerbank.svg");
      break;
- 
- 
      default:
          break;
- }
-
-
-
+    }
 }
 
 function textModalchange(stringObjectivo){
@@ -388,12 +378,7 @@ function textModalchange(stringObjectivo){
         case "powerbank":
             textoModalAlvo.text(" Parabéns! Ganhaste uma powerbank. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
-    
-       
         default:
             break;
     }
-    
 }
-
-
