@@ -170,7 +170,6 @@ $("#prizebtn").on("click", function () {
 
 var ClubeDoUser;
 function skinChange(club){
-    console.log("entro");
     ClubeDoUser = club;
     switch (club) {
         case "Sporting Clube de Braga":
@@ -318,19 +317,19 @@ function imagePrizeChange(stringObjectivo){
         imagemModalAlvo.attr("src", "images/prizeImg/camisola oficial.svg");
      break;
      case "kit - camisolaAlt":
-        if(club==="FC Famalicão")
+        if(ClubeDoUser==="FC Famalicão")
             imagemModalAlvo.attr("src", "images/prizeImg/tshirt.svg");
         else
         imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
      break;
      case "coluna - mochila":
-        if(club==="FC Famalicão")
+        if(ClubeDoUser==="FC Famalicão")
             imagemModalAlvo.attr("src", "images/prizeImg/coluna.svg");
         else
         imagemModalAlvo.attr("src", "images/prizeImg/mochila.svg");
      break;
      case "bola - bone":
-        if(club==="FC Famalicão")
+        if(ClubeDoUser==="FC Famalicão")
         imagemModalAlvo.attr("src", "images/prizeImg/bone.svg");
          else
          imagemModalAlvo.attr("src", "images/prizeImg/bola.svg");
@@ -364,19 +363,19 @@ function textModalchange(stringObjectivo){
             textoModalAlvo.text("Parabéns! Ganhaste a camisola oficial do equipamento principal. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
         case "kit - camisolaAlt":
-            if(club==="FC Famalicão")
+            if(ClubeDoUser==="FC Famalicão")
             textoModalAlvo.text("Parabéns! Ganhaste a camisola oficial do equipamento alternativo. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
             else
             textoModalAlvo.text("Parabéns! Ganhaste um Kit do Adepto. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
         case "coluna - mochila":
-            if(club ==="FC Famalicão")
+            if(ClubeDoUser ==="FC Famalicão")
             textoModalAlvo.text("Parabéns! Ganhaste uma mochila. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
             else
             textoModalAlvo.text("Parabéns! Ganhaste uma coluna de som. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
         case "bola - bone":
-            if(club ==="FC Famalicão")
+            if(ClubeDoUser ==="FC Famalicão")
             textoModalAlvo.text("Parabéns! Ganhaste um boné. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
             else
             textoModalAlvo.text("Parabéns! Ganhaste uma bola anti-stress. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
