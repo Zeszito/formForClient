@@ -15,7 +15,7 @@
    $email = $_POST['emailVal'];
    $reward = $_POST['rewardVal'];
 
-   $updateReward = "UPDATE `users` SET `reward`=$reward WHERE `email` = $email";
+   $updateReward = "UPDATE `users` SET `reward`= '".$reward."' WHERE `email` = '".$email."'";
    if($conn->query($updateReward) === FALSE)
    {
       echo("NO-Nao deu update á reward");

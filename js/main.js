@@ -286,7 +286,7 @@ function sendPremio(premio){
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteReward.php",
-        data: {'rewardVal': premio, 'emailVal': $("#emailVal").val()},
+        data: {'rewardVal': premio, 'emailVal': "joaosantosprofi@gmail.com"},
         success: function (data) {
             result = data;
             console.log(result);
