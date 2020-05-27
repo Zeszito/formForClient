@@ -258,23 +258,23 @@ function getPrizeToSend(angleP){
     console.log("foi tanto "+ angleP)
     
     let resultado;
-    resultado = angleP > 0 && angleP < 22.5 ? "seguro" : 
-                angleP > 22.6 && angleP < 45 ? "seguro": 
+    resultado = angleP > 0 && angleP < 22.5 ? "camisola" : 
+                angleP > 22.6 && angleP < 45 ? "caschecol": 
                 angleP > 45.1 && angleP < 67.5 ? "seguro": 
-                angleP > 67.6 && angleP < 90 ? "seguro": 
-                angleP > 90.1 && angleP < 112.5 ? "seguro": 
-                angleP > 112.6 && angleP < 135 ? "seguro": 
-                angleP > 135.1 && angleP < 157.5 ? "seguro": 
-                angleP > 157.6 && angleP < 180 ? "seguro": 
-                angleP > 180.1 && angleP < 202.5 ? "seguro": 
-                angleP > 202.6 && angleP < 225 ? "seguro": 
+                angleP > 67.6 && angleP < 90 ? "coluna - mochila": 
+                angleP > 90.1 && angleP < 112.5 ? "powerbank": 
+                angleP > 112.6 && angleP < 135 ? "camisola": 
+                angleP > 135.1 && angleP < 157.5 ? "kit - camisolaAlt": 
+                angleP > 157.6 && angleP < 180 ? "consultoria": 
+                angleP > 180.1 && angleP < 202.5 ? "colina": 
+                angleP > 202.6 && angleP < 225 ? "bola - bone": 
                 angleP > 225.1 && angleP < 247.5 ? "seguro": 
-                angleP > 247.6 && angleP < 270 ? "seguro": 
-                angleP > 270.1 && angleP < 292.5 ? "seguro": 
-                angleP > 292.6 && angleP < 315 ? "seguro": 
-                angleP > 315.1 && angleP < 337.5 ? "seguro": 
-                angleP > 337.6 && angleP < 360 ? "seguro":
-                "seguro";
+                angleP > 247.6 && angleP < 270 ? "caschecol": 
+                angleP > 270.1 && angleP < 292.5 ? "bola - bone": 
+                angleP > 292.6 && angleP < 315 ? "kit - camisolaAlt": 
+                angleP > 315.1 && angleP < 337.5 ? "powerbank": 
+               // angleP > 337.6 && angleP < 360 ? "seguro":
+                "consultoria";
 
         sendPremio(resultado);
     
