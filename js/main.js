@@ -87,9 +87,6 @@ function newClient() {
 
 /**faz log in */
 function logInClient(){
-    console.log(("JS ->" + $("#emailVal").val()));
-
-
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteLogIn.php",
@@ -118,7 +115,7 @@ $("#myToast").on("hidden.bs.toast", function() {
     $(this).addClass("d-none");
 })
 
-
+$("#myToast").addClass("d-none");
 /**Chnage type of use */
 function HideShowChangeTarget(choose){
 
@@ -211,7 +208,7 @@ function spin(amount) {
 }
     
 function Stop(){
-    $("#prizebtn").hide();
+    //$("#prizebtn").hide();
    
     /*Show modal*/
     setTimeout(()=>{
@@ -256,8 +253,8 @@ function getPrizeToSend(angleP){
                 angleP > 135.1 && angleP < 157.5 ? "coluna": 
                 angleP > 157.6 && angleP < 180 ? "carregador": 
                 angleP > 180.1 && angleP < 202.5 ? "bilhetes": 
-                angleP > 202.6 && angleP < 225 ? "estadio": 
-                angleP > 225.1 && angleP < 247.5 ? "cascol": 
+                angleP > 202.6 && angleP < 225 ? "coluna - mochila": 
+                angleP > 225.1 && angleP < 247.5 ? "bola-bone": 
                 angleP > 247.6 && angleP < 270 ? "carregador": 
                 angleP > 270.1 && angleP < 292.5 ? "bilhetes": 
                 angleP > 292.6 && angleP < 315 ? "bola": 
@@ -265,7 +262,29 @@ function getPrizeToSend(angleP){
                 angleP > 337.6 && angleP < 360 ? "cascol":
                 "camisola";
 
-    alert(resultado);
+        sendPremio(resultado);
     
     
+}
+
+
+
+function sendPremio(premio){
+    console.log("i am here");
+    $.ajax({
+        type: "POST",
+        url: "phpSubmissions/phpSubmiteReward.php",
+        data: {'rewardVal': premio, 'emailVal': $("#emailVal").val()},
+        success: function (data) {
+            result = data;
+            console.log(result);
+            if(result.slice(0, 3)==="OK-"){
+                let club =result.slice(3);
+            }else{
+                $('.toast-body').empty();
+                $('.toast-body').text(result.slice(3));
+                $('.toast').toast('show');
+            }
+        }
+    })
 }

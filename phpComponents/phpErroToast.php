@@ -1,5 +1,5 @@
   <!-- Then put toasts within -->
-  <div class="toast" data-delay="2500"  role="alert" aria-live="assertive" aria-atomic="true">
+  <div id="myToast" class="toast" data-delay="2500"  role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
       <strong class="mr-auto">Erro</strong>
       <small></small>
