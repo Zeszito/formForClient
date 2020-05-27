@@ -285,13 +285,14 @@ function getPrizeToSend(angleP){
 //*Send Premio doesnt work*/
 function sendPremio(premio){
     
-    PrizeModalChange("seguro");
+   // PrizeModalChange("seguro");
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteReward.php",
         data: {'rewardVal': premio, 'emailVal': finalEmail},
         success: function (data) {
             result = data;
+            console.clear();
             console.log(result);
             if(result.slice(0, 3)==="OK-"){
                 let club =result.slice(3);
@@ -321,13 +322,22 @@ function imagePrizeChange(stringObjectivo){
         imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
      break;
      case "kit - camisolaAlt":
+        if(club==="FC Famalicão")
+            imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+        else
         imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
      break;
      case "coluna - mochila":
+        if(club==="FC Famalicão")
+            imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+        else
         imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
      break;
      case "bola - bone":
+        if(club==="FC Famalicão")
         imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+         else
+         imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
      break;
      case "cachecol":
         imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
@@ -352,15 +362,24 @@ function textModalchange(stringObjectivo){
             textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
         case "camisola":
-            textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+            textoModalAlvo.text("Parabéns! Ganhaste a camisola oficial do equipamento principal. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
         case "kit - camisolaAlt":
+            if(club==="FC Famalicão")
+            textoModalAlvo.text("Parabéns! Ganhaste a camisola oficial do equipamento alternativo. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+            else
             textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
         case "coluna - mochila":
+            if(club ==="FC Famalicão")
+            textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+            else
             textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
         case "bola - bone":
+            if(club ==="FC Famalicão")
+            textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+            else
             textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
         case "cachecol":
