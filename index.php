@@ -18,8 +18,6 @@
 </head>
 
 <body>
-  <div class="bg"></div>
-  <div class="bg2" id="bg2"></div>
   <?php
           include 'phpComponents/topBanner.php'
   ?>
