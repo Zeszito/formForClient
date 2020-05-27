@@ -64,7 +64,6 @@ function newClient() {
         success: function (data) {
             result = data;
             if(result.slice(0, 3)==="OK-"){
-                alert("Sucesso!");
                 $('#myModalRegisto').modal();
                 $("#registerChoose").prop("checked", true);
                 HideShowChangeTarget(1);
