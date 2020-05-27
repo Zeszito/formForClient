@@ -174,29 +174,29 @@ function skinChange(club){
     ClubeDoUser = club;
     switch (club) {
         case "Sporting Clube de Braga":
-            $("#roda").attr("src", "images/rodas/ROLETA SC Braga-04.png");
+            $("#roda").attr("src", "images/rodas/braga.png");
             break;
         case "Vitória Sport Clube":
-            $("#roda").attr("src", "images/rodas/ROLETA Vitoria SC-10.png");
+            $("#roda").attr("src", "images/rodas/vitoriasc.png");
             break;
         case "Vitória Futebol Clube":
-            $("#roda").attr("src", "images/rodas/ROLETA Vitoria FC-09.png");
+            $("#roda").attr("src", "images/rodas/vitoriafc.png");
             break;
         case "Clube Sport Marítimo":
-            $("#roda").attr("src", "images/rodas/ROLETA CS Maritimo-05.png");
+            $("#roda").attr("src", "images/rodas/maritimo.png");
             break;
         case "FC Famalicão":
-            $("#roda").attr("src", "images/rodas/ROLETA FC Famalicao-06.png");
+            $("#roda").attr("src", "images/rodas/famalicao.png");
             break;
         case "Clube Desportivo Tondela":
-            $("#roda").attr("src", "images/rodas/ROLETA CD Tondela-07.png");
+            $("#roda").attr("src", "images/rodas/tondela.png");
             break;
         case "Rio Ave Futebol Clube":
-            $("#roda").attr("src", "images/rodas/ROLETA Rio Ave FC-08");
+            $("#roda").attr("src", "images/rodas/rioave");
             break;
 
         default:
-            $("#roda").attr("src", "images/rodas/ROLETA INSTITUCIONAL.png");
+            $("#roda").attr("src", "images/rodas/default.png");
             break;
     }
 
