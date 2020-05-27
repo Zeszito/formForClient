@@ -18,16 +18,16 @@
         <div class="col-12 col-sm offset-sm-1">
             <div class="row">
                 <div class="col noPadLR">
-                    <img class="img-fluid" src="images\footerImg\footer_facebook.png" alt="">
+                <a href="#"><img class="img-fluid" src="images\footerImg\footer_facebook.png" alt=""></a>
                 </div>
                 <div class="col noPadLR">
-                    <img class="img-fluid" src="images\footerImg\footer_instagram_hover.png" alt="">
+                <a href="#"> <img class="img-fluid" src="images\footerImg\footer_instagram_hover.png" alt=""></a>
                 </div>
                 <div class="col noPadLR">
-                    <img class="img-fluid" src="images\footerImg\footer_linkedin.png" alt="">
+                <a href="#">  <img class="img-fluid" src="images\footerImg\footer_linkedin.png" alt=""></a>
                 </div>
                 <div class="col noPadLR">
-                    <img class="img-fluid" src="images\footerImg\footer_twitter.png" alt="">
+                <a href="#">  <img class="img-fluid" src="images\footerImg\footer_twitter.png" alt=""></a>
                 </div>
             </div>
         </div>
