@@ -226,7 +226,6 @@ function Stop(){
     console.log(ClubeDoUser);
     /*Show modal*/
     setTimeout(()=>{
-        $('#myModal').modal();
         getPrizeToSend(getCurrentRotation(document.getElementById('roda')));
     },8500);
 
@@ -254,8 +253,6 @@ function getCurrentRotation(el){
 
 //**Seitch angulos to prizes */
 function getPrizeToSend(angleP){
-
-    console.log("foi tanto "+ angleP)
     
     let resultado;
     resultado = angleP > 0 && angleP < 22.5 ? "camisola" : 
@@ -284,9 +281,7 @@ function getPrizeToSend(angleP){
 
 //*Send Premio doesnt work*/
 function sendPremio(premio){
-    
-    //PrizeModalChange(premio);
-   // PrizeModalChange("seguro");
+
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteReward.php",
@@ -297,7 +292,7 @@ function sendPremio(premio){
             console.log(result);
             if(result.slice(0,3)==="OK-"){
                 PrizeModalChange(premio);
-                alert(premio);
+                $('#myModal').modal();
             }else{
                 $('.toast-body').empty();
                 $('.toast-body').text(result.slice(3));
@@ -317,7 +312,7 @@ function imagePrizeChange(stringObjectivo){
  let imagemModalAlvo = $("#imagemModalAlvo");
  switch (stringObjectivo) {
      case "seguro":
-        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+        imagemModalAlvo.attr("src", "images/prizeImg/seguro auto.svg");
      break;
      case "camisola":
         imagemModalAlvo.attr("src", "images/prizeImg/camisola oficial.svg");
