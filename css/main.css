@@ -25,7 +25,7 @@
 }
 
 body{
-    background-color: red;
+    background-color: #D6E8F8;
 }
 html, body {
   max-width: 100%;
@@ -225,4 +225,26 @@ padding-right: 5vw;
   margin-top:25vh;
   margin-right: 125vw;
   margin: auto;
+}
+
+/*Jut for chorm*/
+
+.Alternative-Autofill-act:-webkit-autofill,
+.Alternative-Autofill-act:-webkit-autofill:hover, 
+.Alternative-Autofill-act:-webkit-autofill:focus
+ {
+
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px #D6E8F8 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.Alternative-Autofill-De-act:-webkit-autofill,
+.Alternative-Autofill-De-act:-webkit-autofill:hover, 
+.Alternative-Autofill-De-act:-webkit-autofill:focus
+ {
+
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px #e9ecef inset;
+  transition: background-color 5000s ease-in-out 0s;
 }

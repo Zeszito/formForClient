@@ -124,6 +124,13 @@ function HideShowChangeTarget(choose){
         $('#nomeVal').attr('disabled', true);
         $(".AceitoDados").find('input').prop("checked", true);
         $(".AceitoDados").find('*').attr('disabled', true);
+        
+        /**chorme only */
+        $('#nomeVal').removeClass("Alternative-Autofill-act");
+        $('#nomeVal').addClass("Alternative-Autofill-De-act");
+        $('#telInput').removeClass("Alternative-Autofill-act");
+        $('#telInput').addClass("Alternative-Autofill-De-act");
+       
         wichOne = choose;
     }
     else{
@@ -131,6 +138,12 @@ function HideShowChangeTarget(choose){
         $('#nomeVal').attr('disabled', false);
         $(".AceitoDados").find('input').prop("checked", false);
         $(".AceitoDados").find('*').attr('disabled', false);
+        
+       /**chorme only */
+        $('#nomeVal').addClass("Alternative-Autofill-act");
+        $('#nomeVal').removeClass("Alternative-Autofill-De-act");
+        $('#telInput').addClass("Alternative-Autofill-act");
+        $('#telInput').removeClass("Alternative-Autofill-De-act");
         wichOne = choose;
     }
 }

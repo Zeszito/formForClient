@@ -46,7 +46,7 @@
     <div class="form-row noLogIn">
         <div class="form-group col-md-6">
             <label for="inputEmail4">Telémovel</label>
-            <input name="telemovelVal" type="number" class="form-control form-control-sm">
+            <input id="telInput" name="telemovelVal" type="number" class="form-control form-control-sm">
         </div>
         <div class="form-group col-md-6">
             <label for="club">Club</label>
