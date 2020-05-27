@@ -45,35 +45,6 @@ label{
 
 
 
-
-.bg{
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 100%;
-    width: 100vw;
-    background: url("../images/Background.png") no-repeat center center /cover;
-    content: '';
-    z-index: -2;
-
-  }
-
-  .bg2{
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 100%;
-    width: 100vw;
-    background-color: #BDCDDD;
-    opacity: 70%;
-    content: '';
-    z-index: -2;
-  }
-
-
-
   .form-control-sm{
     background-color: #D6E8F8 ;
     
@@ -165,29 +136,6 @@ padding-right: 5vw;
         margin-top: 5vh;
     }
 
-    .bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 150%;
-        width: 100vw;
-        background: url("../images/Background.png") no-repeat center center /cover;
-        content: '';
-        z-index: -2;
-    
-      }
-    
-      .bg2{
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 150%;
-        width: 100vw;
-        background-color: #BDCDDD;
-        opacity: 70%;
-        content: '';
-        z-index: -2;
-      }
     
 }
 
@@ -251,4 +199,11 @@ padding-right: 5vw;
   -webkit-text-fill-color: #000;
   -webkit-box-shadow: 0 0 0px 1000px #e9ecef inset;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+
+#TopBanner{
+  height: 10vh;
+  width: 100vw;
+  object-fit:contain;
 }

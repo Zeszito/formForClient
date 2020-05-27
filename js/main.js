@@ -394,3 +394,7 @@ function textModalchange(stringObjectivo){
     }
     
 }
+
+
+/*acertar a roda*/
+$(".RodaAll").css("margin-top", $('#TopBanner').height());

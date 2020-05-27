@@ -20,13 +20,15 @@
 <body>
   <div class="bg"></div>
   <div class="bg2" id="bg2"></div>
+  <?php
+          include 'phpComponents/topBanner.php'
+  ?>
   <div class="container">
     <div class="row">
 
+     
       <div class="col col-sm-8 offset-sm-2 col-md-8 offset-md-2 rcorner ">
-        <?php
-        
-        ?>
+       
 
         <?php
         include 'phpComponents/loginOrRegister.php'
@@ -51,10 +53,12 @@
         include 'phpComponents/modalRegisto.php'
         ?>
 
-    
 
     </div>
   </div>
+  <?php
+          include 'phpComponents/botBanner.php'
+  ?>
 
 
 
