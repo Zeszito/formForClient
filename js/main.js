@@ -284,8 +284,8 @@ function getPrizeToSend(angleP){
 
 //*Send Premio doesnt work*/
 function sendPremio(premio){
-    console.clear();
-    PrizeModalChange("O premio seria" + premio);
+    
+    PrizeModalChange(premio);
    // PrizeModalChange("seguro");
     $.ajax({
         type: "POST",
