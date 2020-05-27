@@ -159,25 +159,25 @@ function skinChange(club){
     console.log("entro");
 
     switch (club) {
-        case "SC Braga":
+        case "Sporting Clube de Braga":
             $("#roda").attr("src", "images/rodas/Red White.png");
             break;
-        case "Vitória SC":
+        case "Vitória Sport Clube":
             $("#roda").attr("src", "images/rodas/Green White");
             break;
-        case "Vitória FC":
+        case "Vitória Futebol Clube":
             $("#roda").attr("src", "images/rodas/Black White.png");
             break;
-        case "CS Marítimo":
+        case "Clube Sport Marítimo":
             $("#roda").attr("src", "images/rodas/Red Green.png");
             break;
         case "FC Famalicão":
             $("#roda").attr("src", "images/rodas/Blue White.png");
             break;
-        case "CD Tondela":
+        case "Clube Desportivo Tondela":
             $("#roda").attr("src", "images/rodas/Green Yellow.png");
             break;
-        case "Rio Ave FC":
+        case "Rio Ave Futebol Clube":
             $("#roda").attr("src", "images/rodas/Green White.png");
             break;
 
