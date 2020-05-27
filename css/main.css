@@ -226,3 +226,20 @@ padding-right: 5vw;
   top:0;
   vertical-align: super;
 }
+
+footer{
+  background-color: white;
+  opacity: 95%;
+}
+
+.noPadLR{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.text-muted{
+  color: #18316B !important;
+}
+.bbaner{
+  margin-top: 5.5rem;
+}

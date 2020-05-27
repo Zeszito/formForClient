@@ -7,6 +7,12 @@ $('#nomeVal').attr('disabled', true);
 $(".AceitoDados").find('input').prop("checked", true);
 $(".AceitoDados").find('*').attr('disabled', true);
 
+/*acertar a roda*/
+
+var fH;
+fh =($(window).height()/9) + $('#TopBanner').height();
+alert(fh);
+$(".RodaAll").css("margin-top",fh );
 
 
 /**Observo o botao de enviar */
@@ -44,16 +50,9 @@ function CheckTermos()
 
 //**SHOWS WHELL */
 function whellTransition(){
-
-    $(".bg2").animate({
-        'background-color' :"white"
-       }, 1000);
  
        $(".rcorner").animate({bottom:-200, opacity:0}, 1000,
         function (){$(".rcorner").remove()});
-
-     
-  
 }
 
 /**ENVIA NOVO CLIENTE */
@@ -99,10 +98,10 @@ function logInClient(){
 
             if(result.slice(0, 3)==="OK-"){
                 let club =result.slice(3);
-                console.log(club);
                 skinChange(club);
-
+                $(".bbaner").css("margin-top", $(".wrapRoda").height()+150); 
                 whellTransition();
+                
             }else{
                 $('.toast-body').empty();
                 $('.toast-body').text(result.slice(3));
@@ -403,5 +402,3 @@ function textModalchange(stringObjectivo){
 }
 
 
-/*acertar a roda*/
-$(".RodaAll").css("margin-top", $('#TopBanner').height());
