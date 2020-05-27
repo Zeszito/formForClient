@@ -65,7 +65,7 @@ function newClient() {
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteClient.php",
-        data: encodeURIComponent(form.serialize()),
+        data: form.serialize(),
         success: function (data) {
             result = data;
             if(result.slice(0, 3)==="OK-"){
@@ -92,7 +92,7 @@ function logInClient(){
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteLogIn.php",
-        data: {'emailVal':encodeURIComponent($("#emailVal").val()) },
+        data: {'emailVal':$("#emailVal").val() },
         success: function (data) {
             result = data;
             finalEmail = $("#emailVal").val();
@@ -280,7 +280,7 @@ function sendPremio(premio){
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteReward.php",
-        data: {'rewardVal': encodeURIComponent(premio), 'emailVal': encodeURIComponent(finalEmail)},
+        data: {'rewardVal': premio, 'emailVal': finalEmail},
         success: function (data) {
             result = data;
          
