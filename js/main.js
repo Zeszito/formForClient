@@ -284,7 +284,8 @@ function getPrizeToSend(angleP){
 
 //*Send Premio doesnt work*/
 function sendPremio(premio){
-    
+    console.clear();
+    PrizeModalChange("O premio seria" + premio);
    // PrizeModalChange("seguro");
     $.ajax({
         type: "POST",
@@ -319,31 +320,34 @@ function imagePrizeChange(stringObjectivo){
         imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
      break;
      case "camisola":
-        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+        imagemModalAlvo.attr("src", "images/prizeImg/camisola oficial.svg");
      break;
      case "kit - camisolaAlt":
         if(club==="FC Famalicão")
-            imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+            imagemModalAlvo.attr("src", "images/prizeImg/tshirt.svg");
         else
         imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
      break;
      case "coluna - mochila":
         if(club==="FC Famalicão")
-            imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+            imagemModalAlvo.attr("src", "images/prizeImg/coluna.svg");
         else
-        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+        imagemModalAlvo.attr("src", "images/prizeImg/mochila.svg");
      break;
      case "bola - bone":
         if(club==="FC Famalicão")
-        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+        imagemModalAlvo.attr("src", "images/prizeImg/bone.svg");
          else
-         imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+         imagemModalAlvo.attr("src", "images/prizeImg/bola.svg");
      break;
      case "cachecol":
-        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+        imagemModalAlvo.attr("src", "images/prizeImg/cachecol.svg");
      break;
      case "consultoria":
         imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+     break;
+     case "powerbank":
+        imagemModalAlvo.attr("src", "images/prizeImg/powerbank.svg");
      break;
  
  
@@ -389,7 +393,11 @@ function textModalchange(stringObjectivo){
             textoModalAlvo.text("Parabéns! Ganhaste uma consultoria de todos os teus seguros. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
     
+        case "consultoria":
+            textoModalAlvo.text(" Parabéns! Ganhaste uma powerbank. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+        break;
     
+       
         default:
             break;
     }
