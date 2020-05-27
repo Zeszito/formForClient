@@ -85,14 +85,13 @@ label{
 
   /*RODA CENTRO */
 .RodaAll{
-    position: absolute ;
+    position: relative ;
     top: 0 ;
     left: 0;
     right: 0;
     bottom: 0;
 
     margin: auto;
-    z-index: -1;
   }
 
   #rodaCentro{
@@ -118,9 +117,7 @@ label{
 
 
 }
-#roda{
-    /*transform: rotate(10deg);*/
-}
+
 
 #prizebtn{
 background-color: #175E9F;
@@ -130,6 +127,7 @@ border-radius:23px;
 font-size: 1.5rem;
 padding-left: 5vw;
 padding-right: 5vw;
+z-index: 30;
 }
 
 /**MEDIA FOR SMALLER **/
@@ -242,4 +240,5 @@ footer{
 }
 .bbaner{
   margin-top: 5.5rem;
+  bottom: 0;
 }

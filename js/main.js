@@ -9,11 +9,7 @@ $(".AceitoDados").find('*').attr('disabled', true);
 
 /*acertar a roda*/
 
-var fH;
-fh =($(window).height()/9) + $('#TopBanner').height();
-alert(fh);
-$(".RodaAll").css("margin-top",fh );
-
+$(".RodaAll").hide();
 
 /**Observo o botao de enviar */
 form.addEventListener('submit', function(event) {
@@ -99,7 +95,7 @@ function logInClient(){
             if(result.slice(0, 3)==="OK-"){
                 let club =result.slice(3);
                 skinChange(club);
-                $(".bbaner").css("margin-top", $(".wrapRoda").height()+150); 
+                $(".RodaAll").show();
                 whellTransition();
                 
             }else{
