@@ -1,4 +1,4 @@
-<footer class="container-fluid py-5  bbaner">
+<footer class="container-fluid pt-4  bbaner">
     <div class="row">
         <div class="col-12 col-sm offset-sm-1">
             <ul class="list-unstyled text-small">

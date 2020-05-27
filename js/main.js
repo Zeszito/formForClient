@@ -53,7 +53,7 @@ function whellTransition(){
 
 /**ENVIA NOVO CLIENTE */
 function newClient() {
-    var form = $("#mainForm")
+    var form = $("#mainForm");
 
    // console.log(("JS ->" + form.serialize()));
 
