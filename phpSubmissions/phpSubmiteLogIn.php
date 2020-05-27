@@ -1,4 +1,6 @@
-<?php
+<?php header('Content-Type: charset=utf-8');
+
+setlocale(LC_ALL, 'Portuguese_Portugal.1252');
    // MAKE SQLI CONNECTION
    $conn = new mysqli("15.188.164.24", "root", "sayhitoevolution", "sabseg_database");
    if($conn->connect_error)

@@ -1,4 +1,7 @@
-<?php
+<?php header('Content-Type: charset=utf-8');
+
+setlocale(LC_ALL, 'Portuguese_Portugal.1252');
+
  use PHPMailer\PHPMailer\PHPMailer;
  use PHPMailer\PHPMailer\Exception;
  
@@ -30,13 +33,14 @@
       }
       else
       {
+         
          // Current user reward
          $sqlReward = mysqli_fetch_row($conn->query($getReward))[0];
 
          //Send email
          $mail = new PHPMailer();
          $mail->IsSMTP(); // enable SMTP
-         $mail->SMTPDebug = 2; // debugging: 1 = errors and messages, 2 = messages only
+         //$mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
          $mail->SMTPAuth = true; // authentication enabled
          $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
          //$mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
@@ -158,7 +162,7 @@ O futebol é a paixão que nos une.
          } 
          else 
          {
-           echo "OK-";
+            echo "OK-";
          }
       }
    }

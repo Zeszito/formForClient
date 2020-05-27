@@ -65,7 +65,7 @@ function newClient() {
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteClient.php",
-        data: form.serialize(),
+        data: encodeURIComponent(form.serialize()),
         success: function (data) {
             result = data;
             if(result.slice(0, 3)==="OK-"){
@@ -285,7 +285,7 @@ function getPrizeToSend(angleP){
 //*Send Premio doesnt work*/
 function sendPremio(premio){
     
-    PrizeModalChange(premio);
+    //PrizeModalChange(premio);
    // PrizeModalChange("seguro");
     $.ajax({
         type: "POST",
@@ -295,9 +295,9 @@ function sendPremio(premio){
             result = data;
          
             console.log(result);
-            if(result.slice(0, 3)==="OK-"){
-                let club =result.slice(3);
+            if(result.slice(0,3)==="OK-"){
                 PrizeModalChange(premio);
+                alert(premio);
             }else{
                 $('.toast-body').empty();
                 $('.toast-body').text(result.slice(3));
@@ -393,7 +393,7 @@ function textModalchange(stringObjectivo){
             textoModalAlvo.text("Parabéns! Ganhaste uma consultoria de todos os teus seguros. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
     
-        case "consultoria":
+        case "powerbank":
             textoModalAlvo.text(" Parabéns! Ganhaste uma powerbank. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
         break;
     

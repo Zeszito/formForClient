@@ -1,4 +1,7 @@
-<?php
+<?php header('Content-Type: charset=utf-8');
+
+setlocale(LC_ALL, 'Portuguese_Portugal.1252');
+
 // Make connection to database
 $conn = new mysqli("15.188.164.24", "root", "sayhitoevolution", "sabseg_database");
 if($conn->connect_error)
@@ -19,11 +22,11 @@ $health = (isset($_POST['saudeVal'])) ? 1: 0;
 $house = (isset($_POST['casaVal'])) ? 1: 0;
 $other = (isset($_POST['outroVal'])) ? 1: 0;
 //TESTE
-/*echo  "---------------------------\n".
-        "APENAS PARA DEBUG ONLY!!!!!".
-       "\nnome-".$name. "\nemail-".$email."\ndataNas-".$birthDate."\nlocal-".$locality."\nnif-".$nif.
-       "\ntelemo-".$cellphone."\nclub-".$club."\nTem auto?-".$auto."\nTem vida?-".$life."\nTem saude?-".$health."\nTem casa?-".$house.
-       "\nTem outro?-".$other."\n---------------------------";*/
+ //echo  "---------------------------\n".
+ //       "APENAS PARA DEBUG ONLY!!!!!".
+ //      "\nnome-".$name. "\nemail-".$email."\ndataNas-".$birthDate."\nlocal-".$locality."\nnif-".$nif.
+ //      "\ntelemo-".$cellphone."\nclub-".$club."\nTem auto?-".$auto."\nTem vida?-".$life."\nTem saude?-".$health."\nTem casa?-".$house.
+ //     "\nTem outro?-".$other."\n---------------------------";
   
   
 // 1- Verify if email exists
@@ -71,54 +74,6 @@ else
           if ($conn->query($sqlCommand) === TRUE) 
           {
             echo "OK-";
-//            // Send email
-//            $mail = new PHPMailer();
-//            $mail->IsSMTP(); // enable SMTP
-//            $mail->SMTPDebug = 2; // debugging: 1 = errors and messages, 2 = messages only
-//            $mail->SMTPAuth = true; // authentication enabled
-//            //$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-//            $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
-//            //$mail->Host = "smtp.gmail.com";
-//            $mail->Host = "smtp.live.com";
-//            $mail->Port = 587; // 465 or 587
-//            $mail->IsHTML(true);
-//            $mail->Username = "celebramosfutebol@sabseg.pt";
-//            $mail->Password = "Corretor1722";
-//            //$mail->Password = "sayhitoevolutionemail";
-//            //$mail->SetFrom("hivolvept@gmail.com");
-//            $mail->SetFrom("celebramosfutebol@sabseg.pt");
-//            $mail->Subject = "Celebramos Futebol | SABSEG Seguros: Roleta Digital";
-//            //$mail->Body = "<a href='http://15.188.164.24/FriconBackend/EmailVerification.php?vKey=$vkey'>Verify Account</a>";
-//            $mail->Body = "<pre>Olá,
-//
-//Desde já obrigado pelo teu interesse na Roleta Digital SABSEG.
-//Os teus dados foram submetidos com sucesso, pelo que te encontras registado no <b>Celebramos Futebol</b>, um site dedicado a todos os verdadeiros adeptos de futebol!
-//
-//Para teres acesso a prémios exclusivos do teu clube, basta ativares a tua conta e definires uma password através deste link:
-//<a href='www.celebramosfutebol.sabseg.com'>www.celebramosfutebol.sabseg.com</a>
-//
-//Aproveitamos este email para te dar a conhecer melhor o nosso site:
-//
-//<b>(1)</b> O <b>Celebramos Futebol</b> disponibiliza-te vários passatempos exclusivos do teu clube;
-//<b>(2)</b> Em todos os passatempos oferecemos-te prémios únicos do teu clube;
-//<b>(3)</b> Depois de efetuares uma participação num dos nossos passatempos, deves consultar com regularidade as nossas redes sociais e a tua caixa de e-mail, pois é por estes meios que vamos comunicar contigo;
-//<b>(4)</b> Sempre que necessitares de ajuda, consulta todas as informações que disponibilizamos online ou contacta-nos através de <a href='celebramosfutebol@sabseg.pt'>celebramosfutebol@sabseg.pt</a>.
-//
-//
-//Junta-te a nós e vive experiências inesquecíveis.
-//O futebol é a paixão que nos une.
-//
-//<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
-//            $mail->AddAddress($email);
-//            
-//            if(!$mail->Send()) 
-//            {
-//              echo "NO-Mailer error: " . $mail->ErrorInfo;
-//            } 
-//            else 
-//            {
-//              echo "OK";
-//            }
           }
           else
           {
