@@ -87,12 +87,12 @@ function newClient() {
 
 var finalEmail;
 
-/**faz log in */
+/** ENVIA faz log in */
 function logInClient(){
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteLogIn.php",
-        data: {'emailVal':$("#emailVal").val() },
+        data: {'emailVal':encodeURIComponent($("#emailVal").val()) },
         success: function (data) {
             result = data;
             finalEmail = $("#emailVal").val();
@@ -151,8 +151,6 @@ function HideShowChangeTarget(choose){
     }
 }
 
-
-
 //wheel Spin
 var $elie = $("#roda");
 
@@ -203,7 +201,6 @@ function skinChange(club){
 
 
 }
-
 
 function spin(amount) {
  
@@ -277,14 +274,13 @@ function getPrizeToSend(angleP){
     
 }
 
-
-//*Send Premio doesnt work*/
+//*ENVIA Premio doesnt */
 function sendPremio(premio){
 
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteReward.php",
-        data: {'rewardVal': premio, 'emailVal': finalEmail},
+        data: {'rewardVal': encodeURIComponent(premio), 'emailVal': encodeURIComponent(finalEmail)},
         success: function (data) {
             result = data;
          
@@ -306,6 +302,7 @@ function PrizeModalChange(stringObjectivo){
     imagePrizeChange(stringObjectivo);
     textModalchange(stringObjectivo);
 }
+
 function imagePrizeChange(stringObjectivo){
 // imagemModalAlvo
  let imagemModalAlvo = $("#imagemModalAlvo");
