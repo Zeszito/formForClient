@@ -150,12 +150,10 @@ function HideShowChangeTarget(choose){
 
 
 
-
+//wheel Spin
 var $elie = $("#roda");
 
-//wheel Spin
-
-
+/**Atache onclick event */
 $("#prizebtn").on("click", function () {
    
     var min=1080; 
@@ -167,35 +165,35 @@ $("#prizebtn").on("click", function () {
 
   });
 
-
+var ClubeDoUser;
 function skinChange(club){
     console.log("entro");
-
+    ClubeDoUser = club;
     switch (club) {
         case "Sporting Clube de Braga":
-            $("#roda").attr("src", "images/rodas/Red White.png");
+            $("#roda").attr("src", "images/rodas/ROLETA SC Braga-04.png");
             break;
         case "Vitória Sport Clube":
-            $("#roda").attr("src", "images/rodas/Green White");
+            $("#roda").attr("src", "images/rodas/ROLETA Vitoria SC-10.png");
             break;
         case "Vitória Futebol Clube":
-            $("#roda").attr("src", "images/rodas/Black White.png");
+            $("#roda").attr("src", "images/rodas/ROLETA Vitoria FC-09.png");
             break;
         case "Clube Sport Marítimo":
-            $("#roda").attr("src", "images/rodas/Red Green.png");
+            $("#roda").attr("src", "images/rodas/ROLETA CS Maritimo-05.png");
             break;
         case "FC Famalicão":
-            $("#roda").attr("src", "images/rodas/Blue White.png");
+            $("#roda").attr("src", "images/rodas/ROLETA FC Famalicao-06.png");
             break;
         case "Clube Desportivo Tondela":
-            $("#roda").attr("src", "images/rodas/Green Yellow.png");
+            $("#roda").attr("src", "images/rodas/ROLETA CD Tondela-07.png");
             break;
         case "Rio Ave Futebol Clube":
-            $("#roda").attr("src", "images/rodas/Green White.png");
+            $("#roda").attr("src", "images/rodas/ROLETA Rio Ave FC-08");
             break;
 
         default:
-            $("#roda").attr("src", "images/rodas/roleta_default.png");
+            $("#roda").attr("src", "images/rodas/ROLETA INSTITUCIONAL.png");
             break;
     }
 
@@ -221,8 +219,8 @@ function spin(amount) {
 }
     
 function Stop(){
-    //$("#prizebtn").hide();
-   
+    $("#prizebtn").hide();
+    console.log(ClubeDoUser);
     /*Show modal*/
     setTimeout(()=>{
         $('#myModal').modal();
@@ -281,9 +279,10 @@ function getPrizeToSend(angleP){
 }
 
 
-
+//*Send Premio doesnt work*/
 function sendPremio(premio){
-    console.log("i am here");
+    
+    PrizeModalChange("seguro");
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteReward.php",
@@ -293,6 +292,7 @@ function sendPremio(premio){
             console.log(result);
             if(result.slice(0, 3)==="OK-"){
                 let club =result.slice(3);
+                PrizeModalChange(premio);
             }else{
                 $('.toast-body').empty();
                 $('.toast-body').text(result.slice(3));
@@ -300,4 +300,76 @@ function sendPremio(premio){
             }
         }
     })
+}
+
+/**este metodo chama imagePrizechange e textModalchange */
+function PrizeModalChange(stringObjectivo){
+    imagePrizeChange(stringObjectivo);
+    textModalchange(stringObjectivo);
+}
+function imagePrizeChange(stringObjectivo){
+// imagemModalAlvo
+ let imagemModalAlvo = $("#imagemModalAlvo");
+ switch (stringObjectivo) {
+     case "seguro":
+        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+     break;
+     case "camisola":
+        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+     break;
+     case "kit - camisolaAlt":
+        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+     break;
+     case "coluna - mochila":
+        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+     break;
+     case "bola - bone":
+        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+     break;
+     case "cachecol":
+        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+     break;
+     case "consultoria":
+        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+     break;
+ 
+ 
+     default:
+         break;
+ }
+
+
+
+}
+
+function textModalchange(stringObjectivo){
+    let textoModalAlvo = $("#ganhouTexto");
+    switch (stringObjectivo) {
+        case "seguro":
+            textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+        break;
+        case "camisola":
+            textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+        break;
+        case "kit - camisolaAlt":
+            textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+        break;
+        case "coluna - mochila":
+            textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+        break;
+        case "bola - bone":
+            textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+        break;
+        case "cachecol":
+            textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+        break;
+        case "consultoria":
+            textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+        break;
+    
+    
+        default:
+            break;
+    }
+    
 }

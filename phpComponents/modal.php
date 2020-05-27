@@ -9,7 +9,7 @@
   
       </div>
       <div class="modal-body w-100 text-center">
-      <img src="images\prizeImg\audio.png" class="img-responsive" />
+      <img id="imagemModalAlvo" src="images/prizeImg/bola.svg" class="img-responsive" />
         
       <p id="ganhouTexto">Parabén Ganhou isto e aquilo!</p>
       </div>
