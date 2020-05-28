@@ -133,7 +133,7 @@ function play(){
             if(result.slice(0, 3)==="OK-")
             {
                 nomeDoPremio =result.slice(3); 
-                $("#ModalTitle").text(ModalTitle);
+                $("#ModalTitle").text(nomeDoPremio);
                 var min=1080; 
                 var max=1800;  
                 var amount = Math.floor(Math.random() * (+max - +min)) + +min;
