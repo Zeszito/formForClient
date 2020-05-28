@@ -138,6 +138,7 @@ function HideShowChangeTarget(choose){
         $('#telInput').removeClass("Alternative-Autofill-act");
         $('#telInput').addClass("Alternative-Autofill-De-act");
       
+        $('#enviarFormBtn').text("login");
        HideForLoging();
    
         wichOne = choose;
@@ -155,6 +156,7 @@ function HideShowChangeTarget(choose){
         $('#telInput').addClass("Alternative-Autofill-act");
         $('#telInput').removeClass("Alternative-Autofill-De-act");
 
+        $('#enviarFormBtn').text("registar");
         showForRegist();
         wichOne = choose;
     }
