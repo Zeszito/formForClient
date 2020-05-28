@@ -37,7 +37,7 @@ b.click(function() {
 
 function CheckTermos()
 {
-  if(a.is(':checked') && b.is(':checked'))
+  if(a.is(':checked') && b.is(':checked') && telValid==true)
     $("#enviarFormBtn").attr('disabled', false);
   else  $("#enviarFormBtn").attr('disabled', true);
 }
@@ -406,3 +406,26 @@ function showForRegist(){
     $('#nomeVal').show();
     $('#nameLabel').show();
 }
+
+//control//
+
+var telValid =  false;
+$('input[name="telemovelVal"]').keydown(function() {
+    $('#telInput').css("background-color","rgba(255, 25, 25, 0.46)");
+    
+    if (this.value.length == 9 && (this.value.charAt(0) == 9 || this.value.charAt(0) == 2)) {
+        $('#telInput').css("background-color","rgba(25, 255, 25, 0.46)");
+        telValid= true;
+        CheckTermos();
+    }
+    else{
+        telValid= false;
+        CheckTermos();
+    } 
+
+
+    if (this.value.length >= 9) {
+        
+    }
+   
+});
