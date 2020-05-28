@@ -11,7 +11,7 @@
     <div class="form-row noLogIn">
         <div class="form-group col-md-4">
             <label for="inputEmail4">Data Nascimento</label>
-            <input type="date" class="form-control form-control-sm" name="dataNascimentoVal" id="birthDate" min="1904-01-01" max="2025-12-12">
+            <input data-trigger="hover" data-placement="top"  data-toggle="popover"  data-content="Destina-se a maiores de 18 anos" type="date" class="form-control form-control-sm" name="dataNascimentoVal" id="birthDate" min="1904-01-01" max="2025-12-12">
         </div>
         <div class="form-group col-md-4">
             <label for="Localidade">Distrito</label>
@@ -47,7 +47,7 @@
     <div class="form-row noLogIn">
         <div class="form-group col-md-6">
             <label for="inputEmail4">Telémovel</label>
-            <input id="telInput" name="telemovelVal" type="text"  maxlength="9"  max="9" pattern="[0-9]*" class="form-control form-control-sm">
+            <input data-trigger="hover" data-placement="top"  data-toggle="popover"  data-content="Só poderá receber o prémio com um email válido" id="telInput" name="telemovelVal" type="text"  maxlength="9"  max="9" pattern="[0-9]*" class="form-control form-control-sm">
         </div>
         <div class="form-group col-md-6">
             <label for="club">Clube</label>

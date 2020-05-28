@@ -1,6 +1,10 @@
 var form = document.querySelector('.needs-validation');
 var wichOne = 1;
 
+$(function () {
+    $('[data-toggle="popover"]').popover()
+  });
+
 
 var erroDeServidorString ="Erro de servidor, por favor tente mais tarde. Se persistir, por favor contacte a empresa.";
 /**Estado inicial de cada elemento */
