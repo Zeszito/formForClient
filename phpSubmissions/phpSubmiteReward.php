@@ -172,7 +172,7 @@ O futebol é a paixão que nos une.
             } 
             else 
             {
-               echo "OK-";
+               echo "OK-" . $sqlRewardName;
             }
          }
       }
