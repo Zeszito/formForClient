@@ -5,13 +5,13 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header border-0">
-        <h5 class="modal-title w-100 text-center" id="ModalTitle">Parabéns</h5>
+        <h5 class="modal-title w-100 text-center" id="ModalTitle">Erro</h5>
   
       </div>
       <div class="modal-body w-100 text-center">
-      <img id="imagemModalAlvo" src="images/prizeImg/bola.svg" class="img-responsive" />
+      <img id="imagemModalAlvo" src="images/prizeImg/Error.svg" class="img-responsive" />
         
-      <p id="ganhouTexto">Parabén Ganhou isto e aquilo!</p>
+      <p id="ganhouTexto">Algo Correu mal. Por favor tente novamanete.</p>
       </div>
       
       <div class="modal-footer border-0">
