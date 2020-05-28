@@ -1,6 +1,7 @@
 var form = document.querySelector('.needs-validation');
 var wichOne = 1;
 
+var erroDeServidorString ="Erro de servidor, por favor tente mais tarde. Se pressistir, por favor contacte a empresa.";
 /**Estado inicial de cada elemento */
 $('.noLogIn').find('*').attr('disabled', true);
 $('#nomeVal').attr('disabled', true);
@@ -68,14 +69,17 @@ function newClient() {
                 $("#registerChoose").prop("checked", true);
                 HideShowChangeTarget(1);
                 CheckTermos();
+            }else if(result.slice(0, 3)==="NO-"){               
+                $('.toast-body').empty();
+                $('.toast-body').text(result.slice(3));
+                $('.toast').toast('show');  
             }
             else{
                 $('.toast-body').empty();
-                $('.toast-body').text(result.slice(3));
-                $('.toast').toast('show');
-          
+                $('.toast-body').text(erroDeServidorString);
+                $('.toast').toast('show');  
             }
-        }
+            }
     })
 }
 
@@ -97,10 +101,16 @@ function logInClient(){
                 $(".RodaAll").show();
                 whellTransition();
                 
-            }else{
+            }else if(result.slice(0, 3)==="NO-"){
+                
                 $('.toast-body').empty();
                 $('.toast-body').text(result.slice(3));
-                $('.toast').toast('show');
+                $('.toast').toast('show');  
+            }
+            else{
+                $('.toast-body').empty();
+                $('.toast-body').text(erroDeServidorString);
+                $('.toast').toast('show');  
             }
         }
     })
@@ -290,10 +300,15 @@ function sendPremio(premio){
             if(result.slice(0,3)==="OK-"){
                 PrizeModalChange(premio);
                 $('#myModal').modal();
-            }else{
+            }else if(result.slice(0, 3)==="NO-"){                
                 $('.toast-body').empty();
                 $('.toast-body').text(result.slice(3));
-                $('.toast').toast('show');
+                $('.toast').toast('show');  
+            }
+            else{
+                $('.toast-body').empty();
+                $('.toast-body').text(erroDeServidorString);
+                $('.toast').toast('show');  
             }
         }
     })
@@ -407,9 +422,7 @@ function showForRegist(){
     $('#nameLabel').show();
 }
 
-//control//
-
-
+//control FOR THE FORMS//
 $('input[name="telemovelVal"]').keydown(function() {
     $('#telInput').css("background-color","rgba(255, 25, 25, 0.46)");
     
@@ -419,8 +432,6 @@ $('input[name="telemovelVal"]').keydown(function() {
     else{
         $('#telInput').css("background-color","rgba(255, 25, 25, 0.46)");
     }
- 
-   
 });
 
 //MAX DATE 
