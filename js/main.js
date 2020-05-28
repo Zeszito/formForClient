@@ -8,14 +8,14 @@ $(".AceitoDados").find('input').prop("checked", true);
 $(".AceitoDados").find('*').attr('disabled', true);
 
 /*acertar a roda*/
-
+HideForLoging();
 $(".RodaAll").hide();
 
 /**Observo o botao de enviar */
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     event.stopPropagation();
-
+    
     if(wichOne===2){
         newClient();
     }
@@ -39,7 +39,7 @@ function CheckTermos()
 {
   if(a.is(':checked') && b.is(':checked'))
     $("#enviarFormBtn").attr('disabled', false);
-  else   $("#enviarFormBtn").attr('disabled', true);
+  else  $("#enviarFormBtn").attr('disabled', true);
 }
 //-------------------------------------------------------//
 
@@ -116,7 +116,7 @@ $("#myToast").addClass("d-none");
 /**Chnage type of use */
 function HideShowChangeTarget(choose){
 
-    if(choose===1){
+    if(choose===1){ //Login
         $('.noLogIn').find('*').attr('disabled', true);
         $('#nomeVal').attr('disabled', true);
         $(".AceitoDados").find('input').prop("checked", true);
@@ -127,10 +127,13 @@ function HideShowChangeTarget(choose){
         $('#nomeVal').addClass("Alternative-Autofill-De-act");
         $('#telInput').removeClass("Alternative-Autofill-act");
         $('#telInput').addClass("Alternative-Autofill-De-act");
-       
+      
+       HideForLoging();
+   
         wichOne = choose;
+    
     }
-    else{
+    else{ //registo
         $('.noLogIn').find('*').attr('disabled', false);
         $('#nomeVal').attr('disabled', false);
         $(".AceitoDados").find('input').prop("checked", false);
@@ -141,8 +144,11 @@ function HideShowChangeTarget(choose){
         $('#nomeVal').removeClass("Alternative-Autofill-De-act");
         $('#telInput').addClass("Alternative-Autofill-act");
         $('#telInput').removeClass("Alternative-Autofill-De-act");
+
+        showForRegist();
         wichOne = choose;
     }
+    CheckTermos();
 }
 
 //wheel Spin
@@ -396,4 +402,20 @@ function textModalchange(stringObjectivo){
     
 }
 
+/*---------------Case we want to try-------------------------*/
 
+function HideForLoging(){
+         //**hide show*/
+         $('.noLogIn').hide();
+         $(".AceitoDados").find('*').hide();
+         $('#nomeVal').hide();
+         $('#nameLabel').hide();
+}
+
+function showForRegist(){
+    //**hide show*/
+    $('.noLogIn').show();
+    $(".AceitoDados").find('*').show();
+    $('#nomeVal').show();
+    $('#nameLabel').show();
+}

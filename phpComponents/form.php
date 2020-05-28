@@ -4,7 +4,7 @@
         <input type="email" class="form-control form-control-sm" id="emailVal" name="emailVal" required>
     </div>
     <div class="form-group">
-        <label for="my-input">Nome</label>
+        <label for="my-input" id="nameLabel">Nome</label>
         <input type="text" class="form-control  form-control-sm" id="nomeVal" name="nomeVal" required>
     </div>
     <!------FORM ROW DNASCIMENTO LOCALIDADE NIF-->
