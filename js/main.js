@@ -448,3 +448,8 @@ var yyyy = today.getFullYear();
 
 today = yyyy+'-'+mm+'-'+dd;
 document.getElementById("birthDate").setAttribute("max", today);
+
+//Reload page//
+function reload(){
+    location.reload();
+}

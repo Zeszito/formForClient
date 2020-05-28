@@ -16,7 +16,7 @@
       
       <div class="modal-footer border-0">
       <div class="col text-center">
-        <button type="button" class="btn btn-secondary basicBtn" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-secondary basicBtn" data-dismiss="modal" onclick="reload()">OK</button>
 </div>  
     </div>
 
