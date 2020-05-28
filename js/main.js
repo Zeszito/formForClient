@@ -10,11 +10,13 @@ var erroDeServidorString ="Erro de servidor, por favor tente mais tarde. Se pers
 /**Estado inicial de cada elemento */
 $('.noLogIn').find('*').attr('disabled', true);
 $('#nomeVal').attr('disabled', true);
-$(".AceitoDados").find('input').prop("checked", true);
-$(".AceitoDados").find('*').attr('disabled', true);
+$("#enviarFormBtn").attr('disabled', true);
+//$(".AceitoDados").find('input').prop("checked", true);
+//$(".AceitoDados").find('*').attr('disabled', true);
 
 /*acertar a roda*/
 HideForLoging();
+
 $(".RodaAll").hide();
 
 /**Observo o botao de enviar */
@@ -33,17 +35,19 @@ form.addEventListener('submit', function(event) {
 /**Observo os Termos */
 var a = $("#direitoInfo");
 var b = $("#termosInfo");
-
+var c = $("#termosInfoPAss");
 a.click(function() {
     CheckTermos();
   });
 b.click(function() {
     CheckTermos();
   });
-
+c.click(function() {
+    CheckTermos();
+  });
 function CheckTermos()
 {
-  if(a.is(':checked') && b.is(':checked'))
+  if(a.is(':checked') && b.is(':checked') && c.is(':checked'))
     $("#enviarFormBtn").attr('disabled', false);
   else  $("#enviarFormBtn").attr('disabled', true);
 }
@@ -172,8 +176,8 @@ function HideShowChangeTarget(choose){
     if(choose===1){ //Login
         $('.noLogIn').find('*').attr('disabled', true);
         $('#nomeVal').attr('disabled', true);
-        $(".AceitoDados").find('input').prop("checked", true);
-        $(".AceitoDados").find('*').attr('disabled', true);
+        //$(".AceitoDados").find('input').prop("checked", true);
+        //$(".AceitoDados").find('*').attr('disabled', true);
         
         /**chorme only */
         $('#nomeVal').removeClass("Alternative-Autofill-act");
@@ -182,7 +186,8 @@ function HideShowChangeTarget(choose){
         $('#telInput').addClass("Alternative-Autofill-De-act");
       
         $('#enviarFormBtn').text("Enviar");
-       HideForLoging();
+        $('.pusher').css("padding-top","28vh");
+        HideForLoging();
    
         wichOne = choose;
     
@@ -190,8 +195,8 @@ function HideShowChangeTarget(choose){
     else{ //Registo
         $('.noLogIn').find('*').attr('disabled', false);
         $('#nomeVal').attr('disabled', false);
-        $(".AceitoDados").find('input').prop("checked", false);
-        $(".AceitoDados").find('*').attr('disabled', false);
+        //$(".AceitoDados").find('input').prop("checked", false);
+        //$(".AceitoDados").find('*').attr('disabled', false);
         
        /**chorme only */
         $('#nomeVal').addClass("Alternative-Autofill-act");
@@ -200,6 +205,7 @@ function HideShowChangeTarget(choose){
         $('#telInput').removeClass("Alternative-Autofill-De-act");
 
         $('#enviarFormBtn').text("Registar");
+        $('.pusher').css("padding-top","5vh");
         showForRegist();
         wichOne = choose;
     }
@@ -472,7 +478,7 @@ function textModalchange(stringObjectivo){
 function HideForLoging(){
          //**hide show*/
          $('.noLogIn').hide();
-         $(".AceitoDados").find('*').hide();
+        // $(".AceitoDados").find('*').hide();
          $('#nomeVal').hide();
          $('#nameLabel').hide();
 }
@@ -480,7 +486,7 @@ function HideForLoging(){
 function showForRegist(){
     //**hide show*/
     $('.noLogIn').show();
-    $(".AceitoDados").find('*').show();
+   // $(".AceitoDados").find('*').show();
     $('#nomeVal').show();
     $('#nameLabel').show();
 }

@@ -1,4 +1,9 @@
-<footer class="container-fluid pt-4  bbaner ">
+<div class="row pusher">
+    <div class="col text-right">
+        <a  href="https://ftp.sabseg.com/web-app/celebramosfutebol/passatempos/QA164/Regulamento%20Roleta%20Digital%20SABSEG.pdf" target="_blank" style="color:white">[Regulamento]</a>
+    </div>
+</div>
+<footer class="container-fluid  bbaner ">
     <div class="row">
         <div class="col-12 col-sm offset-sm-1">
             <ul class="list-unstyled text-small">

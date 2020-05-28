@@ -122,7 +122,7 @@
     <div class="AceitoDados">
         <div class="form-check">
             <input id="direitoInfo" class="form-check-input" type="checkbox" name="direitoInfoVal" value="1">
-            <label for="my-input" class="form-check-label"><a href="https://celebramosfutebol.sabseg.com/resources/files/CelebramosFutebol_DireitoInformacao.pdf">Li e compreendi o direito de informação</a></label>
+            <label for="my-input" class="form-check-label"><a href="https://celebramosfutebol.sabseg.com/resources/files/CelebramosFutebol_DireitoInformacao.pdf" target="_blank">Li e compreendi o direito de informação</a></label>
         </div>
         <div class="form-check">
             <input id="termosInfo" class="form-check-input" type="checkbox" name="" value="1">
@@ -130,7 +130,12 @@
         </div>
     </div>
 
-    <div class="text-center pb-2">
+    <div class="form-check">
+            <input id="termosInfoPAss" class="form-check-input" type="checkbox" name="" value="1">
+            <label for="my-input" class="form-check-label"><a href="https://ftp.sabseg.com/web-app/celebramosfutebol/passatempos/QA164/Regulamento%20Roleta%20Digital%20SABSEG.pdf" target="_blank"> Li e aceito todos os termos e condições do Regulamento deste passatempo.</a></label>
+        </div>
+    
+        <div class="text-center pb-2 pt-2">
         <button type="submit" class="btn btn-primary basicBtn" id="enviarFormBtn">Login</button>
     </div>
 

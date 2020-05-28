@@ -251,7 +251,10 @@ footer{
   color: #18316B !important;
 }
 .bbaner{
-  margin-top: 5.5rem;
   bottom: 0;
+  padding-top: 20px;
 }
 
+.pusher{
+   padding-top: 28vh;
+}
