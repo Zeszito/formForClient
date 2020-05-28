@@ -37,7 +37,7 @@ b.click(function() {
 
 function CheckTermos()
 {
-  if(a.is(':checked') && b.is(':checked') && telValid==true)
+  if(a.is(':checked') && b.is(':checked'))
     $("#enviarFormBtn").attr('disabled', false);
   else  $("#enviarFormBtn").attr('disabled', true);
 }
@@ -409,23 +409,31 @@ function showForRegist(){
 
 //control//
 
-var telValid =  false;
+
 $('input[name="telemovelVal"]').keydown(function() {
     $('#telInput').css("background-color","rgba(255, 25, 25, 0.46)");
     
     if (this.value.length == 9 && (this.value.charAt(0) == 9 || this.value.charAt(0) == 2)) {
         $('#telInput').css("background-color","rgba(25, 255, 25, 0.46)");
-        telValid= true;
-        CheckTermos();
     }
     else{
-        telValid= false;
-        CheckTermos();
-    } 
-
-
-    if (this.value.length >= 9) {
-        
+        $('#telInput').css("background-color","rgba(255, 25, 25, 0.46)");
     }
+ 
    
 });
+
+//MAX DATE 
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("birthDate").setAttribute("max", today);

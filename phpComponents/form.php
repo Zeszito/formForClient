@@ -11,7 +11,7 @@
     <div class="form-row noLogIn">
         <div class="form-group col-md-4">
             <label for="inputEmail4">Data Nascimento</label>
-            <input type="date" class="form-control form-control-sm" name="dataNascimentoVal">
+            <input type="date" class="form-control form-control-sm" name="dataNascimentoVal" id="birthDate" min="1904-01-01" max="2025-12-12">
         </div>
         <div class="form-group col-md-4">
             <label for="Localidade">Distrito</label>
