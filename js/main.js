@@ -127,24 +127,22 @@ function play(){
         data: {'emailVal': finalEmail },
         success: function (data) {
             result = decodeURIComponent(data);
-            
-            if(result.slice(0, 3)==="OK-"){
-                let club =result.slice(3);
-                
+            if(result.slice(0, 3)==="OK-")
+            {
                 var min=1080; 
                 var max=1800;  
-                var amount = 
-                Math.floor(Math.random() * (+max - +min)) + +min;
+                var amount = Math.floor(Math.random() * (+max - +min)) + +min;
             
-               spin(amount);
-            
-            }else if(result.slice(0, 3)==="NO-"){
-                
+                spin(amount);
+            }
+            else if(result.slice(0, 3)==="NO-")
+            {
                 $('.toast-body').empty();
                 $('.toast-body').text(result.slice(3));
                 $('.toast').toast('show');  
             }
-            else{
+            else
+            {
                 $('.toast-body').empty();
                 $('.toast-body').text(erroDeServidorString);
                 $('.toast').toast('show');  
@@ -206,8 +204,8 @@ function HideShowChangeTarget(choose){
 var $elie = $("#roda");
 
 /**Atache onclick event */
-$("#prizebtn").on("click", function () {
-   
+$("#prizebtn").on("click", function () 
+{
     play();
 });
 

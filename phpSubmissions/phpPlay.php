@@ -50,7 +50,7 @@
                     $selectReward = "SELECT reward FROM users WHERE email = '".$email."' AND reward != '0'";
                     if ($conn->query($selectReward)->num_rows > 0) 
                     {
-                        echo ("NO-''Ups.. Parece que já participou na Roleta SABSEG. Segundo o regulamento do jogo apenas pode participar uma vez.");
+                        echo ("NO-Ups.. Parece que já participou na Roleta SABSEG. Segundo o regulamento do jogo apenas pode participar uma vez.");
                     }
                     else
                     {
