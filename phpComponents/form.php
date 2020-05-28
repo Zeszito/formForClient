@@ -49,7 +49,7 @@
             <input id="telInput" name="telemovelVal" type="text"  maxlength="9"  max="9" pattern="[0-9]*" class="form-control form-control-sm">
         </div>
         <div class="form-group col-md-6">
-            <label for="club">Club</label>
+            <label for="club">Clube</label>
             <select name="clubVal" id="clubVal" class="form-control form-control-sm">
                 <option selected value="Belenenses SAD">Belenenses SAD</option>
                 <option value="Boavista Futebol Clube">Boavista Futebol Clube</option>
@@ -74,6 +74,12 @@
     </div>
 
     <!--Check Boxes section-->
+    <div class="row noLogIn">
+        <div class="col">
+        <p id="qualClubParagrafo">Quais os seguros que possui atualmente?</p>
+        </div>
+    </div>
+ 
     <div class="row noLogIn">
         <div class="col">
             <div class="form-check">
