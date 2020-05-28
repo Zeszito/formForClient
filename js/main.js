@@ -189,7 +189,7 @@ function HideShowChangeTarget(choose){
         $('#telInput').addClass("Alternative-Autofill-De-act");
       
         $('#enviarFormBtn').text("Enviar");
-        $('.pusher').css("padding-top","28vh");
+        $('.pusher').css("padding-top","24vh");
         HideForLoging();
    
         wichOne = choose;
