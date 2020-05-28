@@ -117,6 +117,40 @@ function logInClient(){
         }
     })
 }
+
+/**Envia faz Posso Jogar? */
+function play(){
+    $.ajax({
+        type: "POST",
+        url: "phpSubmissions/phpPlay.php",
+        data: {'emailVal':$("#emailVal").val() },
+        success: function (data) {
+            result = decodeURIComponent(data);
+            finalEmail = $("#emailVal").val();
+
+            // AQUI ESTA IGUAL AO TEU?
+            if(result.slice(0, 3)==="OK-"){
+                let club =result.slice(3);
+                skinChange(club);
+                $(".RodaAll").show();
+                whellTransition();
+                
+            }else if(result.slice(0, 3)==="NO-"){
+                
+                $('.toast-body').empty();
+                $('.toast-body').text(result.slice(3));
+                $('.toast').toast('show');  
+            }
+            else{
+                $('.toast-body').empty();
+                $('.toast-body').text(erroDeServidorString);
+                $('.toast').toast('show');  
+            }
+        }
+    })
+}
+
+}
 $("#myToast").on("show.bs.toast", function() {
     $(this).removeClass("d-none");
 })
