@@ -59,7 +59,7 @@
         // 4- Verify nif
         if(!binif_isvalid($nif))
         {
-          echo "NO-BI invalido.";
+          echo "NO-NIF invalido.";
         }
         else
         {

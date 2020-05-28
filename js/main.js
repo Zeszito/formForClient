@@ -62,7 +62,8 @@ function newClient() {
         type: "POST",
         url: "phpSubmissions/phpSubmiteClient.php",
         data: form.serialize(),
-        success: function (data) {
+        success: function (data) 
+        {
             result = data;
             if(result.slice(0, 3)==="OK-"){
                 $('#myModalRegisto').modal();
@@ -79,7 +80,7 @@ function newClient() {
                 $('.toast-body').text(erroDeServidorString);
                 $('.toast').toast('show');  
             }
-            }
+        }
     })
 }
 
@@ -92,9 +93,10 @@ function logInClient(){
         url: "phpSubmissions/phpSubmiteLogIn.php",
         data: {'emailVal':$("#emailVal").val() },
         success: function (data) {
-            result = data;
+            result = decodeURIComponent(data);
             finalEmail = $("#emailVal").val();
 
+            // AQUI ESTA IGUAL AO TEU?
             if(result.slice(0, 3)==="OK-"){
                 let club =result.slice(3);
                 skinChange(club);
@@ -181,6 +183,7 @@ $("#prizebtn").on("click", function () {
 var ClubeDoUser;
 function skinChange(club){
     ClubeDoUser = club;
+    
     switch (club) {
         case "Sporting Clube de Braga":
             $("#roda").attr("src", "images/rodas/braga.png");
@@ -268,45 +271,47 @@ function getCurrentRotation(el)
 function getPrizeToSend(angleP){
     
     let resultado;
-    resultado = angleP > 0 && angleP < 22.5 ? "camisola" :
+    console.log("Angulo: " + angleP);
+    resultado = angleP > 0 && angleP <= 22.5 ? "camisola" :
 
-                angleP > 22.6 && angleP < 45 ? "cachecol":
+                angleP > 22.5 && angleP <= 45 ? "cachecol":
 
-                angleP > 45.1 && angleP < 67.5 ? "seguro": 
+                angleP > 45. && angleP <= 67.5 ? "seguro": 
 
-                angleP > 67.6 && angleP < 90 && ClubeDoUser != "FC Famalicão" ? "coluna": 
-                angleP > 67.6 && angleP < 90 && ClubeDoUser == "FC Famalicão" ? "mochila": 
+                angleP > 67.5 && angleP <= 90 && ClubeDoUser != "FC Famalicão" ? "coluna": 
+                angleP > 67.5 && angleP <= 90 && ClubeDoUser == "FC Famalicão" ? "camisolaAlt": 
 
-                angleP > 90.1 && angleP < 112.5 ? "powerbank": 
+                angleP > 90 && angleP <= 112.5 ? "powerbank": 
 
-                angleP > 112.6 && angleP < 135 ? "camisola": 
+                angleP > 112.5 && angleP <= 135 ? "camisola": 
 
-                angleP > 135.1 && angleP < 157.5 && ClubeDoUser != "FC Famalicão" ? "kit":
-                angleP > 135.1 && angleP < 157.5 && ClubeDoUser == "FC Famalicão" ? "camisolaAlt": 
+                angleP > 135 && angleP <= 157.5 && ClubeDoUser != "FC Famalicão" ? "kit":
+                angleP > 135 && angleP <= 157.5 && ClubeDoUser == "FC Famalicão" ? "bone": 
 
-                angleP > 157.6 && angleP < 180 ? "consultoria": 
+                angleP > 157.5 && angleP <= 180 ? "consultoria": 
 
-                angleP > 180.1 && angleP < 202.5 && ClubeDoUser != "FC Famalicão" ? "coluna": 
-                angleP > 180.1 && angleP < 202.5 && ClubeDoUser == "FC Famalicão" ? "mochila":  
+                angleP > 180 && angleP <= 202.5 && ClubeDoUser != "FC Famalicão" ? "coluna": 
+                angleP > 180 && angleP <= 202.5 && ClubeDoUser == "FC Famalicão" ? "camisolaAlt":  
 
-                angleP > 202.6 && angleP < 225 && ClubeDoUser != "FC Famalicão" ? "bola": 
-                angleP > 202.6 && angleP < 225 && ClubeDoUser == "FC Famalicão" ? "bone": 
+                angleP > 202.5 && angleP <= 225 && ClubeDoUser != "FC Famalicão" ? "bola": 
+                angleP > 202.5 && angleP <= 225 && ClubeDoUser == "FC Famalicão" ? "mochila": 
 
-                angleP > 225.1 && angleP < 247.5 ? "seguro": 
+                angleP > 225 && angleP <= 247.5 ? "seguro": 
 
-                angleP > 247.6 && angleP < 270 ? "cachecol": 
+                angleP > 247.5 && angleP <= 270 ? "cachecol": 
 
-                angleP > 270.1 && angleP < 292.5 && ClubeDoUser != "FC Famalicão" ? "bola":
-                angleP > 270.1 && angleP < 292.5 && ClubeDoUser == "FC Famalicão" ? "bone":  
+                angleP > 270 && angleP <= 292.5 && ClubeDoUser != "FC Famalicão" ? "bola":
+                angleP > 270 && angleP <= 292.5 && ClubeDoUser == "FC Famalicão" ? "bone":  
 
-                angleP > 292.6 && angleP < 315 && ClubeDoUser != "FC Famalicão" ? "kit":
-                angleP > 292.6 && angleP < 315 && ClubeDoUser == "FC Famalicão" ? "camisolaAlt": 
+                angleP > 292.5 && angleP <= 315 && ClubeDoUser != "FC Famalicão" ? "kit":
+                angleP > 292.5 && angleP <= 315 && ClubeDoUser == "FC Famalicão" ? "mochila": 
 
-                angleP > 315.1 && angleP < 337.5 ? "powerbank": 
+                angleP > 315 && angleP <= 337.5 ? "powerbank": 
 
                // angleP > 337.6 && angleP < 360 ? "seguro":
                 "consultoria";
-
+        console.log("Clube: " + ClubeDoUser);
+        console.log("Resultado: " + resultado);
         sendPremio(resultado);
 }
 

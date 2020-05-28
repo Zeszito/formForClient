@@ -1,11 +1,12 @@
-<?php header('Content-Type: charset=utf-8');
+<?php 
 
+header('Content-Type: charset=utf-8');
 setlocale(LC_ALL, 'Portuguese_Portugal.1252');
    // MAKE SQLI CONNECTION
    $conn = new mysqli("15.188.164.24", "root", "sayhitoevolution", "sabseg_database");
    if($conn->connect_error)
    {
-      die("error:" . $conn->connect_error);
+      die ("error:" . $conn->connect_error);
    } 
 
    mysqli_set_charset($conn, "utf8"); // TA-DA
@@ -17,7 +18,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
    $accountVerify = "SELECT email FROM users WHERE email = '".$email."'";
    if($conn->query($accountVerify)->num_rows == 0)
    {
-      die("NO-Este email não foi ainda registado.");
+      echo ("NO-Este email não foi ainda registado.");
    }
    else
    {
@@ -25,7 +26,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
       $selectUserClub = "SELECT club FROM users WHERE email = '".$email."'";
       if($conn->query($selectUserClub)->num_rows == 0)
       {
-         die("NO-Erro a encontrar club.");
+         echo ("NO-Erro a encontrar club.");
       }
       else
       {
@@ -34,14 +35,14 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
          $selectClub = "SELECT `sponsored` FROM `clubs` WHERE `name` = '".$userClub."'";
          if($conn->query($selectClub)->num_rows == 0)
          {
-            die("NO-Erro a encontrar club do utilizador.");
+            echo ("NO-Erro a encontrar club do utilizador.");
          }
          else
          {
             // 4- Verificar se o club é valido
             if(mysqli_fetch_row($conn->query($selectClub))[0] == 0)
             {
-               die("NO-Club não patrocionado pela sabseg.");
+               echo ("NO-Club não patrocionado pela sabseg.");
             }
             else
             {
@@ -49,7 +50,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
                $selectReward = "SELECT reward FROM users WHERE email = '".$email."' AND reward != '0'";
                if ($conn->query($selectReward)->num_rows > 0) 
                {
-                  die("NO-Voçê já jogou á roleta.");
+                  echo ("NO-''Ups.. Parece que já participou na Roleta SABSEG. Segundo o regulamento do jogo apenas pode participar uma vez.");
                }
                else
                {
@@ -57,7 +58,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
                   $clubResult = $conn->query($clubSelect);
                   if ( $clubResult->num_rows == 0) 
                   {
-                     die("NO-Error a encontrar o club do utilizador.");
+                     echo ("NO-Error a encontrar o club do utilizador.");
                   }
                   else
                   {
@@ -67,7 +68,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
                      $selectRewardCount = "SELECT `reward_count` FROM `clubs` WHERE `name` = '".$club."'";
                      if($conn->query($selectRewardCount)->num_rows <= 0)
                      {
-                        die("NO-Error a encontrar o numero de recompensas do club");
+                        echo ("NO-Error a encontrar o numero de recompensas do club");
                      }
                      else
                      {
@@ -75,7 +76,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
                         $club_reward_count = mysqli_fetch_row($conn->query($selectRewardCount))[0];
                         if($club_reward_count == 0)
                         {
-                           die("NO-O numero de recompensas acabaram, volte no próximo jogo.");
+                           echo ("NO-O numero de recompensas acabaram, volte no próximo jogo.");
                         }
                         else
                         {
@@ -86,7 +87,8 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
                            }
                            else
                            {
-                              echo "OK-" . utf8_encode($club);
+                              //echo "OK-" . utf8_encode($club);
+                              echo "OK-" . $club;
                            }
                         }
                      }
