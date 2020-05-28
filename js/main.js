@@ -120,7 +120,6 @@ function logInClient(){
     })
 }
 
-var nomeDoPremio;
 /**Envia faz Posso Jogar? */
 function play(){
     $.ajax({
@@ -129,11 +128,9 @@ function play(){
         data: {'emailVal': finalEmail },
         success: function (data) {
             result = decodeURIComponent(data);
-            console.log($('.toast-body'));
             if(result.slice(0, 3)==="OK-")
             {
-                nomeDoPremio =result.slice(3); 
-                $("#ModalTitle").text(nomeDoPremio);
+                
                 var min=1080; 
                 var max=1800;  
                 var amount = Math.floor(Math.random() * (+max - +min)) + +min;
@@ -305,7 +302,6 @@ function getCurrentRotation(el)
 function getPrizeToSend(angleP){
     
     let resultado;
-    console.log("Angulo: " + angleP);
     resultado = angleP > 0 && angleP <= 22.5 ? "camisola" :
 
                 angleP > 22.5 && angleP <= 45 ? "cachecol":
@@ -344,8 +340,7 @@ function getPrizeToSend(angleP){
 
                // angleP > 337.6 && angleP < 360 ? "seguro":
                 "consultoria";
-        console.log("Clube: " + ClubeDoUser);
-        console.log("Resultado: " + resultado);
+
         sendPremio(resultado);
 }
 
@@ -361,6 +356,7 @@ function sendPremio(premio){
          
             console.log(result);
             if(result.slice(0,3)==="OK-"){
+                $("#ModalTitle").text(result.slice(3));
                 PrizeModalChange(premio);
                 $('#myModal').modal();
             }else if(result.slice(0, 3)==="NO-"){                
