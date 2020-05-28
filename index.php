@@ -24,7 +24,7 @@
   <div class="container">
     <div class="row warperValid">
 
-     
+    <?php include 'phpComponents/phpErroToast.php' ?>
       <div class="col col-sm-8 offset-sm-2 col-md-8 offset-md-2 rcorner ">
        
 
