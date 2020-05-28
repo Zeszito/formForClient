@@ -1,7 +1,8 @@
 var form = document.querySelector('.needs-validation');
 var wichOne = 1;
 
-var erroDeServidorString ="Erro de servidor, por favor tente mais tarde. Se pressistir, por favor contacte a empresa.";
+
+var erroDeServidorString ="Erro de servidor, por favor tente mais tarde. Se persistir, por favor contacte a empresa.";
 /**Estado inicial de cada elemento */
 $('.noLogIn').find('*').attr('disabled', true);
 $('#nomeVal').attr('disabled', true);
@@ -55,7 +56,7 @@ function whellTransition(){
 /**ENVIA NOVO CLIENTE */
 function newClient() {
     var form = $("#mainForm");
-
+    emailDaSessão = 
    // console.log(("JS ->" + form.serialize()));
 
     $.ajax({
@@ -123,18 +124,20 @@ function play(){
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpPlay.php",
-        data: {'emailVal':$("#emailVal").val() },
+        data: {'emailVal': finalEmail },
         success: function (data) {
             result = decodeURIComponent(data);
-            finalEmail = $("#emailVal").val();
-
-            // AQUI ESTA IGUAL AO TEU?
+            
             if(result.slice(0, 3)==="OK-"){
                 let club =result.slice(3);
-                skinChange(club);
-                $(".RodaAll").show();
-                whellTransition();
                 
+                var min=1080; 
+                var max=1800;  
+                var amount = 
+                Math.floor(Math.random() * (+max - +min)) + +min;
+            
+               spin(amount);
+            
             }else if(result.slice(0, 3)==="NO-"){
                 
                 $('.toast-body').empty();
@@ -150,7 +153,7 @@ function play(){
     })
 }
 
-}
+
 $("#myToast").on("show.bs.toast", function() {
     $(this).removeClass("d-none");
 })
@@ -205,13 +208,7 @@ var $elie = $("#roda");
 /**Atache onclick event */
 $("#prizebtn").on("click", function () {
    
-    var min=1080; 
-    var max=1800;  
-    var amount = 
-    Math.floor(Math.random() * (+max - +min)) + +min;
-
-   spin(amount);
-
+    play();
 });
 
 var ClubeDoUser;
