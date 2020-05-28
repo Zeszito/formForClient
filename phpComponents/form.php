@@ -16,7 +16,8 @@
         <div class="form-group col-md-4">
             <label for="Localidade">Distrito</label>
             <select name="localidadeVal" id="LocalidadeVal" class="form-control form-control-sm">
-                <option selected value="Aveiro">Aveiro</option>
+            <option selected disabled hidden style='display: none' value=''></option> 
+            <option value="Aveiro">Aveiro</option>
                 <option value="Beja">Beja</option>
                 <option value="Braga">Braga</option>
                 <option value="Bragança">Bragança</option>
@@ -51,7 +52,8 @@
         <div class="form-group col-md-6">
             <label for="club">Clube</label>
             <select name="clubVal" id="clubVal" class="form-control form-control-sm">
-                <option selected value="Belenenses SAD">Belenenses SAD</option>
+            <option selected disabled hidden style='display: none' value=''></option>    
+            <option value="Belenenses SAD">Belenenses SAD</option>
                 <option value="Boavista Futebol Clube">Boavista Futebol Clube</option>
                 <option value="Club Sport Marítimo">Club Sport Marítimo</option>
                 <option value="Clube Desportivo das Aves">Clube Desportivo das Aves</option>
