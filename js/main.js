@@ -140,13 +140,13 @@ function HideShowChangeTarget(choose){
         $('#telInput').removeClass("Alternative-Autofill-act");
         $('#telInput').addClass("Alternative-Autofill-De-act");
       
-        $('#enviarFormBtn').text("login");
+        $('#enviarFormBtn').text("Enviar");
        HideForLoging();
    
         wichOne = choose;
     
     }
-    else{ //registo
+    else{ //Registo
         $('.noLogIn').find('*').attr('disabled', false);
         $('#nomeVal').attr('disabled', false);
         $(".AceitoDados").find('input').prop("checked", false);
@@ -158,7 +158,7 @@ function HideShowChangeTarget(choose){
         $('#telInput').addClass("Alternative-Autofill-act");
         $('#telInput').removeClass("Alternative-Autofill-De-act");
 
-        $('#enviarFormBtn').text("registar");
+        $('#enviarFormBtn').text("Registar");
         showForRegist();
         wichOne = choose;
     }
