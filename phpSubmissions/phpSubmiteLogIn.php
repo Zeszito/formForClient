@@ -8,6 +8,8 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
       die("error:" . $conn->connect_error);
    } 
 
+   mysqli_set_charset($conn, "utf8"); // TA-DA
+
    // POSTS
    $email = $_POST['emailVal'];
 
@@ -59,8 +61,35 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
                   }
                   else
                   {
-                     $club = mysqli_fetch_row($clubResult);
-                     echo "OK-".$club[0];
+                     $club = mysqli_fetch_row($clubResult)[0];
+
+                     //Get club remaining rewards
+                     $selectRewardCount = "SELECT `reward_count` FROM `clubs` WHERE `name` = '".$club."'";
+                     if($conn->query($selectRewardCount)->num_rows == 0)
+                     {
+                        die("NO-Error getting club reward count");
+                     }
+                     else
+                     {
+                        //Club reward count
+                        $club_reward_count = mysqli_fetch_row($conn->query($selectRewardCount))[0];
+                        if($club_reward_count == 0)
+                        {
+                           die("NO-No remaining rewards");
+                        }
+                        else
+                        {
+                           $update_club_reward_count = "UPDATE `clubs` SET `reward_count` = $club_reward_count - 1 WHERE `name` = '".$club."'";
+                           if($conn->query($update_club_reward_count) === FALSE)
+                           {
+                              echo("NO-Nao deu update á reward");
+                           }
+                           else
+                           {
+                              echo "OK-" . utf8_encode($club);
+                           }
+                        }
+                     }
                   }
                }
             }
