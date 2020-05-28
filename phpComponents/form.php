@@ -134,4 +134,3 @@
 
 </form>
 
-<?php include 'phpComponents/phpErroToast.php' ?>
