@@ -247,7 +247,8 @@ function Stop(){
 }
 
 /**Funaçao de suport */
-function getCurrentRotation(el){
+function getCurrentRotation(el)
+{
     var st = window.getComputedStyle(el, null);
     var tm = st.getPropertyValue("-webkit-transform") ||
              st.getPropertyValue("-moz-transform") ||
@@ -261,27 +262,48 @@ function getCurrentRotation(el){
       return (angle < 0 ? angle + 360 : angle); 
     }
     return 0;
-  } 
+} 
 
 //**Seitch angulos to prizes */
 function getPrizeToSend(angleP){
     
     let resultado;
-    resultado = angleP > 0 && angleP < 22.5 ? "camisola" : 
-                angleP > 22.6 && angleP < 45 ? "cachecol": 
+    resultado = angleP > 0 && angleP < 22.5 ? "camisola" :
+
+                angleP > 22.6 && angleP < 45 ? "cachecol":
+
                 angleP > 45.1 && angleP < 67.5 ? "seguro": 
-                angleP > 67.6 && angleP < 90 ? "coluna - mochila": 
+
+                angleP > 67.6 && angleP < 90 && ClubeDoUser != "FC Famalicão" ? "coluna": 
+                angleP > 67.6 && angleP < 90 && ClubeDoUser == "FC Famalicão" ? "mochila": 
+
                 angleP > 90.1 && angleP < 112.5 ? "powerbank": 
+
                 angleP > 112.6 && angleP < 135 ? "camisola": 
-                angleP > 135.1 && angleP < 157.5 ? "kit - camisolaAlt": 
+
+                angleP > 135.1 && angleP < 157.5 && ClubeDoUser != "FC Famalicão" ? "kit":
+                angleP > 135.1 && angleP < 157.5 && ClubeDoUser == "FC Famalicão" ? "camisolaAlt": 
+
                 angleP > 157.6 && angleP < 180 ? "consultoria": 
-                angleP > 180.1 && angleP < 202.5 ? "colina": 
-                angleP > 202.6 && angleP < 225 ? "bola - bone": 
+
+                angleP > 180.1 && angleP < 202.5 && ClubeDoUser != "FC Famalicão" ? "coluna": 
+                angleP > 180.1 && angleP < 202.5 && ClubeDoUser == "FC Famalicão" ? "mochila":  
+
+                angleP > 202.6 && angleP < 225 && ClubeDoUser != "FC Famalicão" ? "bola": 
+                angleP > 202.6 && angleP < 225 && ClubeDoUser == "FC Famalicão" ? "bone": 
+
                 angleP > 225.1 && angleP < 247.5 ? "seguro": 
+
                 angleP > 247.6 && angleP < 270 ? "cachecol": 
-                angleP > 270.1 && angleP < 292.5 ? "bola - bone": 
-                angleP > 292.6 && angleP < 315 ? "kit - camisolaAlt": 
+
+                angleP > 270.1 && angleP < 292.5 && ClubeDoUser != "FC Famalicão" ? "bola":
+                angleP > 270.1 && angleP < 292.5 && ClubeDoUser == "FC Famalicão" ? "bone":  
+
+                angleP > 292.6 && angleP < 315 && ClubeDoUser != "FC Famalicão" ? "kit":
+                angleP > 292.6 && angleP < 315 && ClubeDoUser == "FC Famalicão" ? "camisolaAlt": 
+
                 angleP > 315.1 && angleP < 337.5 ? "powerbank": 
+
                // angleP > 337.6 && angleP < 360 ? "seguro":
                 "consultoria";
 
@@ -321,46 +343,47 @@ function PrizeModalChange(stringObjectivo){
     imagePrizeChange(stringObjectivo);
     textModalchange(stringObjectivo);
 }
-// Nao queres começar a usar as funçoes todas com letra grande?
-function imagePrizeChange(stringObjectivo){
-// imagemModalAlvo
- let imagemModalAlvo = $("#imagemModalAlvo");
- switch (stringObjectivo) {
-     case "seguro":
-        imagemModalAlvo.attr("src", "images/prizeImg/seguro auto.svg");
-     break;
-     case "camisola":
-        imagemModalAlvo.attr("src", "images/prizeImg/camisola oficial.svg");
-     break;
-     case "kit - camisolaAlt":
-        if(ClubeDoUser==="FC Famalicão")
-            imagemModalAlvo.attr("src", "images/prizeImg/camisolaAlt.svg");
-        else
-        imagemModalAlvo.attr("src", "images/prizeImg/mochila.svg");
-     break;
-     case "coluna - mochila":
-        if(ClubeDoUser==="FC Famalicão")
-            imagemModalAlvo.attr("src", "images/prizeImg/mochila.svg");
-        else
-        imagemModalAlvo.attr("src", "images/prizeImg/coluna.svg");
-     break;
-     case "bola - bone":
-        if(ClubeDoUser==="FC Famalicão")
-        imagemModalAlvo.attr("src", "images/prizeImg/bone.svg");
-         else
-         imagemModalAlvo.attr("src", "images/prizeImg/bola.svg");
-     break;
-     case "cachecol":
-        imagemModalAlvo.attr("src", "images/prizeImg/cachecol.svg");
-     break;
-     case "consultoria":
-        imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
-     break;
-     case "powerbank":
-        imagemModalAlvo.attr("src", "images/prizeImg/powerbank.svg");
-     break;
-     default:
-         break;
+    // Nao queres começar a usar as funçoes todas com letra grande?
+    function imagePrizeChange(stringObjectivo){
+    // imagemModalAlvo
+    let imagemModalAlvo = $("#imagemModalAlvo");
+    switch (stringObjectivo) 
+    {
+        case "seguro":
+           imagemModalAlvo.attr("src", "images/prizeImg/seguro auto.svg");
+           break;
+        case "camisola":
+           imagemModalAlvo.attr("src", "images/prizeImg/camisola oficial.svg");
+           break;
+        case "kit":
+           imagemModalAlvo.attr("src", "images/prizeImg/mochila.svg");
+           break;
+        case"camisolaAlt":
+           imagemModalAlvo.attr("src", "images/prizeImg/camisolaAlt.svg");
+           break;
+        case "coluna":
+           imagemModalAlvo.attr("src", "images/prizeImg/coluna.svg");
+           break;
+        case "mochila":
+           imagemModalAlvo.attr("src", "images/prizeImg/mochila.svg");
+           break;
+        case "bola":
+           imagemModalAlvo.attr("src", "images/prizeImg/bola.svg");
+           break;
+        case "bone":
+           imagemModalAlvo.attr("src", "images/prizeImg/bone.svg");
+           break;
+        case "cachecol":
+           imagemModalAlvo.attr("src", "images/prizeImg/cachecol.svg");
+           break;
+        case "consultoria":
+           imagemModalAlvo.attr("src", "images/prizeImg/consulta seguro.svg");
+           break;
+        case "powerbank":
+           imagemModalAlvo.attr("src", "images/prizeImg/powerbank.svg");
+           break;
+        default:
+            break;
     }
 }
 
@@ -369,38 +392,37 @@ function textModalchange(stringObjectivo){
     switch (stringObjectivo) {
         case "seguro":
             textoModalAlvo.text("Parabéns! Ganhaste uma anuidade do seguro automóvel. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
-        break;
+            break;
         case "camisola":
             textoModalAlvo.text("Parabéns! Ganhaste a camisola oficial do equipamento principal. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
-        break;
-        case "kit - camisolaAlt":
-            if(ClubeDoUser==="FC Famalicão")
-            textoModalAlvo.text("Parabéns! Ganhaste a camisola oficial do equipamento alternativo. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
-            else
+            break;
+        case "kit":
             textoModalAlvo.text("Parabéns! Ganhaste um Kit do Adepto. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
-        break;
-        case "coluna - mochila":
-            if(ClubeDoUser ==="FC Famalicão")
-            textoModalAlvo.text("Parabéns! Ganhaste uma mochila. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
-            else
+            break;
+        case "camisolaAlt":
+            textoModalAlvo.text("Parabéns! Ganhaste a camisola oficial do equipamento alternativo. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+            break;
+        case "coluna":
             textoModalAlvo.text("Parabéns! Ganhaste uma coluna de som. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
-        break;
-        case "bola - bone":
-            if(ClubeDoUser ==="FC Famalicão")
-            textoModalAlvo.text("Parabéns! Ganhaste um boné. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
-            else
+            break;
+        case "mochila":
+            textoModalAlvo.text("Parabéns! Ganhaste uma mochila. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+            break;
+        case "bola":
             textoModalAlvo.text("Parabéns! Ganhaste uma bola anti-stress. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
-        break;
+            break;
+        case "bone":
+            textoModalAlvo.text("Parabéns! Ganhaste um boné. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+            break;
         case "cachecol":
             textoModalAlvo.text("Parabéns! Ganhaste um cachecol. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
-        break;
+            break;
         case "consultoria":
             textoModalAlvo.text("Parabéns! Ganhaste uma consultoria de todos os teus seguros. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
-        break;
-    
+            break;
         case "powerbank":
             textoModalAlvo.text(" Parabéns! Ganhaste uma powerbank. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
-        break;
+            break;
         default:
             break;
     }

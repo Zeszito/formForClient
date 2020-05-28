@@ -23,7 +23,7 @@
    $updateReward = "UPDATE `users` SET `reward`= '".$reward."' WHERE `email` = '".$email."'";
    if($conn->query($updateReward) === FALSE)
    {
-      echo("NO-Nao deu update á reward");
+      echo("NO-Não deu update á recompensa");
    }
    else
    {
@@ -31,7 +31,7 @@
       $rewardConn = $conn->query($getReward);
       if ($rewardConn->num_rows == 0)
       {
-         echo "NO-Erro a encontrar reward";
+         echo "NO-Erro a encontrar a recompensa";
       }
       else
       {
@@ -41,7 +41,7 @@
          $getRewardName = "SELECT reward_name FROM rewards WHERE index_name = '" . $sqlReward . "'";
          if($conn->query($getRewardName)->num_rows == 0)
          {
-            echo ("NO-Não encontro recompensa na db");
+            echo ("NO-Error a encontrar o nome da recompensa");
          }
          else
          {

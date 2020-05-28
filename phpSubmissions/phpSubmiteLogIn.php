@@ -17,7 +17,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
    $accountVerify = "SELECT email FROM users WHERE email = '".$email."'";
    if($conn->query($accountVerify)->num_rows == 0)
    {
-      die("NO-Este email não foi ainda registado");
+      die("NO-Este email não foi ainda registado.");
    }
    else
    {
@@ -25,7 +25,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
       $selectUserClub = "SELECT club FROM users WHERE email = '".$email."'";
       if($conn->query($selectUserClub)->num_rows == 0)
       {
-         die("NO-Erro a encontrar club");
+         die("NO-Erro a encontrar club.");
       }
       else
       {
@@ -34,14 +34,14 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
          $selectClub = "SELECT `sponsored` FROM `clubs` WHERE `name` = '".$userClub."'";
          if($conn->query($selectClub)->num_rows == 0)
          {
-            die("NO-Erro a encontrar club do utilizador na db");
+            die("NO-Erro a encontrar club do utilizador.");
          }
          else
          {
             // 4- Verificar se o club é valido
             if(mysqli_fetch_row($conn->query($selectClub))[0] == 0)
             {
-               die("NO-Club não patrocionado pela sabseg");
+               die("NO-Club não patrocionado pela sabseg.");
             }
             else
             {
@@ -49,7 +49,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
                $selectReward = "SELECT reward FROM users WHERE email = '".$email."' AND reward != '0'";
                if ($conn->query($selectReward)->num_rows > 0) 
                {
-                  die("NO-Voçê já jogou á roleta");
+                  die("NO-Voçê já jogou á roleta.");
                }
                else
                {
@@ -57,7 +57,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
                   $clubResult = $conn->query($clubSelect);
                   if ( $clubResult->num_rows == 0) 
                   {
-                     die("NO-Error getting club");
+                     die("NO-Error a encontrar o club do utilizador.");
                   }
                   else
                   {
@@ -65,9 +65,9 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
 
                      //Get club remaining rewards
                      $selectRewardCount = "SELECT `reward_count` FROM `clubs` WHERE `name` = '".$club."'";
-                     if($conn->query($selectRewardCount)->num_rows == 0)
+                     if($conn->query($selectRewardCount)->num_rows <= 0)
                      {
-                        die("NO-Error getting club reward count");
+                        die("NO-Error a encontrar o numero de recompensas do club");
                      }
                      else
                      {
@@ -75,14 +75,14 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
                         $club_reward_count = mysqli_fetch_row($conn->query($selectRewardCount))[0];
                         if($club_reward_count == 0)
                         {
-                           die("NO-No remaining rewards");
+                           die("NO-O numero de recompensas acabaram, volte no próximo jogo.");
                         }
                         else
                         {
                            $update_club_reward_count = "UPDATE `clubs` SET `reward_count` = $club_reward_count - 1 WHERE `name` = '".$club."'";
                            if($conn->query($update_club_reward_count) === FALSE)
                            {
-                              echo("NO-Nao deu update á reward");
+                              echo("NO-Nao deu update á reward.");
                            }
                            else
                            {
