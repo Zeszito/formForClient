@@ -65,6 +65,7 @@ function newClient() {
         data: form.serialize(),
         success: function (data) 
         {
+
             result = data;
             if(result.slice(0, 3)==="OK-"){
                 $('#myModalRegisto').modal();
@@ -127,6 +128,7 @@ function play(){
         data: {'emailVal': finalEmail },
         success: function (data) {
             result = decodeURIComponent(data);
+            console.log($('.toast-body'));
             if(result.slice(0, 3)==="OK-")
             {
                 var min=1080; 
