@@ -1,6 +1,6 @@
 <div class="row pusher">
     <div class="col text-right">
-        <a  href="https://ftp.sabseg.com/web-app/celebramosfutebol/passatempos/QA164/Regulamento%20Roleta%20Digital%20SABSEG.pdf" target="_blank" style="color:white">[Regulamento]</a>
+        <a id="pusherGrand" class="regular" href="https://ftp.sabseg.com/web-app/celebramosfutebol/passatempos/QA164/Regulamento%20Roleta%20Digital%20SABSEG.pdf" target="_blank">[Regulamento]</a>
     </div>
 </div>
 <footer class="container-fluid  bbaner ">

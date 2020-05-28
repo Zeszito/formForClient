@@ -258,3 +258,15 @@ footer{
 .pusher{
    padding-top: 28vh;
 }
+
+.regular{
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: #000; /* Fallback for older browsers */
+  color: rgba(0, 0, 0, 0.0);
+}
+.ForShow{
+  color: #fff; /* Fallback for older browsers */
+  color: rgb(255, 255, 255);
+}

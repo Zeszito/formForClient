@@ -111,6 +111,9 @@ function logInClient(){
                 let club =result.slice(3);
                 skinChange(club);
                 $(".RodaAll").show();
+                $("#pusherGrand").removeClass("regular");
+                $("#pusherGrand").addClass("ForShow");
+                $('.pusher').css("padding-top","6vh");
                 whellTransition();
                 
             }else if(result.slice(0, 3)==="NO-"){
