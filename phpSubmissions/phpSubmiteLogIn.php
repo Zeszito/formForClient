@@ -30,71 +30,17 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
       }
       else
       {
-         // 3- Verificar se o club esta na data base
-         $userClub = mysqli_fetch_row($conn->query($selectUserClub))[0];
-         $selectClub = "SELECT `sponsored` FROM `clubs` WHERE `name` = '".$userClub."'";
-         if($conn->query($selectClub)->num_rows == 0)
+         $clubSelect = "SELECT `club` FROM `users` WHERE email = '" . $email . "'";
+         $clubResult = $conn->query($clubSelect);
+         if ( $clubResult->num_rows == 0) 
          {
-            echo ("NO-Erro a encontrar club do utilizador.");
+            echo ("NO-Erro a encontrar o club do utilizador.");
          }
          else
          {
-            // 4- Verificar se o club é valido
-            if(mysqli_fetch_row($conn->query($selectClub))[0] == 0)
-            {
-               echo ("NO-Club não patrocionado pela sabseg.");
-            }
-            else
-            {
-               // 5-Verificar se já jogou
-               $selectReward = "SELECT reward FROM users WHERE email = '".$email."' AND reward != '0'";
-               if ($conn->query($selectReward)->num_rows > 0) 
-               {
-                  echo ("NO-''Ups.. Parece que já participou na Roleta SABSEG. Segundo o regulamento do jogo apenas pode participar uma vez.");
-               }
-               else
-               {
-                  $clubSelect = "SELECT `club` FROM `users` WHERE email = '" . $email . "'";
-                  $clubResult = $conn->query($clubSelect);
-                  if ( $clubResult->num_rows == 0) 
-                  {
-                     echo ("NO-Error a encontrar o club do utilizador.");
-                  }
-                  else
-                  {
-                     $club = mysqli_fetch_row($clubResult)[0];
-
-                     //Get club remaining rewards
-                     $selectRewardCount = "SELECT `reward_count` FROM `clubs` WHERE `name` = '".$club."'";
-                     if($conn->query($selectRewardCount)->num_rows <= 0)
-                     {
-                        echo ("NO-Error a encontrar o numero de recompensas do club");
-                     }
-                     else
-                     {
-                        //Club reward count
-                        $club_reward_count = mysqli_fetch_row($conn->query($selectRewardCount))[0];
-                        if($club_reward_count == 0)
-                        {
-                           echo ("NO-O numero de recompensas acabaram, volte no próximo jogo.");
-                        }
-                        else
-                        {
-                           $update_club_reward_count = "UPDATE `clubs` SET `reward_count` = $club_reward_count - 1 WHERE `name` = '".$club."'";
-                           if($conn->query($update_club_reward_count) === FALSE)
-                           {
-                              echo("NO-Nao deu update á reward.");
-                           }
-                           else
-                           {
-                              //echo "OK-" . utf8_encode($club);
-                              echo "OK-" . $club;
-                           }
-                        }
-                     }
-                  }
-               }
-            }
+            // Clube do utilizador
+            $club = mysqli_fetch_row($clubResult)[0];
+            echo "OK-" . $club;
          }
       }
    }
