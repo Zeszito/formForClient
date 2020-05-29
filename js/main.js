@@ -6,7 +6,8 @@ $(function () {
   });
 
 
-var erroDeServidorString ="Erro de servidor, por favor tente mais tarde. Se persistir, por favor contacte a empresa.";
+var erroDeCliente = "Error, verifique a sua ligação de internet e tente novamente.";
+var erroDeServidorString ="Error a nivel do servidor, por favor tente mais tarde";
 /**Estado inicial de cada elemento */
 $('.noLogIn').find('*').attr('disabled', true);
 $('#nomeVal').attr('disabled', true);
@@ -64,8 +65,7 @@ function whellTransition(){
 /**ENVIA NOVO CLIENTE */
 function newClient() {
     var form = $("#mainForm");
-    emailDaSessão = 
-   // console.log(("JS ->" + form.serialize()));
+
 
     $.ajax({
         type: "POST",
@@ -87,9 +87,15 @@ function newClient() {
             }
             else{
                 $('.toast-body').empty();
-                $('.toast-body').text(erroDeServidorString);
+                $('.toast-body').text(erroDeCliente);
                 $('.toast').toast('show');  
             }
+        },
+        error: function(xhr) {
+            $('.toast-body').empty();
+            $('.toast-body').text(erroDeServidorString);
+            $('.toast').toast('show'); 
+          
         }
     })
 }
@@ -124,9 +130,15 @@ function logInClient(){
             }
             else{
                 $('.toast-body').empty();
-                $('.toast-body').text(erroDeServidorString);
+                $('.toast-body').text(erroDeCliente);
                 $('.toast').toast('show');  
             }
+        },
+        error: function(xhr) {
+            $('.toast-body').empty();
+            $('.toast-body').text(erroDeServidorString);
+            $('.toast').toast('show'); 
+          
         }
     })
 }
@@ -157,9 +169,15 @@ function play(){
             else
             {
                 $('.toast-body').empty();
-                $('.toast-body').text(erroDeServidorString);
+                $('.toast-body').text(erroDeCliente);
                 $('.toast').toast('show');  
             }
+        },
+        error: function(xhr) {
+            $('.toast-body').empty();
+            $('.toast-body').text(erroDeServidorString);
+            $('.toast').toast('show'); 
+          
         }
     })
 }
@@ -379,9 +397,15 @@ function sendPremio(premio){
             }
             else{
                 $('.toast-body').empty();
-                $('.toast-body').text(erroDeServidorString);
+                $('.toast-body').text(erroDeCliente);
                 $('.toast').toast('show');  
             }
+        },
+        error: function(xhr) {
+            $('.toast-body').empty();
+            $('.toast-body').text(erroDeServidorString);
+            $('.toast').toast('show'); 
+          
         }
     })
 }
@@ -524,4 +548,10 @@ document.getElementById("birthDate").setAttribute("max", today);
 //Reload page//
 function reload(){
     location.reload();
+}
+
+
+/**Lidar com erros mais sérios */
+function stringErro(status){
+
 }
