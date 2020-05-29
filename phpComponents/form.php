@@ -1,7 +1,7 @@
 <form method="get" action="" class="main-form needs-validation" id="mainForm" novalidate>
     <div class="form-group">
         <label for="my-input">Email</label>
-        <input type="email" class="form-control form-control-sm" id="emailVal" name="emailVal" required>
+        <input type="email" data-trigger="hover" data-placement="top"  data-toggle="popover"  data-content="Só poderá receber o prémio com um email válido" class="form-control form-control-sm" id="emailVal" name="emailVal" required>
     </div>
     <div class="form-group">
         <label for="my-input" id="nameLabel">Nome</label>
@@ -47,7 +47,7 @@
     <div class="form-row noLogIn">
         <div class="form-group col-md-6">
             <label for="inputEmail4">Telémovel</label>
-            <input data-trigger="hover" data-placement="top"  data-toggle="popover"  data-content="Só poderá receber o prémio com um email válido" id="telInput" name="telemovelVal" type="text"  maxlength="9"  max="9" pattern="[0-9]*" class="form-control form-control-sm">
+            <input  id="telInput" name="telemovelVal" type="text"  maxlength="9"  max="9" pattern="[0-9]*" class="form-control form-control-sm">
         </div>
         <div class="form-group col-md-6">
             <label for="club">Clube</label>
