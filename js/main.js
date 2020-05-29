@@ -19,7 +19,7 @@ $("#enviarFormBtn").attr('disabled', true);
 HideForLoging();
 
 $(".RodaAll").hide();
-
+$('#voltarBtn').hide();
 /**Observo o botao de enviar */
 form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -120,6 +120,7 @@ function logInClient(){
                 $("#pusherGrand").removeClass("regular");
                 $("#pusherGrand").addClass("ForShow");
                 $('.pusher').css("padding-top","6vh");
+                $('#voltarBtn').show();
                 whellTransition();
                 
             }else if(result.slice(0, 3)==="NO-"){

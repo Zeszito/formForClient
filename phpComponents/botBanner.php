@@ -1,4 +1,7 @@
 <div class="row pusher">
+    <div class="col text-left pb-1">
+        <button type="submit" class="btn btn-primary" id="voltarBtn" onclick="reload()">voltar</button>
+    </div>
     <div class="col text-right">
         <a id="pusherGrand" class="regular" href="https://ftp.sabseg.com/web-app/celebramosfutebol/passatempos/QA164/Regulamento%20Roleta%20Digital%20SABSEG.pdf" target="_blank">[Regulamento]</a>
     </div>
@@ -23,16 +26,16 @@
         <div class="col-12 col-sm offset-sm-1">
             <div class="row">
                 <div class="col noPadLR">
-                <a href="#"><img class="img-fluid" src="images\footerImg\footer_facebook.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="images\footerImg\footer_facebook.png" alt=""></a>
                 </div>
                 <div class="col noPadLR">
-                <a href="#"> <img class="img-fluid" src="images\footerImg\footer_instagram_hover.png" alt=""></a>
+                    <a href="#"> <img class="img-fluid" src="images\footerImg\footer_instagram_hover.png" alt=""></a>
                 </div>
                 <div class="col noPadLR">
-                <a href="#">  <img class="img-fluid" src="images\footerImg\footer_linkedin.png" alt=""></a>
+                    <a href="#"> <img class="img-fluid" src="images\footerImg\footer_linkedin.png" alt=""></a>
                 </div>
                 <div class="col noPadLR">
-                <a href="#">  <img class="img-fluid" src="images\footerImg\footer_twitter.png" alt=""></a>
+                    <a href="#"> <img class="img-fluid" src="images\footerImg\footer_twitter.png" alt=""></a>
                 </div>
             </div>
         </div>

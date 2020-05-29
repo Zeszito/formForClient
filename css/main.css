@@ -270,3 +270,14 @@ footer{
   color: #fff; /* Fallback for older browsers */
   color: rgb(255, 255, 255);
 }
+
+#voltarBtn{
+  background-color:#066EB4 !important;
+  font-size: 1.0rem;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  border-radius: 14px;
+  font-weight: 600;
+}

@@ -136,7 +136,7 @@
         </div>
     
         <div class="text-center pb-2 pt-2">
-        <button type="submit" class="btn btn-primary basicBtn" id="enviarFormBtn">Login</button>
+        <button  class="btn btn-primary basicBtn" id="enviarFormBtn">Login</button>
     </div>
 
 </form>
