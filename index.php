@@ -14,6 +14,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+
+  <?php 
+  include 'phpComponents/favicon.php'
+  ?>
   <title>Form question</title>
 </head>
 
