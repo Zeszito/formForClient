@@ -10,10 +10,10 @@
     <div class="row">
         <div class="col-12 col-sm offset-sm-1">
             <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Sobre a SABSEG</a></li>
-                <li><a class="text-muted" href="#">Informação Legal</a></li>
-                <li><a class="text-muted" href="#">Política de Privacidade</a></li>
-                <li><a class="text-muted" href="#">Contactos</a></li>
+                <li><a class="text-muted" href="https://sabseg.com/pt/sobre-nos" target="_blank">Sobre a SABSEG</a></li>
+                <li><a class="text-muted" href="https://sabseg.com/pt/informacao-legal" target="_blank">Informação Legal</a></li>
+                <li><a class="text-muted" href="https://sabseg.com/pt/politica-de-privacidade" target="_blank">Política de Privacidade</a></li>
+                <li><a class="text-muted" href="https://sabseg.com/pt/contactos" target="_blank">Contactos</a></li>
             </ul>
         </div>
         <div class="col-12 col-sm">
@@ -26,16 +26,16 @@
         <div class="col-12 col-sm offset-sm-1">
             <div class="row">
                 <div class="col noPadLR">
-                    <a href="#"><img class="img-fluid" src="images\footerImg\footer_facebook.png" alt=""></a>
+                    <a href="https://www.facebook.com/sabsegseguros" target="_blank"><img class="img-fluid" src="images\footerImg\footer_facebook.png" alt=""></a>
                 </div>
                 <div class="col noPadLR">
-                    <a href="#"> <img class="img-fluid" src="images\footerImg\footer_instagram_hover.png" alt=""></a>
+                    <a href="https://www.instagram.com/sabsegseguros/" target="_blank"> <img class="img-fluid" src="images\footerImg\footer_instagram_hover.png" alt=""></a>
                 </div>
                 <div class="col noPadLR">
-                    <a href="#"> <img class="img-fluid" src="images\footerImg\footer_linkedin.png" alt=""></a>
+                    <a href="https://www.linkedin.com/company/sabseg/" target="_blank"> <img class="img-fluid" src="images\footerImg\footer_linkedin.png" alt=""></a>
                 </div>
                 <div class="col noPadLR">
-                    <a href="#"> <img class="img-fluid" src="images\footerImg\footer_twitter.png" alt=""></a>
+                    <a href="https://twitter.com/sabsegseguros" target="_blank"> <img class="img-fluid" src="images\footerImg\footer_twitter.png" alt=""></a>
                 </div>
             </div>
         </div>
