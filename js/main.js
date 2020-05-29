@@ -58,11 +58,19 @@ b.click(function() {
 c.click(function() {
     CheckTermos();
   });
-function CheckTermos()
+  
+  function CheckTermos()
 {
-  if(a.is(':checked') && b.is(':checked') && c.is(':checked'))
+  if(a.is(':checked') && b.is(':checked') && c.is(':checked')){
     $("#enviarFormBtn").attr('disabled', false);
-  else  $("#enviarFormBtn").attr('disabled', true);
+    $("#enviarFormBtn").css('pointer-events','');
+    $(".popViso").popover('disable');
+  } 
+  else{
+    $("#enviarFormBtn").attr('disabled', true);
+    $("#enviarFormBtn").css('pointer-events','none');
+    $(".popViso").popover('enable');
+  }  
 }
 //-------------------------------------------------------//
 
