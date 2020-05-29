@@ -1,6 +1,18 @@
 /*400 regular
 600 semi bold
 800 bold*/
+#overlayLoad{
+  opacity:1;
+  background-color:#223067;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  z-index:1000;
+}
+
+
 *{
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;

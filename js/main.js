@@ -2,7 +2,8 @@ var form = document.querySelector('.needs-validation');
 var wichOne = 1;
 
 $(function () {
-    $('[data-toggle="popover"]').popover()
+    $('[data-toggle="popover"]').popover();
+    $('#overlayLoad').slideUp();
   });
 
 

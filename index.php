@@ -18,6 +18,7 @@
 </head>
 
 <body>
+<div id="overlayLoad"></div>
   <?php
           include 'phpComponents/topBanner.php'
   ?>
