@@ -17,11 +17,7 @@ $(function () {
     $(window).on('load', autoHeight);
   });
 
-<<<<<<< Updated upstream
-  $('html').click(function(e) {
-=======
 $('html').click(function(e) {
->>>>>>> Stashed changes
     $('.popViso').popover('hide');
 });
 
@@ -32,10 +28,6 @@ $('.popViso').popover({
     $(this).popover('toggle');
     e.stopPropagation();
 });
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
 var erroDeCliente = "Error, verifique a sua ligação de internet e tente novamente.";
 var erroDeServidorString ="Error a nivel do servidor, por favor tente mais tarde";
