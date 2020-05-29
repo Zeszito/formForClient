@@ -17,6 +17,17 @@ $(function () {
     $(window).on('load', autoHeight);
   });
 
+  $('html').click(function(e) {
+    $('.popViso').popover('hide');
+});
+
+$('.popViso').popover({
+    html: true,
+    trigger: 'manual'
+}).click(function(e) {
+    $(this).popover('toggle');
+    e.stopPropagation();
+});
 
 var erroDeCliente = "Error, verifique a sua ligação de internet e tente novamente.";
 var erroDeServidorString ="Error a nivel do servidor, por favor tente mais tarde";
@@ -60,9 +71,16 @@ c.click(function() {
   });
 function CheckTermos()
 {
-  if(a.is(':checked') && b.is(':checked') && c.is(':checked'))
+  if(a.is(':checked') && b.is(':checked') && c.is(':checked')){
     $("#enviarFormBtn").attr('disabled', false);
-  else  $("#enviarFormBtn").attr('disabled', true);
+    $("#enviarFormBtn").css('pointer-events','');
+    $(".popViso").popover('disable');
+  } 
+  else{
+    $("#enviarFormBtn").attr('disabled', true);
+    $("#enviarFormBtn").css('pointer-events','none');
+    $(".popViso").popover('enable');
+  }  
 }
 //-------------------------------------------------------//
 

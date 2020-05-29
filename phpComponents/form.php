@@ -135,8 +135,10 @@
             <label for="my-input" class="form-check-label"><a href="https://ftp.sabseg.com/web-app/celebramosfutebol/passatempos/QA164/Regulamento%20Roleta%20Digital%20SABSEG.pdf" target="_blank"> Li e aceito todos os termos e condições do Regulamento deste passatempo.</a></label>
         </div>
     
-        <div class="text-center pb-2 pt-2">
-        <button  class="btn btn-primary basicBtn" id="enviarFormBtn">Login</button>
+        <div class="text-center pb-2 pt-2 ">
+        <div class="popViso"  data-toggle="popover" data-content="Deve aceitar os termos para continuar" data-placement="top">
+        <button  style="pointer-events: none;" class="btn btn-primary basicBtn" id="enviarFormBtn">Login</button>
+        </div>
     </div>
 
 </form>
