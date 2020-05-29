@@ -18,7 +18,7 @@
   <?php 
   include 'phpComponents/favicon.php'
   ?>
-  <title>Form question</title>
+  <title>SABSEG - Roleta</title>
 </head>
 
 <body>
