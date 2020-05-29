@@ -17,17 +17,6 @@ $(function () {
     $(window).on('load', autoHeight);
   });
 
-  $('html').click(function(e) {
-    $('.popViso').popover('hide');
-});
-
-$('.popViso').popover({
-    html: true,
-    trigger: 'manual'
-}).click(function(e) {
-    $(this).popover('toggle');
-    e.stopPropagation();
-});
 
 var erroDeCliente = "Error, verifique a sua ligação de internet e tente novamente.";
 var erroDeServidorString ="Error a nivel do servidor, por favor tente mais tarde";
@@ -71,16 +60,9 @@ c.click(function() {
   });
 function CheckTermos()
 {
-  if(a.is(':checked') && b.is(':checked') && c.is(':checked')){
+  if(a.is(':checked') && b.is(':checked') && c.is(':checked'))
     $("#enviarFormBtn").attr('disabled', false);
-    $("#enviarFormBtn").css('pointer-events','');
-    $(".popViso").popover('disable');
-  } 
-  else{
-    $("#enviarFormBtn").attr('disabled', true);
-    $("#enviarFormBtn").css('pointer-events','none');
-    $(".popViso").popover('enable');
-  }  
+  else  $("#enviarFormBtn").attr('disabled', true);
 }
 //-------------------------------------------------------//
 
@@ -290,7 +272,7 @@ function skinChange(club){
             $("#roda").attr("src", "images/rodas/vitoriafc.png");
             $("#TopBanner").attr("src", "images/banners/Banner_vitoria_fc.jpg")
             break;
-        case "Clube Sport Marítimo":
+        case "Club Sport Marítimo":
             $("#roda").attr("src", "images/rodas/maritimo.png");
             $("#TopBanner").attr("src", "images/banners/Banner_cs_maritimo.jpg")
             break;
@@ -303,7 +285,7 @@ function skinChange(club){
             $("#TopBanner").attr("src", "images/banners/Banner_cd_tondela.jpg")
             break;
         case "Rio Ave Futebol Clube":
-            $("#roda").attr("src", "images/rodas/rioave");
+            $("#roda").attr("src", "images/rodas/rioave.png");
             $("#TopBanner").attr("src", "images/banners/Banner_rio_ave_fc.jpg")
             break;
 

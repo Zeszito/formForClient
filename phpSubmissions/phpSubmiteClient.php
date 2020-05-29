@@ -70,16 +70,42 @@
           }
           else 
           {
-            // Dados validos, executar registo
-            $sqlCommand = "INSERT INTO `users`(`email`, `name`, `birthDate`, `locality`, `nif`, `cellphone`, `club`, `auto`, `life`, `health`, `house`, `other`, `reward`) 
-            VALUES ('".$email."','".$name."','".$birthDate."','".$locality."','".$nif."','".$cellphone."','".$club."','".$auto."','".$life."','".$health."','".$house."','".$other."','0')";
-            if ($conn->query($sqlCommand) === TRUE) 
+            // 6- Verify if district is valid
+            $select_district = "SELECT `name` FROM `districts` WHERE `name` = '".$locality."'";
+            if($conn->query($select_district)->num_rows == 0)
             {
-              echo "OK-";
+              echo "NO-Ups... Escolha o seu distrito";
             }
             else
             {
-              echo "NO-Não foi possivel inserir os dados na base de dados, tente mais tarde.";
+              // 7- Verify if club is valid
+              $select_club = "SELECT `name` FROM `clubs` WHERE `name` = '".$club."'";
+              if($conn->query($select_club)->num_rows == 0)
+              {
+                echo "NO-Ups... Escolha o seu clube.";
+              }
+              else 
+              {
+                // 8- Verify if date is valid
+                if(!birthdate_isvalid($birthDate))
+                {
+                  echo "NO-Ups... Insira uma data de nascimento válida.";
+                }
+                else
+                {
+                  // Dados validos, executar registo
+                  $sqlCommand = "INSERT INTO `users`(`email`, `name`, `birthDate`, `locality`, `nif`, `cellphone`, `club`, `auto`, `life`, `health`, `house`, `other`, `reward`) 
+                  VALUES ('".$email."','".$name."','".$birthDate."','".$locality."','".$nif."','".$cellphone."','".$club."','".$auto."','".$life."','".$health."','".$house."','".$other."','0')";
+                  if ($conn->query($sqlCommand) === TRUE) 
+                  {
+                    echo "OK-";
+                  }
+                  else
+                  {
+                    echo "NO-Não foi possivel inserir os dados na base de dados, tente mais tarde.";
+                  }
+                }
+              }
             }
           }
         }
@@ -87,6 +113,24 @@
     }
   }
 
+  function birthdate_isvalid($date)
+  {
+    if($date == "")
+    {
+      return false;
+    }
+
+    $bday = new DateTime($date);
+    $bday->add(new DateInterval("P18Y")); //adds time interval of 18 years to bday  
+    if($bday < new DateTime())
+    {   
+        return true;
+    }
+    else
+    {  
+        return false;
+    }
+  }
 
   function phonenumber_isvalid($nr)
   {
@@ -105,6 +149,16 @@
   }
   function binif_isvalid($nr)
   {
+    if(mb_strlen($nr) != 9)
+    {
+      return false;
+    }
+
+    if (!ctype_digit($nr)) 
+    {
+      return false;
+    }
+
     while (strlen($nr) < 9) 
     {
        $nr = "0" . $nr;

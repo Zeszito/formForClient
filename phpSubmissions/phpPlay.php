@@ -42,7 +42,7 @@
                 // 4- Verificar se o club é valido
                 if(mysqli_fetch_row($conn->query($selectClub))[0] == 0)
                 {
-                    echo ("NO-Ups... o seu clube não é patrocionado pela SABSEG.");
+                    echo ("NO-Ups...Desculpa, mas não reúnes todos os termos e condições do regulamento deste passatempo.");
                 }
                 else
                 {
