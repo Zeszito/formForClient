@@ -4,6 +4,17 @@ var wichOne = 1;
 $(function () {
     $('[data-toggle="popover"]').popover();
     $('#overlayLoad').slideUp();
+
+
+    function autoHeight() {
+        var h = $(document).height() - $('body').height();
+        if (h > 0) {
+            $('.pusher').css({
+                marginTop: h
+            });
+        }
+    }
+    $(window).on('load', autoHeight);
   });
 
 
