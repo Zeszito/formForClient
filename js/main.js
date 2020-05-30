@@ -84,9 +84,7 @@ c.click(function() {
   }  
 }
 //-------------------------------------------------------//
-
-
-//**SHOWS WHELL */
+//**SHOWS WHEEL */
 function whellTransition(){
  
        $(".rcorner").animate({bottom:-200, opacity:0}, 1000,
@@ -584,6 +582,11 @@ function stringErro(status){
 }
 
 /**funções de controlo de respostas para a roda */
+
+
+
+
+
 function prizeDegrees(prizeIdentificator) {
     let twoChoice = randomNumber(1,3);
     switch (prizeIdentificator) {
