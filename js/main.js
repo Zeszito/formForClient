@@ -185,12 +185,7 @@ function play(){
             result = decodeURIComponent(data);
             if(result.slice(0, 3)==="OK-")
             {
-                
-                var min=1080; 
-                var max=1800;  
-                var amount = Math.floor(Math.random() * (+max - +min)) + +min;
-            
-                spin(amount);
+                spin(finalPostion(result.slice(3)));
             }
             else if(result.slice(0, 3)==="NO-")
             {
@@ -202,7 +197,7 @@ function play(){
             {
                 $('.toast-body').empty();
                 $('.toast-body').text(erroDeCliente);
-                $('.toast').toast('show');  
+                $('.toast').toast('show');
             }
         },
         error: function(xhr) {
@@ -586,4 +581,98 @@ function reload(){
 /**Lidar com erros mais sérios */
 function stringErro(status){
 
+}
+
+/**funções de controlo de respostas para a roda */
+function prizeDegrees(prizeIdentificator) {
+    let twoChoice = randomNumber(1,3);
+    switch (prizeIdentificator) {
+        case "camisola":
+            if(twoChoice==1)
+            return 11.25;
+            if(twoChoice==2)
+            return 123.75;
+            break;
+        case "cachecol":
+            if(twoChoice==1)
+            return 33.75;
+            if(twoChoice==2)
+            return 358.75;
+            break;
+        case "seguro":
+            if(twoChoice==1)
+            return 56.25;
+            if(twoChoice==2)
+            return 236.25;
+            break;
+        case "coluna":
+            if(twoChoice==1)
+            return 78.75;
+            if(twoChoice==2)
+            return 191.25;
+            break;
+        case "camisolaAlt":
+            if(twoChoice==1)
+            return 78.75;
+            if(twoChoice==2)
+            return 191.25;
+            break;
+        case "powerbank":
+            if(twoChoice==1)
+            return 101.25;
+            if(twoChoice==2)
+            return 326.25;
+            break;
+        case "kit":
+            if(twoChoice==1)
+            return 146.25;
+            if(twoChoice==2)
+            return 303.75;
+            break;
+        case "bone":
+            if(twoChoice==1)
+            return 146.25;
+            if(twoChoice==2)
+            return 281.25;
+            break;
+        case "consultoria":
+            if(twoChoice==1)
+            return 168.75;
+            if(twoChoice==2)
+            return 348.75;
+            break;
+        case "bola":
+            if(twoChoice==1)
+            return 213.75;
+            if(twoChoice==2)
+            return 281.25;
+            break;
+        case "mochila":
+            if(twoChoice==1)
+            return 213.75;
+            if(twoChoice==2)
+            return 303.75;
+            break;
+        default:
+            break;
+    }
+}
+
+function randomlaps(){
+    let randomLaps;
+ 
+    let random = randomNumber(1,4);
+
+    randomLaps = random * 360;
+    return randomLaps;
+}
+
+function randomNumber(min,max){
+    let random = 
+    Math.floor(Math.random() * (+max - +min)) + +min; 
+    return random;
+}
+
+function finalPostion(prizeIdentificator){
+    return prizeDegrees(prizeIdentificator) + randomlaps();
 }
