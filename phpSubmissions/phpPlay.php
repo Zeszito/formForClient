@@ -79,8 +79,6 @@
                                 }
                                 else
                                 {
-                                    echo "NO-entrou";
-
                                     $select_consultoria_count = "SELECT `consultoria_count` FROM `clubs` WHERE `name` = '".$club."'";
                                     $select_camisola_count    = "SELECT `camisola_count` FROM `clubs` WHERE `name` = '".$club."'";
                                     $select_kit_count         = "SELECT `kit_count` FROM `clubs` WHERE `name` = '".$club."'";
