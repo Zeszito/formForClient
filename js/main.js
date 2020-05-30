@@ -369,7 +369,7 @@ function getPrizeToSend(angleP){
 
                 angleP > 22.5 && angleP <= 45 ? "cachecol":
 
-                angleP > 45.5 && angleP <= 67.5 ? "seguro": 
+                angleP > 45 && angleP <= 67.5 ? "seguro": 
 
                 angleP > 67.5 && angleP <= 90 && ClubeDoUser != "FC Famalicão" ? "coluna": 
                 angleP > 67.5 && angleP <= 90 && ClubeDoUser == "FC Famalicão" ? "camisolaAlt": 
