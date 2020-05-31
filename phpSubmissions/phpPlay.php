@@ -73,22 +73,22 @@
                             {
                                 //Club reward count
                                 $club_reward_count = mysqli_fetch_row($conn->query($selectRewardCount))[0];
-                                if($club_reward_count == 0)
+                                if($club_reward_count <= 0)
                                 {
                                     echo ("NO-O numero de recompensas acabaram, volte a jogar no próximo jogo do seu clube.");
                                 }
                                 else
                                 {
-                                    $select_consultoria_count = "SELECT `consultoria_count` FROM `clubs` WHERE `name` = '".$club."'";
-                                    $select_camisola_count    = "SELECT `camisola_count` FROM `clubs` WHERE `name` = '".$club."'";
-                                    $select_kit_count         = "SELECT `kit_count` FROM `clubs` WHERE `name` = '".$club."'";
-                                    $select_cachecol_count    = "SELECT `cachecol_count` FROM `clubs` WHERE `name` = '".$club."'";
-                                    $select_bola_count        = "SELECT `bola_count` FROM `clubs` WHERE `name` = '".$club."'";
-                                    $select_powerbank_count   = "SELECT `powerbank_count` FROM `clubs` WHERE `name` = '".$club."'";
-                                    $select_coluna_count      = "SELECT `coluna_count` FROM `clubs` WHERE `name` = '".$club."'";
-                                    $select_camisolaAlt_count = "SELECT `camisolaAlt_count` FROM `clubs` WHERE `name` = '".$club."'";
-                                    $select_bone_count        = "SELECT `bone_count` FROM `clubs` WHERE `name` = '".$club."'";
-                                    $select_mochila_count     = "SELECT `mochila_count` FROM `clubs` WHERE `name` = '".$club."'";
+                                    $select_consultoria_count = "SELECT `consultoria` FROM `clubs` WHERE `name` = '".$club."'";
+                                    $select_camisola_count = "SELECT `camisola` FROM `clubs` WHERE `name` = '".$club."'";
+                                    $select_kit_count = "SELECT `kit` FROM `clubs` WHERE `name` = '".$club."'";
+                                    $select_cachecol_count = "SELECT `cachecol` FROM `clubs` WHERE `name` = '".$club."'";
+                                    $select_bola_count = "SELECT `bola` FROM `clubs` WHERE `name` = '".$club."'";
+                                    $select_powerbank_count = "SELECT `powerbank` FROM `clubs` WHERE `name` = '".$club."'";
+                                    $select_coluna_count = "SELECT `coluna` FROM `clubs` WHERE `name` = '".$club."'";
+                                    $select_camisolaAlt_count = "SELECT `camisolaAlt` FROM `clubs` WHERE `name` = '".$club."'";
+                                    $select_bone_count = "SELECT `bone` FROM `clubs` WHERE `name` = '".$club."'";
+                                    $select_mochila_count = "SELECT `mochila` FROM `clubs` WHERE `name` = '".$club."'";
 
                                     $consultoria_count = mysqli_fetch_row($conn->query($select_consultoria_count))[0];
                                     $camisola_count = mysqli_fetch_row($conn->query($select_camisola_count))[0];
@@ -103,28 +103,47 @@
 
                                     $array = array();
                                     
-                                    for ($i=0; $i < $consultoria_count; $i++) { $array[] = "consultoria"; }
-                                    for ($i=0; $i < $camisola_count; $i++) { $array[] = "camisola"; }
-                                    for ($i=0; $i < $kit_count; $i++) { $array[] = "kit"; }
-                                    for ($i=0; $i < $cachecol_count; $i++) { $array[] = "cachecol"; }
-                                    for ($i=0; $i < $bola_count; $i++) { $array[] = "bola"; }
-                                    for ($i=0; $i < $powerbank_count; $i++) { $array[] = "powerbank"; }
-                                    for ($i=0; $i < $coluna_count; $i++) { $array[] = "coluna"; }
-                                    for ($i=0; $i < $camisolaAlt_count; $i++) { $array[] = "camisolaAlt"; }
-                                    for ($i=0; $i < $bone_count; $i++) { $array[] = "bone"; }
-                                    for ($i=0; $i < $mochila_count; $i++) { $array[] = "mochila"; }
+                                    for ($i=0; $i < $consultoria_count; $i++){ $array[] = "consultoria"; }
+                                    for ($i=0; $i < $camisola_count; $i++){ $array[] = "camisola"; }
+                                    for ($i=0; $i < $kit_count; $i++){ $array[] = "kit"; }
+                                    for ($i=0; $i < $cachecol_count; $i++){ $array[] = "cachecol"; }
+                                    for ($i=0; $i < $bola_count; $i++){ $array[] = "bola"; }
+                                    for ($i=0; $i < $powerbank_count; $i++){ $array[] = "powerbank"; }
+                                    for ($i=0; $i < $coluna_count; $i++){ $array[] = "coluna"; }
+                                    for ($i=0; $i < $camisolaAlt_count; $i++){ $array[] = "camisolaAlt"; }
+                                    for ($i=0; $i < $bone_count; $i++){ $array[] = "bone"; }
+                                    for ($i=0; $i < $mochila_count; $i++){ $array[] = "mochila"; }
 
                                     $rand_key = array_rand($array, 1);
+                                    $reward = $array[$rand_key];
 
-                                    $update_club_reward_decremented = "UPDATE `clubs` SET `reward_count` = $club_reward_count - 1 WHERE `name` = '".$club."'";
-                                    $update_club_reward_count = "UPDATE `clubs` SET `reward_count` = $club_reward_count - 1 WHERE `name` = '".$club."'";
-                                    if($conn->query($update_club_reward_count) === FALSE)
+                                    if($reward == "consultoria") {$update_club_decrement_reward = "UPDATE `clubs` SET `consultoria` = $consultoria_count - 1 WHERE `name` = '".$club."'";}
+                                    else if($reward == "camisola") {$update_club_decrement_reward = "UPDATE `clubs` SET `camisola` = $camisola_count - 1 WHERE `name` = '".$club."'";}
+                                    else if($reward == "kit") {$update_club_decrement_reward = "UPDATE `clubs` SET `kit` = $kit_count - 1 WHERE `name` = '".$club."'";}
+                                    else if($reward == "cachecol") {$update_club_decrement_reward = "UPDATE `clubs` SET `cachecol` = $cachecol_count - 1 WHERE `name` = '".$club."'";}
+                                    else if($reward == "bola") {$update_club_decrement_reward = "UPDATE `clubs` SET `bola` = $bola_count - 1 WHERE `name` = '".$club."'";}
+                                    else if($reward == "powerbank") {$update_club_decrement_reward = "UPDATE `clubs` SET `powerbank` = $powerbank_count - 1 WHERE `name` = '".$club."'";}
+                                    else if($reward == "coluna") {$update_club_decrement_reward = "UPDATE `clubs` SET `coluna` = $coluna_count - 1 WHERE `name` = '".$club."'";}
+                                    else if($reward == "camisolaAlt") {$update_club_decrement_reward = "UPDATE `clubs` SET `camisolaAlt` = $camisolaAlt_count - 1 WHERE `name` = '".$club."'";}
+                                    else if($reward == "bone") {$update_club_decrement_reward = "UPDATE `clubs` SET `bone` = $bone_count - 1 WHERE `name` = '".$club."'";}
+                                    else if($reward == "mochila") {$update_club_decrement_reward = "UPDATE `clubs` SET `mochila` = $mochila_count - 1 WHERE `name` = '".$club."'";}
+                                    else { echo "NO-Ups erro a jogar, tente novamente.";die;}
+
+                                    if($conn->query($update_club_decrement_reward) === FALSE)
                                     {
-                                        echo("NO-Não deu update á reward.");
+                                        echo("NO-Ups erro a jogar, tente novamente.");
                                     }
                                     else
                                     {
-                                        echo "OK-" . $array[$rand_key];
+                                        $update_club_reward_count = "UPDATE `clubs` SET `reward_count` = $club_reward_count - 1 WHERE `name` = '".$club."'";
+                                        if($conn->query($update_club_reward_count) === FALSE)
+                                        {
+                                            echo("NO-Não deu update á reward.");
+                                        }
+                                        else
+                                        {
+                                            echo "OK-" . $reward;
+                                        }
                                     }
                                 }
                             }
