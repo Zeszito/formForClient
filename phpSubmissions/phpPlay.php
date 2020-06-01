@@ -35,7 +35,7 @@
             $selectClub = "SELECT `sponsored` FROM `clubs` WHERE `name` = '".$userClub."'";
             if($conn->query($selectClub)->num_rows == 0)
             {
-               echo ("NO-Erro a encontrar club do utilizador.");
+               echo ("NO-Ups...Desculpa, mas não reúnes todos os termos e condições do regulamento deste passatempo.");
             }
             else
             {
