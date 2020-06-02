@@ -128,10 +128,17 @@
                     $mail->Body = "<pre>Olá,
                     
 Desde já obrigado pelo teu interesse na Roleta Digital SABSEG.
-Os teus dados foram submetidos com sucesso. 
+Os teus dados foram submetidos com sucesso, pelo que te encontras registado no <b>Celebramos Futebol</b>, um site dedicado a todos os verdadeiros adeptos de futebol!
 
-Esperemos que te divirtas com a nossa Roleta!
-Mantem-te atento ao <a href='www.celebramosfutebol.sabseg.com'>www.celebramosfutebol.sabseg.com</a> e não percas os prémios exclusivos que temos para te oferecer.
+Para teres acesso a prémios exclusivos do teu clube, basta ativares a tua conta e definires uma password através deste link: <a href='www.celebramosfutebol.sabseg.com'>www.celebramosfutebol.sabseg.com</a>
+
+Aproveitamos este email para te dar a conhecer melhor o nosso site:
+
+(1)O <b>Celebramos Futebol</b> disponibiliza-te vários passatempos exclusivos do teu clube;
+(2)Em todos os passatempos oferecemos-te prémios únicos do teu clube;
+(3)Depois de efetuares uma participação num dos nossos passatempos, deves consultar com regularidade as nossas redes sociais e a tua caixa de e-mail, pois é por estes meios que vamos comunicar contigo;
+(4)Sempre que necessitares de ajuda, consulta todas as informações que disponibilizamos online ou contacta-nos através de <a href='celebramosfutebol@sabseg.pt'>celebramosfutebol@sabseg.pt</a>.
+
 
 Junta-te a nós e vive experiências inesquecíveis.
 O futebol é a paixão que nos une.
