@@ -19,7 +19,7 @@
         <div class="col-12 col-sm">
             <div class="row">
                 <div class="col mb-4 mb-md-0">
-                    <img class="img-resposnive lgDark mx-auto d-block" src="images\footerImg\Logo_Icon_Dark.svg" alt="">
+                    <img class="img-resposnive lgDark mx-auto d-block" height="60px" width="60px" src="images\footerImg\Logo_Icon_Dark.svg" alt="">
                 </div>
             </div>
         </div>
