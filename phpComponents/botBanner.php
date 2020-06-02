@@ -8,22 +8,22 @@
 </div>
 <footer class="container-fluid  bbaner ">
     <div class="row">
-        <div class="col-12 col-sm offset-sm-1">
-            <ul class="list-unstyled text-small">
+        <div class="col-12 col-sm ">
+            <ul class="list-unstyled text-small text-center text-md-left">
                 <li><a class="text-muted" href="https://sabseg.com/pt/sobre-nos" target="_blank">Sobre a SABSEG</a></li>
                 <li><a class="text-muted" href="https://sabseg.com/pt/informacao-legal" target="_blank">Informação Legal</a></li>
                 <li><a class="text-muted" href="https://sabseg.com/pt/politica-de-privacidade" target="_blank">Política de Privacidade</a></li>
                 <li><a class="text-muted" href="https://sabseg.com/pt/contactos" target="_blank">Contactos</a></li>
             </ul>
         </div>
-        <div class="col-12 col-sm">
+        <div class="col-12 col-sm ">
             <div class="row">
                 <div class="col mb-4 mb-md-0">
                     <img class="img-resposnive lgDark mx-auto d-block" height="60px" width="60px" src="images\footerImg\Logo_Icon_Dark.svg" alt="">
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm offset-sm-1">
+        <div class="col-12 col-sm  text-center">
             <div class="row">
                 <div class="col noPadLR">
                     <a href="https://www.facebook.com/sabsegseguros" target="_blank"><img class="img-fluid" src="images\footerImg\footer_facebook.png" alt=""></a>
