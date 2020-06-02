@@ -1,5 +1,7 @@
 <?php 
 
+
+
 header('Content-Type: charset=utf-8');
 setlocale(LC_ALL, 'Portuguese_Portugal.1252');
    // MAKE SQLI CONNECTION

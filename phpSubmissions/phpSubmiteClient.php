@@ -2,6 +2,14 @@
 
   setlocale(LC_ALL, 'Portuguese_Portugal.1252');
 
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
+  
+  require '/opt/lampp/htdocs/roleta/phpSubmissions/phpmailer/src/Exception.php';
+  require '/opt/lampp/htdocs/roleta/phpSubmissions/phpmailer/src/PHPMailer.php';
+  require '/opt/lampp/htdocs/roleta/phpSubmissions/phpmailer/src/SMTP.php';
+
+
   // Make connection to database
   $conn = new mysqli("15.188.164.24", "root", "sayhitoevolution", "sabseg_database");
   if($conn->connect_error)
@@ -98,7 +106,47 @@
                   VALUES ('".$email."','".$name."','".$birthDate."','".$locality."','".$nif."','".$cellphone."','".$club."','".$auto."','".$life."','".$health."','".$house."','".$other."','0')";
                   if ($conn->query($sqlCommand) === TRUE) 
                   {
-                    echo "OK-";
+
+                    //Send email
+                    $mail = new PHPMailer();
+                    $mail->IsSMTP(); // enable SMTP
+                    //$mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
+                    $mail->SMTPAuth = true; // authentication enabled
+                    //$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+                    $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
+                    $mail->Host = "smtp.live.com";
+                    //$mail->Host = "smtp.live.com";
+                    $mail->Port = 587; // 465 or 587
+                    $mail->IsHTML(true);
+                    $mail->Username = "celebramosfutebol@sabseg.pt";
+                    $mail->Password = "Corretor1722";
+                    $mail->SetFrom("celebramosfutebol@sabseg.pt");
+                    //$mail->Username = "hivolvept@gmail.com";
+                    //$mail->Password = "sayhitoevolutionemail";
+                    //$mail->SetFrom("hivolvept@gmail.com");
+                    $mail->Subject = "Celebramos Futebol | SABSEG Seguros: Roleta Digital SABSEG";
+                    $mail->Body = "<pre>Olá,
+                    
+Desde já obrigado pelo teu interesse na Roleta Digital SABSEG.
+Os teus dados foram submetidos com sucesso. 
+
+Esperemos que te divirtas com a nossa Roleta!
+Mantem-te atento ao <a href='www.celebramosfutebol.sabseg.com'>www.celebramosfutebol.sabseg.com</a> e não percas os prémios exclusivos que temos para te oferecer.
+
+Junta-te a nós e vive experiências inesquecíveis.
+O futebol é a paixão que nos une.
+
+<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
+                    $mail->AddAddress($email);
+
+                    if(!$mail->Send()) 
+                    {
+                      echo "NO-Mailer error: " . $mail->ErrorInfo;
+                    } 
+                    else 
+                    {
+                       echo "OK-";
+                    }
                   }
                   else
                   {
