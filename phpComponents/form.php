@@ -47,7 +47,7 @@
     <div class="form-row noLogIn">
         <div class="form-group col-md-6">
             <label for="inputEmail4">Telémovel</label>
-            <input  id="telInput" name="telemovelVal" type="text"  maxlength="9"  max="9" pattern="[0-9]*" class="form-control form-control-sm">
+            <input  id="telInput" oninput="checkTele()" name="telemovelVal" type="text"  maxlength="9"  max="9" pattern="[0-9]*" class="form-control form-control-sm">
         </div>
         <div class="form-group col-md-6">
             <label for="club">Clube</label>

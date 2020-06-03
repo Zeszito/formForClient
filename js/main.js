@@ -544,16 +544,16 @@ function showForRegist(){
 }
 
 //control FOR THE FORMS//
-$('input[name="telemovelVal"]').keydown(function() {
-    $('#telInput').css("background-color","rgba(255, 25, 25, 0.46)");
+function checkTele(){
     
-    if (this.value.length == 9 && (this.value.charAt(0) == 9 || this.value.charAt(0) == 2)) {
-        $('#telInput').css("background-color","rgba(25, 255, 25, 0.46)");
+    console.log($('#telInput').val());
+    if ($('#telInput').val().length == 9 && ($('#telInput').val().charAt(0) == 9 || $('#telInput').val().charAt(0) == 2)) {
+        $('#telInput').css("background-color","#D6E8F8");
     }
     else{
         $('#telInput').css("background-color","rgba(255, 25, 25, 0.46)");
     }
-});
+};
 
 //MAX DATE 
 var today = new Date();
