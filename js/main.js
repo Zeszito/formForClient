@@ -178,7 +178,7 @@ function play(){
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpPlay.php",
-        data: {'emailVal': finalEmail },
+        data: {'emailVal': finalEmail , 'clubVal': ClubeDoUser},
         success: function (data) {
             result = decodeURIComponent(data);
             if(result.slice(0, 3)==="OK-")
@@ -187,18 +187,31 @@ function play(){
             }
             else if(result.slice(0, 3)==="NO-")
             {
+                $("#ToasTitle").text("Erro");
                 $('.toast-body').empty();
                 $('.toast-body').text(result.slice(3));
                 $('.toast').toast('show');  
             }
+            else if(result.slice(0, 3)==="W8-")
+            {
+                $('.toast-body').empty();
+                $("#ToasTitle").text("Preparando a Roleta");
+                $('.toast-body').text("Por favor aguarde.");
+                $('.toast').toast('show'); 
+                setTimeout(function(){ 
+                    play(); 
+                }, 250);
+            }
             else
             {
+                $("#ToasTitle").text("Erro");
                 $('.toast-body').empty();
                 $('.toast-body').text(erroDeCliente);
                 $('.toast').toast('show');
             }
         },
         error: function(xhr) {
+            $("#ToasTitle").text("Erro");
             $('.toast-body').empty();
             $('.toast-body').text(erroDeServidorString);
             $('.toast').toast('show'); 
