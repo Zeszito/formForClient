@@ -133,7 +133,6 @@
                                     if($conn->query($update_club_decrement_reward) === FALSE)
                                     {
                                         echo("W8-Ups... Tente novamente.");
-                                        die;
                                     }
                                     else
                                     {
@@ -145,7 +144,6 @@
                                         else*/
                                         {
                                             echo "OK-" . $reward;
-                                            die;
                                         }
                                     }
                                 }
