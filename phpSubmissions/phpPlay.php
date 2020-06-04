@@ -75,7 +75,7 @@
                                 $club_reward_count = mysqli_fetch_row($conn->query($selectRewardCount))[0];
                                 if($club_reward_count <= 0)
                                 {
-                                    echo ("NO-O numero de recompensas acabaram, volte a jogar no próximo jogo do seu clube.");
+                                    echo ("NO-Ups...O número máximo de participações já foi atingido. Fica atento nas próximas jornadas e tenta a tua sorte!");
                                 }
                                 else
                                 {

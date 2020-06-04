@@ -69,103 +69,103 @@
             // CAMISOLA
             if($sqlReward == "camisola")
             {
-               $mail->Body = "<pre>Olá,
+               $mail->Body = "Ola,
 
-Desde já agradecemos a tua participação na Roleta Digital SABSEG!
-O prémio que ganhaste, através da nossa Roleta, foi: $sqlRewardName
+<p>Desde ja agradecemos a tua participacao na Roleta Digital SABSEG!<br>
+O premio que ganhaste, atravs da nossa Roleta, foi: $sqlRewardName</p>
 
-Para receberes o prémio, por favor, responde a este e-mail indicando-nos o tamanho pretendido e a morada para onde devemos enviar o prémio. Todos os prémios vão ser enviados por correio.
+<p>Para receberes o premio, por favor, responde a este e-mail indicando-nos o tamanho pretendido e a morada para onde devemos enviar o prémio. Todos os premios vao ser enviados por correio.</p>
 
-Após recebermos o teu e-mail vamos entrar em contacto contigo confirmando o prémio e a indicação da morada. 
+<p>Apos recebermos o teu e-mail vamos entrar em contacto contigo confirmando o premio e a indicacao da morada.</p>
 
-Posteriormente, quando efetuarmos o envio para a tua morada, receberás, também, um e-mail com essa indicação!
+<p>Posteriormente, quando efetuarmos o envio para a tua morada, receberas, tambem, um e-mail com essa indicacao!</p>
 
-Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.
+<p>Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.</p>
 
 
-Junta-te a nós e vive experiências inesquecíveis.
-O futebol é a paixão que nos une.
+<p>Junta-te a nós e vive experiencias inesqueciveis.<br>
+O futebol é a paixao que nos une.</p>
 
-<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
+<p><b>Celebramos o Futebol | SABSEG Seguros</b></p>";
             }
             // CAMISOLA ALTERNATIVA
             else if($sqlReward == "camisolaAlt")
             {
-               $mail->Body = "<pre>Olá,
+               $mail->Body = "Ola,
 
-Desde já agradecemos a tua participação na Roleta Digital SABSEG!
-O prémio que ganhaste, através da nossa Roleta, foi: $sqlRewardName
+<p>Desde ja agradecemos a tua participacao na Roleta Digital SABSEG!<br>
+O premio que ganhaste, atraves da nossa Roleta, foi: $sqlRewardName</p>
 
-Para receberes o prémio, por favor, responde a este e-mail indicando-nos o tamanho pretendido e a morada para onde devemos enviar o prémio. Todos os prémios vão ser enviados por correio.
+<p>Para receberes o premio, por favor, responde a este e-mail indicando-nos o tamanho pretendido e a morada para onde devemos enviar o premio. Todos os premios vao ser enviados por correio.</p>
 
-Após recebermos o teu e-mail vamos entrar em contacto contigo confirmando o prémio e a indicação da morada. 
+<p>Após recebermos o teu e-mail vamos entrar em contacto contigo confirmando o premio e a indicacao da morada.</p> 
 
-Posteriormente, quando efetuarmos o envio para a tua morada, receberás, também, um e-mail com essa indicação!
+<p>Posteriormente, quando efetuarmos o envio para a tua morada, receberas, tambem, um e-mail com essa indicacao!</p>
 
-Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.
+<p>Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.</p>
 
 
-Junta-te a nós e vive experiências inesquecíveis.
-O futebol é a paixão que nos une.
+<p>Junta-te a nos e vive experiencias inesqueciveis.<br>
+O futebol e a paixao que nos une.</p>
 
-<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
+<p><b>Celebramos o Futebol | SABSEG Seguros</b></p>";
             }
             // SEGURO AUTOMOVEL
             else if($sqlReward == "seguro")
             {
-               $mail->Body = "<pre>Olá,
+               $mail->Body = "Ola,
 
-Desde já agradecemos a tua participação na Roleta Digital SABSEG!
-O prémio que ganhaste, através da nossa Roleta, foi: $sqlRewardName (oferta da primeira anuidade)
+<p>Desde ja agradecemos a tua participação na Roleta Digital SABSEG!<br>
+O premio que ganhaste, atraves da nossa Roleta, foi: $sqlRewardName (oferta da primeira anuidade)</p>
 
-Para receberes o prémio, por favor, responde a este e-mail demonstrando interesse pelo mesmo. Após recebermos o teu e-mail vamos entrar em contacto contigo! 
+<p>Para receberes o premio, por favor, responde a este e-mail demonstrando interesse pelo mesmo. Apos recebermos o teu e-mail vamos entrar em contacto contigo!</p>
 
-Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.
+<p>Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.</p>
 
-Junta-te a nós e vive experiências inesquecíveis.
-O futebol é a paixão que nos une.
+<p>Junta-te a nos e vive experiencias inesqueciveis.<br>
+O futebol e a paixao que nos une.</p>
 
-<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
+<p><b>Celebramos o Futebol | SABSEG Seguros</b></p>";
             }
             // CONSULTORIA DE SEGUROS
             else if($sqlReward == "consultoria")
             {
-               $mail->Body = "<pre>Olá,
+               $mail->Body = "Ola,
 
-Desde já agradecemos a tua participação na Roleta Digital SABSEG!
-O prémio que ganhaste, através da nossa Roleta, foi: $sqlRewardName
+<p>Desde ja agradecemos a tua participacao na Roleta Digital SABSEG!<br>
+O premio que ganhaste, atraves da nossa Roleta, foi: $sqlRewardName</p>
             
-Para receberes o prémio, por favor, responde a este e-mail demonstrando interesse pelo mesmo. Após recebermos o teu e-mail vamos entrar em contacto contigo! 
+<p>Para receberes o premio, por favor, responde a este e-mail demonstrando interesse pelo mesmo. Apos recebermos o teu e-mail vamos entrar em contacto contigo!</p> 
             
-Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.
+<p>Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.</p>
             
-Junta-te a nós e vive experiências inesquecíveis.
-O futebol é a paixão que nos une.
+<p>Junta-te a nos e vive experiencias inesqueciveis.<br>
+O futebol e a paixao que nos une.</p>
 
             
-<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
+<p><b>Celebramos o Futebol | SABSEG Seguros</b></p>";
             }
             // OTHER
             else
             {
-               $mail->Body = "<pre>Olá,
+               $mail->Body = "Ola,
 
-Desde já agradecemos a tua participação na Roleta Digital SABSEG!
-O prémio que ganhaste, através da nossa Roleta, foi: $sqlRewardName 
+<p>Desde ja agradecemos a tua participacao na Roleta Digital SABSEG!<br>
+O premio que ganhaste, atraves da nossa Roleta, foi: $sqlRewardName</p>
 
-Para receberes o prémio, por favor, responde a este e-mail indicando-nos a morada para onde devemos enviar o prémio. Todos os prémios vão ser enviados por correio.
+<p>Para receberes o premio, por favor, responde a este e-mail indicando-nos a morada para onde devemos enviar o premio. Todos os premios vao ser enviados por correio.</p>
 
-Após recebermos o teu e-mail vamos entrar em contacto contigo confirmando o prémio e a indicação da morada. 
+<p>Apos recebermos o teu e-mail vamos entrar em contacto contigo confirmando o premio e a indicacao da morada.</p> 
 
-Posteriormente, quando efetuarmos o envio para a tua morada, receberás, também, um e-mail com essa indicação!
+<p>Posteriormente, quando efetuarmos o envio para a tua morada, receberas, tambem, um e-mail com essa indicaçao!</p>
 
-Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.
+<p>Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.</p>
 
-Junta-te a nós e vive experiências inesquecíveis.
-O futebol é a paixão que nos une.
+<p>Junta-te a nos e vive experiencias inesqueciveis.<br>
+O futebol e a paixao que nos une.</p>
 
 
-<b>Celebramos o Futebol | SABSEG Seguros</b></pre>";
+<p><b>Celebramos o Futebol | SABSEG Seguros</b></p>";
             }
 
             $mail->AddAddress($email);
