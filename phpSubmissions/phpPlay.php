@@ -125,7 +125,7 @@
                                     else if($reward == "powerbank") {$update_club_decrement_reward = "UPDATE `clubs` SET `powerbank` = `powerbank` - 1 WHERE `name` = '".$club."' AND `powerbank` > 0";}
                                     else if($reward == "coluna") {$update_club_decrement_reward = "UPDATE `clubs` SET `coluna` = `coluna` - 1 WHERE `name` = '".$club."' AND `coluna` > 0";}
                                     else if($reward == "camisolaAlt") {$update_club_decrement_reward = "UPDATE `clubs` SET `camisolaAlt` = `camisolaAlt` - 1 WHERE `name` = '".$club."' AND `camisolaAlt` > 0";}
-                                    else if($reward == "bone") {$update_club_decrement_reward = "UPDATE `clubs` SET `bone` = `bone` - 1 WHERE `name` = '".$club."' AND `bone` > 0";  }
+                                    else if($reward == "bone") {$update_club_decrement_reward = "UPDATE `clubs` SET `bone` = `bone` - 1 WHERE `name` = '".$club."' AND `bone` > 0";}
                                     else if($reward == "mochila") {$update_club_decrement_reward = "UPDATE `clubs` SET `mochila` = `mochila` - 1 WHERE `name` = '".$club."' AND `mochila` > 0";}
                                     else { echo "NO-Ups erro a jogar, tente novamente.";die;}
 
@@ -133,7 +133,7 @@
                                     {
                                         echo("W8-Ups... Tente novamente.");
                                         die;
-                                    })
+                                    }
                                     else
                                     {
                                         $update_club_reward_count = "UPDATE `clubs` SET `reward_count` = `reward_count` - 1 WHERE `name` = '".$club."' AND `reward_count` > 0 ";
