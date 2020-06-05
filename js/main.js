@@ -1,6 +1,6 @@
 var form = document.querySelector('.needs-validation');
 var wichOne = 1;
-
+var VimDeRegistoValJS = 0;
 $(function () {
     $('[data-toggle="popover"]').popover();
     $('#overlayLoad').slideUp();
@@ -43,6 +43,7 @@ HideForLoging();
 
 $(".RodaAll").hide();
 $('#voltarBtn').hide();
+
 /**Observo o botao de enviar */
 form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -107,6 +108,7 @@ function newClient() {
             if(result.slice(0, 3)==="OK-"){
                 $('#myModalRegisto').modal();
                 $("#registerChoose").prop("checked", true);
+                VimDeRegistoValJS = 1;
                 HideShowChangeTarget(1);
                 CheckTermos();
             }else if(result.slice(0, 3)==="NO-"){               
@@ -136,7 +138,7 @@ function logInClient(){
     $.ajax({
         type: "POST",
         url: "phpSubmissions/phpSubmiteLogIn.php",
-        data: {'emailVal':$("#emailVal").val() },
+        data: {'emailVal':$("#emailVal").val() , 'VimDeRegistoVal' : VimDeRegistoValJS },
         success: function (data) {
             result = decodeURIComponent(data);
             finalEmail = $("#emailVal").val();
