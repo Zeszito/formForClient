@@ -45,7 +45,7 @@
    {  
      echo "NO-Preencha o nome, este não pode ser vazio";
    } 
-
+   else{
 
   // 1- Verify if email exists
   $sqlVerifyEmail = "SELECT email FROM users WHERE email = '" . $email . "'";
@@ -166,7 +166,7 @@ O futebol e a paixao que nos une.</p>
       }
     }
   }
-
+}
   function birthdate_isvalid($date)
   {
     if($date == "")
