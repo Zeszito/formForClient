@@ -119,7 +119,7 @@
                     $mail->Port = 587; // 465 or 587
                     $mail->IsHTML(true);
                     $mail->Username = "celebramosfutebol@sabseg.pt";
-                    $mail->Password = "Corretor1722";
+                    $mail->Password = "G.1722.a";
                     $mail->SetFrom("celebramosfutebol@sabseg.pt");
                     //$mail->Username = "hivolvept@gmail.com";
                     //$mail->Password = "sayhitoevolutionemail";

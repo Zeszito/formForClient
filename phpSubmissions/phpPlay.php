@@ -136,12 +136,12 @@
                                     }
                                     else
                                     {
-                                        /*$updateReward = "UPDATE `users` SET `reward`= '".$reward."' WHERE `email` = '".$email."'";
+                                        $updateReward = "UPDATE `users` SET `reward`= '".$reward."' WHERE `email` = '".$email."'";
                                         if($conn->query($updateReward) === FALSE)
                                         {
                                            echo("NO-Não deu update á recompensa");
                                         }
-                                        else*/
+                                        else
                                         {
                                             echo "OK-" . $reward;
                                         }

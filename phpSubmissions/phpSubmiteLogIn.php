@@ -20,6 +20,7 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
 
    // POSTS
    $email = $_POST['emailVal'];
+   $registered = $_POST['VimDeRegistoVal'];
 
    //1-Verificar se email esta registado
    $accountVerify = "SELECT email FROM users WHERE email = '".$email."'";
@@ -45,25 +46,27 @@ setlocale(LC_ALL, 'Portuguese_Portugal.1252');
          }
          else
          {
-            //Send email
-            $mail = new PHPMailer();
-            $mail->IsSMTP(); // enable SMTP
-            //$mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
-            $mail->SMTPAuth = true; // authentication enabled
-            //$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-            $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
-            $mail->Host = "smtp.live.com";
-            //$mail->Host = "smtp.live.com";
-            $mail->Port = 587; // 465 or 587
-            $mail->IsHTML(true);
-            $mail->Username = "celebramosfutebol@sabseg.pt";
-            $mail->Password = "Corretor1722";
-            $mail->SetFrom("celebramosfutebol@sabseg.pt");
-            //$mail->Username = "hivolvept@gmail.com";
-            //$mail->Password = "sayhitoevolutionemail";
-            //$mail->SetFrom("hivolvept@gmail.com");
-            $mail->Subject = "Celebramos Futebol | SABSEG Seguros: Roleta Digital SABSEG";
-            $mail->Body = "Ola,
+            if($registered == 0)
+            {
+               //Send email
+               $mail = new PHPMailer();
+               $mail->IsSMTP(); // enable SMTP
+               //$mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
+               $mail->SMTPAuth = true; // authentication enabled
+               //$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+               $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
+               $mail->Host = "smtp.live.com";
+               //$mail->Host = "smtp.live.com";
+               $mail->Port = 587; // 465 or 587
+               $mail->IsHTML(true);
+               $mail->Username = "celebramosfutebol@sabseg.pt";
+               $mail->Password = "G.1722.a";
+               $mail->SetFrom("celebramosfutebol@sabseg.pt");
+               //$mail->Username = "hivolvept@gmail.com";
+               //$mail->Password = "sayhitoevolutionemail";
+               //$mail->SetFrom("hivolvept@gmail.com");
+               $mail->Subject = "Celebramos Futebol | SABSEG Seguros: Roleta Digital SABSEG";
+               $mail->Body = "Ola,
             
 <p>Desde ja obrigado pelo teu interesse na Roleta Digital SABSEG.<br>
 Os teus dados foram submetidos com sucesso. Esperamos que te divirtas com a nossa Roleta!<br>
@@ -74,13 +77,20 @@ O futebol e a paixao que nos une.</p>
             
 
 <p><p><b>Celebramos o Futebol | SABSEG Seguros</b></p></p>";
-            $mail->AddAddress($email);
+               $mail->AddAddress($email);
 
-            if(!$mail->Send()) 
-            {
-              echo "NO-Mailer error: " . $mail->ErrorInfo;
-            } 
-            else 
+               if(!$mail->Send()) 
+               {
+                 echo "NO-Mailer error: " . $mail->ErrorInfo;
+               } 
+               else 
+               {
+                  // Clube do utilizador
+                  $club = mysqli_fetch_row($clubResult)[0];
+                  echo "OK-" . $club;
+               }
+            }
+            else
             {
                // Clube do utilizador
                $club = mysqli_fetch_row($clubResult)[0];
