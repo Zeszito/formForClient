@@ -39,6 +39,14 @@
    //     "\nTem outro?-".$other."\n---------------------------";
 
 
+
+   //0 - Verify if name is not empety
+   if (empty($name)) 
+   {  
+     echo "NO-Preencha o nome, este não pode ser vazio";
+   } 
+
+
   // 1- Verify if email exists
   $sqlVerifyEmail = "SELECT email FROM users WHERE email = '" . $email . "'";
   if ($conn->query($sqlVerifyEmail)->num_rows > 0) 
