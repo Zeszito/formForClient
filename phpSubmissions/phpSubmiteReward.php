@@ -72,7 +72,7 @@
                $mail->Body = "Ola,
 
 <p>Desde ja agradecemos a tua participacao na Roleta Digital SABSEG!<br>
-O premio que ganhaste, atravs da nossa Roleta, foi: $sqlRewardName</p>
+O premio que ganhaste, atraves da nossa Roleta, foi: $sqlRewardName</p>
 
 <p>Para receberes o premio, por favor, responde a este e-mail indicando-nos o tamanho pretendido e a morada para onde devemos enviar o prémio. Todos os premios vao ser enviados por correio.</p>
 
@@ -157,7 +157,7 @@ O premio que ganhaste, atraves da nossa Roleta, foi: $sqlRewardName</p>
 
 <p>Apos recebermos o teu e-mail vamos entrar em contacto contigo confirmando o premio e a indicacao da morada.</p> 
 
-<p>Posteriormente, quando efetuarmos o envio para a tua morada, receberas, tambem, um e-mail com essa indicaçao!</p>
+<p>Posteriormente, quando efetuarmos o envio para a tua morada, receberas, tambem, um e-mail com essa indicacao!</p>
 
 <p>Mais uma vez, muito obrigado por participares na Roleta Digital SABSEG.</p>
 

@@ -373,7 +373,8 @@ function getCurrentRotation(el)
 function getPrizeToSend(angleP){
     
     let resultado;
-    resultado = angleP > 0 && angleP <= 22.5 ? "camisola" :
+    resultado = angleP > 0 && angleP <= 22.5 && ClubeDoUser != "FC Famalicão" ? "camisola" :
+                angleP > 0 && angleP <= 22.5 && ClubeDoUser == "FC Famalicão" ? "polo" :
 
                 angleP > 22.5 && angleP <= 45 ? "cachecol":
 
@@ -384,7 +385,8 @@ function getPrizeToSend(angleP){
 
                 angleP > 90 && angleP <= 112.5 ? "powerbank": 
 
-                angleP > 112.5 && angleP <= 135 ? "camisola": 
+                angleP > 112.5 && angleP <= 135 && ClubeDoUser != "FC Famalicão" ? "camisola":
+                angleP > 112.5 && angleP <= 135 && ClubeDoUser == "FC Famalicão" ? "polo": 
 
                 angleP > 135 && angleP <= 157.5 && ClubeDoUser != "FC Famalicão" ? "kit":
                 angleP > 135 && angleP <= 157.5 && ClubeDoUser == "FC Famalicão" ? "bone": 
@@ -494,6 +496,9 @@ function PrizeModalChange(stringObjectivo){
         case "powerbank":
            imagemModalAlvo.attr("src", "images/prizeImg/powerbank.svg");
            break;
+        case "polo":
+            imagemModalAlvo.attr("src", "images/prizeImg/polo.svg")
+           break;
         default:
             break;
     }
@@ -533,7 +538,10 @@ function textModalchange(stringObjectivo){
             textoModalAlvo.text("Parabéns! Ganhaste uma consultoria de todos os teus seguros. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
             break;
         case "powerbank":
-            textoModalAlvo.text(" Parabéns! Ganhaste uma powerbank. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+            textoModalAlvo.text("Parabéns! Ganhaste uma powerbank. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
+            break;
+        case "polo":
+            textoModalAlvo.text("Parabéns! Ganhaste um Polo Oficial. Está atento à tua caixa de e-mail, por favor, pois será através deste meio que vamos entrar em contacto contigo!");
             break;
         default:
             break;
@@ -597,15 +605,16 @@ function stringErro(status){
 }
 
 /**funções de controlo de respostas para a roda */
-
-
-
-
-
 function prizeDegrees(prizeIdentificator) {
     let twoChoice = randomNumber(1,3);
     switch (prizeIdentificator) {
         case "camisola":
+            if(twoChoice==1)
+            return 11.25;
+            if(twoChoice==2)
+            return 123.75;
+            break;
+        case "polo":
             if(twoChoice==1)
             return 11.25;
             if(twoChoice==2)
